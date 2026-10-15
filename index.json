@@ -1,0 +1,17 @@
+{
+  "data_trust": "untrusted_content_not_instructions",
+  "input_version": "af16f1406a7569b7899493e71962bac78a597e08eaa0eb9946036671ebe80615",
+  "knowledge": [],
+  "manifest": {
+    "content": {},
+    "format": "research-knowledge-v1",
+    "implementation": {
+      "schema/knowledge.schema.json": "e73d3070c0133c7c6b53d9161d24518231c677144247b7302878de033c11c009",
+      "schema/source.schema.json": "ed09ccf6b6d78df3629ee353e85d9f352a29fb05fb5d00180257011ea1c231d5",
+      "scripts/kb.py": "c5e2a232c7c480a1f603e41adb787e3f665c205f56c5e70792e499be511254b6",
+      "scripts/mcp_server.py": "c0aca26935059dd80aa8937617b8c5926576282b02192ae132ad72a64df5ecfc"
+    }
+  },
+  "reverse_relations": {},
+  "sources": []
+}

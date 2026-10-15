@@ -1,0 +1,24 @@
+name: Validate knowledge and read-only MCP
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests and actual MCP protocol calls
+        run: python3 -B -m unittest discover -s tests -v
+      - name: Validate formal content
+        run: python3 -B scripts/kb.py validate
+      - name: Rebuild and verify tracked text indexes
+        run: |
+          python3 -B scripts/kb.py build
+          git diff --exit-code -- index.md index.json
+      - name: Verify no binary index is tracked
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          files = subprocess.check_output(['git','ls-files'], text=True).splitlines()
+          assert not any(p.startswith('.cache/') or p.endswith(('.sqlite','.db','.pyc')) for p in files)
+          PY
