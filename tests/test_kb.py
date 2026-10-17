@@ -1,4 +1,4 @@
-"""Acceptance tests: all scientific-looking content is synthetic and stays in fixtures."""
+"""Acceptance tests use synthetic fixtures; formal content is validated separately."""
 import contextlib
 import datetime as dt
 import hashlib
@@ -50,11 +50,21 @@ class FixtureCase(unittest.TestCase):
 
 class Acceptance(FixtureCase):
     def test_empty_formal_collection(self):
-        s = Store(ROOT)
+        empty = self.root / "empty-store"
+        for name in ("knowledge", "sources"):
+            (empty / name).mkdir(parents=True)
+        s = Store(empty)
         self.addCleanup(s.close)
         self.assertEqual(s.status()["knowledge_count"], 0)
         self.assertEqual(s.status()["source_count"], 0)
         self.assertEqual(s.search("合成测试")["results"], [])
+
+    def test_formal_collection_excludes_test_fixtures(self):
+        formal = Store(ROOT)
+        self.addCleanup(formal.close)
+        with self.store() as fixtures:
+            self.assertTrue(set(formal.knowledge).isdisjoint(fixtures.knowledge))
+            self.assertTrue(set(formal.sources).isdisjoint(fixtures.sources))
 
     def test_long_chinese_tail_and_exact_order(self):
         body = "# TEST FIXTURE ONLY\n\n## 长中文章节\n\n" + "这是没有空格的长中文测试段落。" * 7000
