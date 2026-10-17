@@ -1,9 +1,168 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "af16f1406a7569b7899493e71962bac78a597e08eaa0eb9946036671ebe80615",
-  "knowledge": [],
+  "input_version": "6c604067629ba096e88fa9d486cddfdee8438c4f72090ef25de5de57bc4fd87a",
+  "knowledge": [
+    {
+      "conditions": [
+        "理论引用须保留 §3.1 的核表示、L2 可积与 L1 稳定性等条件；近似模型最优策略的界不等于 PPO 的全局收敛保证。",
+        "只在可定义事件方向、事件时间和可执行报价机制的研究环境讨论；真实排队、延迟、手续费和成交机制必须另行验证。"
+      ],
+      "content_hash": "d91cc574a702fb281fbe7f13a3db0adc0b20455ad837e1e46a4ba9beb98b3936",
+      "evidence": {
+        "note": "已核对 S-000001 的官方 v1 原文；理论与仿真为作者报告，未独立证明审计、训练、回测或实盘验证。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000001",
+      "lifecycle": "draft",
+      "limitations": [
+        "作者合成环境的奖励不是实际净利润；二元 CLOB 的价格边界、互补合约、结算与队列机制未获该文验证。",
+        "稿件为待审知识卡；未执行下述任何科研实验，也未把作者声称的会议接收视为独立质量保证。"
+      ],
+      "path": "knowledge/K-000001.md",
+      "sources": [
+        {
+          "id": "S-000001",
+          "locator": "model-and-bound",
+          "role": "理论假设和策略近似边界",
+          "version": "arXiv:2610.16524v1"
+        },
+        {
+          "id": "S-000001",
+          "locator": "hsn-method",
+          "role": "方法",
+          "version": "arXiv:2610.16524v1"
+        },
+        {
+          "id": "S-000001",
+          "locator": "simulation-results",
+          "role": "作者报告的仿真证据",
+          "version": "arXiv:2610.16524v1"
+        },
+        {
+          "id": "S-000001",
+          "locator": "probe-diagnostics",
+          "role": "表征探针与额外再拟合的区别",
+          "version": "arXiv:2610.16524v1"
+        },
+        {
+          "id": "S-000001",
+          "locator": "research-limits",
+          "role": "后续研究边界",
+          "version": "arXiv:2610.16524v1"
+        }
+      ],
+      "summary": "HSN 将订单事件历史压缩为可学习的指数混合表征，再联合学习做市策略；作者报告的合成奖励优势具有环境边界，尚未在本地复现或证明可迁移收益。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "限价订单簿做市",
+          "表示学习"
+        ],
+        "methods": [
+          "Hawkes 过程",
+          "指数混合滤波",
+          "强化学习",
+          "PPO"
+        ],
+        "problems": [
+          "非马尔可夫订单流",
+          "历史状态压缩",
+          "模拟到市场迁移"
+        ]
+      },
+      "title": "用可学习指数滤波压缩订单流历史：HSN 做市表征候选",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "基准模型采用独立同分布、零均值且绝对一阶矩有限的参考价增量，固定潜在流量和线性小收益利润；不应只保留“无需高斯”而删除其余假设。",
+        "基准筛选无成本、不误拒非知情流，且在知情类型内独立于机会盈利大小；暴露期须从报价参考时点到可被执行时点实际定义。"
+      ],
+      "content_hash": "458de5fa254227f43b71fee5e777ecc9eeeecbca4bd281f5c07095485790d191",
+      "evidence": {
+        "note": "已核对 S-000002 官方 v1 的理论、经验口径与限制；未独立重算样本、估计筛选器、回测或验证因果/盈利效果。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000002",
+      "lifecycle": "draft",
+      "limitations": [
+        "84.5% 是特定经验创新分布的低毒性极限校准，不是通用阈值、分类准确率或利润提升；流量毒性未被点识别。",
+        "四个 USDC-WETH AMM 池相对中心化参考价的观察不证明二元 CLOB 盈利、可撤单筛选可实现或筛选后的净收益改善。",
+        "重定中心和误分类会改变比较；库存、资金、有限订单冲击及筛选成本不能视为已被模型覆盖。"
+      ],
+      "path": "knowledge/K-000002.md",
+      "sources": [
+        {
+          "id": "S-000002",
+          "locator": "exposure-and-assumptions",
+          "role": "模型适用条件",
+          "version": "arXiv:2610.21510v1"
+        },
+        {
+          "id": "S-000002",
+          "locator": "screening-threshold",
+          "role": "共同半价差下的门槛",
+          "version": "arXiv:2610.21510v1"
+        },
+        {
+          "id": "S-000002",
+          "locator": "centering-and-errors",
+          "role": "重定中心与误分类边界",
+          "version": "arXiv:2610.21510v1"
+        },
+        {
+          "id": "S-000002",
+          "locator": "data-and-measurement",
+          "role": "样本与测量",
+          "version": "arXiv:2610.21510v1"
+        },
+        {
+          "id": "S-000002",
+          "locator": "empirical-threshold-and-selection",
+          "role": "作者报告的数值与关联",
+          "version": "arXiv:2610.21510v1"
+        },
+        {
+          "id": "S-000002",
+          "locator": "research-limits",
+          "role": "识别与外推限制",
+          "version": "arXiv:2610.21510v1"
+        }
+      ],
+      "summary": "比较较慢做市者与较快未筛选基准时，应使用共同参考半价差下的超额损失来定义筛选门槛；AMM 样本中的门槛校准不等于筛选模型准确率或二元 CLOB 收益。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "AMM",
+          "做市机制研究"
+        ],
+        "methods": [
+          "盈亏平衡定价",
+          "逆向选择",
+          "分布损失比较",
+          "经验校准"
+        ],
+        "problems": [
+          "报价陈旧风险",
+          "速度与筛选权衡",
+          "跨市场外推边界"
+        ]
+      },
+      "title": "报价陈旧期与筛选的替代门槛须在同一损失口径下比较",
+      "version": "draft-1"
+    }
+  ],
   "manifest": {
-    "content": {},
+    "content": {
+      "knowledge/K-000001.md": "d91cc574a702fb281fbe7f13a3db0adc0b20455ad837e1e46a4ba9beb98b3936",
+      "knowledge/K-000002.md": "458de5fa254227f43b71fee5e777ecc9eeeecbca4bd281f5c07095485790d191",
+      "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
+      "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db"
+    },
     "format": "research-knowledge-v1",
     "implementation": {
       "schema/knowledge.schema.json": "e73d3070c0133c7c6b53d9161d24518231c677144247b7302878de033c11c009",
@@ -12,6 +171,22 @@
       "scripts/mcp_server.py": "c0aca26935059dd80aa8937617b8c5926576282b02192ae132ad72a64df5ecfc"
     }
   },
-  "reverse_relations": {},
-  "sources": []
+  "reverse_relations": {
+    "K-000001": [],
+    "K-000002": []
+  },
+  "sources": [
+    {
+      "content_hash": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
+      "id": "S-000001",
+      "path": "sources/S-000001.md",
+      "version": "arXiv:2610.16524v1"
+    },
+    {
+      "content_hash": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
+      "id": "S-000002",
+      "path": "sources/S-000002.md",
+      "version": "arXiv:2610.21510v1"
+    }
+  ]
 }

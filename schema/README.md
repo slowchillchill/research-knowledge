@@ -2,7 +2,7 @@
 
 Each card starts with a strict JSON object between `---` lines, then a nonempty Markdown body. UTF-8 and LF newlines are required. Duplicate JSON keys, unknown fields, missing required fields and incorrect types fail validation. This is not a general YAML parser. See the full metadata shapes in [knowledge.schema.json](knowledge.schema.json) and [source.schema.json](source.schema.json); the CLI enforces the small documented JSON Schema vocabulary plus cross-card semantic checks.
 
-There are deliberately no real research cards in the initial formal directories. Complete **synthetic, non-scientific** examples live in [knowledge fixtures](../tests/fixtures/knowledge/K-900001.md) and [source fixture](../tests/fixtures/sources/S-900001.md). Copying them into formal directories is not an onboarding step; create an actual card only after selecting and reading a real public source.
+Formal research cards must be based on selected and read public sources; their lifecycle and replication status remain separate from that source check. Complete **synthetic, non-scientific** format examples live in [knowledge fixtures](../tests/fixtures/knowledge/K-900001.md) and [source fixture](../tests/fixtures/sources/S-900001.md). Keep these examples outside the formal directories; do not copy them into the formal collection as research content.
 
 ## Knowledge metadata
 
