@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "6c604067629ba096e88fa9d486cddfdee8438c4f72090ef25de5de57bc4fd87a",
+  "input_version": "55b8c420611f1780f739330ff3af0bf09bd2d39a914da07948fd87740947b959",
   "knowledge": [
     {
       "conditions": [
@@ -154,14 +154,1239 @@
       },
       "title": "报价陈旧期与筛选的替代门槛须在同一损失口径下比较",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "基准价格为恒定波动率的布朗运动，基础模型没有预测漂移。",
+        "指数效用、有限期限及泊松成交；允许连续且无成本地更新报价。"
+      ],
+      "content_hash": "3e1a11757e3e00975c9752e506da989ae9106a6508c4c6255a41439eb5687185",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000003",
+      "lifecycle": "active",
+      "limitations": [
+        "没有真实延迟、撤单竞态和精确队列优先级。",
+        "无界价格与期末盯市目标不能直接代替二元合约的 0/1 结算。"
+      ],
+      "path": "knowledge/K-000003.md",
+      "sources": [
+        {
+          "id": "S-000003",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published journal version\",\n  \"date\": \"2008-04\",\n  \"venue\": \"Quantitative Finance 8(3), 217–224\",\n  \"online_date\": \"2008-03-28\"\n}"
+        },
+        {
+          "id": "S-000003",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published journal version\",\n  \"date\": \"2008-04\",\n  \"venue\": \"Quantitative Finance 8(3), 217–224\",\n  \"online_date\": \"2008-03-28\"\n}"
+        }
+      ],
+      "summary": "用随机价格、成交强度和效用目标推导库存偏斜报价。论文的模拟显示库存与盈亏波动下降，但平均收益也略降；这是风险控制证据，不是 BTC 实盘收益证据。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "High-frequency trading in a limit order book",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "有限库存上限，成交强度随报价距离按指数形式变化。",
+        "布朗基准价格与指数效用；实用时须适配价位离散化和真实订单生命周期。"
+      ],
+      "content_hash": "cf75ee153b89fe7d3a91aadac81ed765652cc5804f3935052dc569b9cf69975a",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000004",
+      "lifecycle": "active",
+      "limitations": [
+        "指数强度假设更适合价差较小的高流动性股票。",
+        "单个股票历史示例不能证明跨事件样本外有效；二元结算与费用仍需另建模。"
+      ],
+      "path": "knowledge/K-000004.md",
+      "sources": [
+        {
+          "id": "S-000004",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v5 inspected; published journal manifestation verified\",\n  \"date\": \"2012-08-03\",\n  \"venue\": \"Mathematics and Financial Economics 7, 477–507 (September 2013)\",\n  \"online_date\": \"2012-09-04\",\n  \"arxiv_title\": \"Dealing with the Inventory Risk. A solution to the market making problem\"\n}"
+        },
+        {
+          "id": "S-000004",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v5 inspected; published journal manifestation verified\",\n  \"date\": \"2012-08-03\",\n  \"venue\": \"Mathematics and Financial Economics 7, 477–507 (September 2013)\",\n  \"online_date\": \"2012-09-04\",\n  \"arxiv_title\": \"Dealing with the Inventory Risk. A solution to the market making problem\"\n}"
+        },
+        {
+          "id": "S-000004",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v5 inspected; published journal manifestation verified\",\n  \"date\": \"2012-08-03\",\n  \"venue\": \"Mathematics and Financial Economics 7, 477–507 (September 2013)\",\n  \"online_date\": \"2012-09-04\",\n  \"arxiv_title\": \"Dealing with the Inventory Risk. A solution to the market making problem\"\n}"
+        }
+      ],
+      "summary": "在有限库存约束下，把做市 HJB 方程转为线性常微分方程，并给出近似报价。论文历史示例明确考虑最小价位和频繁改单造成的队列优先级损失。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "Dealing with the inventory risk: a solution to the market making problem",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "订单到达与撤单采用简化的独立泊松类机制。",
+        "需要足够细的历史订单簿观测来估计参数；概率结论依赖模型成立。"
+      ],
+      "content_hash": "9a60799bc882453490d4007dd6a4547359eeb95490edc371eefc1ff18e5ec0e4",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000005",
+      "lifecycle": "active",
+      "limitations": [
+        "明确忽略交易者战略互动和订单流长记忆。",
+        "突发新闻或 BTC 大幅波动时，平稳性与独立性假设容易失效；可访问手稿的具体修订日期未确认。"
+      ],
+      "path": "knowledge/K-000005.md",
+      "sources": [
+        {
+          "id": "S-000005",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Undated institutional manuscript inspected; journal record verified\",\n  \"date\": null,\n  \"venue\": \"Operations Research 58(3), 549–563 (May–June 2010)\",\n  \"online_date\": \"2010-02-26\"\n}"
+        },
+        {
+          "id": "S-000005",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Undated institutional manuscript inspected; journal record verified\",\n  \"date\": null,\n  \"venue\": \"Operations Research 58(3), 549–563 (May–June 2010)\",\n  \"online_date\": \"2010-02-26\"\n}"
+        },
+        {
+          "id": "S-000005",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Undated institutional manuscript inspected; journal record verified\",\n  \"date\": null,\n  \"venue\": \"Operations Research 58(3), 549–563 (May–June 2010)\",\n  \"online_date\": \"2010-02-26\"\n}"
+        }
+      ],
+      "summary": "建立可解析的连续时间订单簿模型，估计给定队列状态下的价格变化与成交概率，并用东京证券交易所观测和模拟说明。核心是条件成交风险，而非触价必成交。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "A Stochastic Model for Order Book Dynamics",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "给定当前订单簿状态后，订单流按马尔可夫过程建模，并假设价格时间优先。",
+        "稳定性依赖负漂移与有界到达；准确检验位置相关撤单需要订单标识。"
+      ],
+      "content_hash": "371291172c6b19755cf267f25bf5a087b031aab7c95d3746fbc540a366f900de",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000006",
+      "lifecycle": "active",
+      "limitations": [
+        "原始验证是大 tick 股票，不是临近到期的二元合约。",
+        "缺少订单标识时成交估计可能乐观；原始研究排除了开收盘时段，不能直接外推到到期冲击。"
+      ],
+      "path": "knowledge/K-000006.md",
+      "sources": [
+        {
+          "id": "S-000006",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v2 inspected; journal publication verified\",\n  \"date\": \"2014-09-03\",\n  \"cover_date\": \"2014-09-05\",\n  \"venue\": \"Journal of the American Statistical Association 110(509), 107–122 (2015)\",\n  \"institutional_publication_date\": \"2015-01-02\"\n}"
+        },
+        {
+          "id": "S-000006",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v2 inspected; journal publication verified\",\n  \"date\": \"2014-09-03\",\n  \"cover_date\": \"2014-09-05\",\n  \"venue\": \"Journal of the American Statistical Association 110(509), 107–122 (2015)\",\n  \"institutional_publication_date\": \"2015-01-02\"\n}"
+        },
+        {
+          "id": "S-000006",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"arXiv v2 inspected; journal publication verified\",\n  \"date\": \"2014-09-03\",\n  \"cover_date\": \"2014-09-05\",\n  \"venue\": \"Journal of the American Statistical Association 110(509), 107–122 (2015)\",\n  \"institutional_publication_date\": \"2015-01-02\"\n}"
+        }
+      ],
+      "summary": "在参考价固定的区间内，让订单事件强度依赖当前队列状态，并通过状态切换衔接价格变化。论文明确提醒：均匀分配撤单位置可能高估成交，因为低优先级订单更易撤销。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "Simulating and Analyzing Order Book Data: The Queue-Reactive Model",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "所有交互须经过显式计时的事件队列。",
+        "背景流与撮合规则决定模拟质量；所读版本对同一纳秒事件采用任意顺序。"
+      ],
+      "content_hash": "7486cf67fbb4be00689be1caae6a1fe5dda8d3f9eef444ded3f34dfabe25d818",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000007",
+      "lifecycle": "active",
+      "limitations": [
+        "NASDAQ 风格基础设施不会自动实现二元结算、抵押规则或目标平台费用。",
+        "后续 JPMC 仓库已于 2025-06-02 归档，依赖兼容性未运行验证。"
+      ],
+      "path": "knowledge/K-000007.md",
+      "sources": [
+        {
+          "id": "S-000007",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"2019 arXiv v1 inspected; 2020 proceedings identity verified separately\",\n  \"date\": \"2019-04-26\",\n  \"inspected_title\": \"ABIDES: Towards High-Fidelity Market Simulation for AI Research\",\n  \"venue\": \"2020 ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (SIGSIM-PADS ’20), June 15–17, 2020\",\n  \"publication_pages\": \"12-page manuscript; proceedings page range not independently confirmed in an accessible primary record\"\n}"
+        },
+        {
+          "id": "S-000007",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"2019 arXiv v1 inspected; 2020 proceedings identity verified separately\",\n  \"date\": \"2019-04-26\",\n  \"inspected_title\": \"ABIDES: Towards High-Fidelity Market Simulation for AI Research\",\n  \"venue\": \"2020 ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (SIGSIM-PADS ’20), June 15–17, 2020\",\n  \"publication_pages\": \"12-page manuscript; proceedings page range not independently confirmed in an accessible primary record\"\n}"
+        },
+        {
+          "id": "S-000007",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"2019 arXiv v1 inspected; 2020 proceedings identity verified separately\",\n  \"date\": \"2019-04-26\",\n  \"inspected_title\": \"ABIDES: Towards High-Fidelity Market Simulation for AI Research\",\n  \"venue\": \"2020 ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (SIGSIM-PADS ’20), June 15–17, 2020\",\n  \"publication_pages\": \"12-page manuscript; proceedings page range not independently confirmed in an accessible primary record\"\n}"
+        }
+      ],
+      "summary": "用离散事件消息内核模拟代理、交易所、计算耗时及网络延迟，并展示互动和冲击实验。架构支持受控压力测试，但真实程度取决于背景代理与校准。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "ABIDES: Towards High-Fidelity Multi-Agent Market Simulation",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "明确互斥完备的结果空间、初始概率和流动性参数。",
+        "诚实报告激励依赖效用与事件相关性等假设。"
+      ],
+      "content_hash": "c6143594de3fd79473e56eb76ea2dee56208643e9f3692ff5dc887513df0d2fe",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000008",
+      "lifecycle": "active",
+      "limitations": [
+        "LMSR 运营方的补贴或亏损界限不同于 CLOB 做市者的库存风险。",
+        "组合状态空间有计算成本，不能据此假定目标平台当前采用 LMSR。"
+      ],
+      "path": "knowledge/K-000008.md",
+      "sources": [
+        {
+          "id": "S-000008",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published journal PDF inspected\",\n  \"date\": \"2007\",\n  \"venue\": \"The Journal of Prediction Markets 1(1), 3–15\",\n  \"metadata_note\": \"Migrated publisher landing page says 2012-12-13 and has a title-spacing typo; PDF and issue identify 2007.\"\n}"
+        },
+        {
+          "id": "S-000008",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published journal PDF inspected\",\n  \"date\": \"2007\",\n  \"venue\": \"The Journal of Prediction Markets 1(1), 3–15\",\n  \"metadata_note\": \"Migrated publisher landing page says 2012-12-13 and has a title-spacing typo; PDF and issue identify 2007.\"\n}"
+        }
+      ],
+      "summary": "把连续修订概率报告转换为与做市商的交易。对数形式能保持指定的条件概率关系并支持模块化信息聚合；资金约束是机制设计结论，不是预测准确率保证。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "Logarithmic Market Scoring Rules for Modular Combinatorial Information Aggregation",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "先对齐支付、事件定义及到期时间，再解释价差。",
+        "期权隐含价格还涉及风险溢价，不能自动视为真实事件概率。"
+      ],
+      "content_hash": "4a51dd767e7ad2ba9cc6e1578cb304d98472f8890695d270aa33a2ef2db9da08",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000009",
+      "lifecycle": "active",
+      "limitations": [
+        "主要是现代加密预测市场出现前的异质历史证据。",
+        "集体预测准确不等于做市净盈利；中间价差异未必能在买卖价差与费用后执行。"
+      ],
+      "path": "knowledge/K-000009.md",
+      "sources": [
+        {
+          "id": "S-000009",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published article inspected\",\n  \"date\": \"2004\",\n  \"venue\": \"Journal of Economic Perspectives 18(2), 107–126 (Spring 2004)\"\n}"
+        },
+        {
+          "id": "S-000009",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published article inspected\",\n  \"date\": \"2004\",\n  \"venue\": \"Journal of Economic Perspectives 18(2), 107–126 (Spring 2004)\"\n}"
+        },
+        {
+          "id": "S-000009",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"Published article inspected\",\n  \"date\": \"2004\",\n  \"venue\": \"Journal of Economic Perspectives 18(2), 107–126 (Spring 2004)\"\n}"
+        }
+      ],
+      "summary": "综述预测市场的预测证据，区分概率、均值和中位数对应的不同合约支付，并讨论长赔率偏差及与期权推导事件价格的比较。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "Prediction Markets",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "基础推导假设价格接受者、对数效用和财富信念独立。",
+        "事件只经预测合约影响财富，没有额外对冲动机。"
+      ],
+      "content_hash": "b99ec5f395c6d96fd0ec8edd1c8138d3beb9e62f2e1a513112985d616ce7ed44",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000010",
+      "lifecycle": "active",
+      "limitations": [
+        "平均信念不自动等于校准后的客观事件概率。",
+        "财富集中、稀薄流动性、对冲需求和非均衡订单流均会破坏简单解释；不是现代 BTC 校准实证。"
+      ],
+      "path": "knowledge/K-000010.md",
+      "sources": [
+        {
+          "id": "S-000010",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"IZA April 2006 full text inspected; NBER May 2006 record verified\",\n  \"date\": \"2006-04\",\n  \"nber_issue_date\": \"2006-05\",\n  \"venue\": \"IZA Discussion Paper 2092 / NBER Working Paper 12200\",\n  \"published_manifestation\": \"IZA records a chapter in Hahn and Tetlock (eds.), Information Markets: A New Way of Making Decisions in the Public and Private Sectors, AEI-Brookings Press (2006); chapter pagination unverified.\"\n}"
+        },
+        {
+          "id": "S-000010",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"IZA April 2006 full text inspected; NBER May 2006 record verified\",\n  \"date\": \"2006-04\",\n  \"nber_issue_date\": \"2006-05\",\n  \"venue\": \"IZA Discussion Paper 2092 / NBER Working Paper 12200\",\n  \"published_manifestation\": \"IZA records a chapter in Hahn and Tetlock (eds.), Information Markets: A New Way of Making Decisions in the Public and Private Sectors, AEI-Brookings Press (2006); chapter pagination unverified.\"\n}"
+        },
+        {
+          "id": "S-000010",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "{\n  \"label\": \"IZA April 2006 full text inspected; NBER May 2006 record verified\",\n  \"date\": \"2006-04\",\n  \"nber_issue_date\": \"2006-05\",\n  \"venue\": \"IZA Discussion Paper 2092 / NBER Working Paper 12200\",\n  \"published_manifestation\": \"IZA records a chapter in Hahn and Tetlock (eds.), Information Markets: A New Way of Making Decisions in the Public and Private Sectors, AEI-Brookings Press (2006); chapter pagination unverified.\"\n}"
+        }
+      ],
+      "summary": "给出二元合约价格等于交易者平均信念的充分条件，并研究偏离；在对数效用下，财富与信念相关会产生财富加权信念。价格是有信息但可能偏差的信念汇总。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "预测市场"
+        ],
+        "methods": [
+          "市场建模"
+        ],
+        "problems": [
+          "成交与风险评估"
+        ]
+      },
+      "title": "Interpreting Prediction Market Prices as Probabilities",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "预测先于可验证结果；评分定义及正负方向固定。"
+      ],
+      "content_hash": "092177ec1147dc0d4d5f9ed724b18ace082d2600ae7783ec8040faa332cbe243",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000011",
+      "lifecycle": "active",
+      "limitations": [
+        "适当性是期望下的激励性质，不保证有限样本校准，也不等同交易效用；log loss 对极端误判敏感。"
+      ],
+      "path": "knowledge/K-000011.md",
+      "sources": [
+        {
+          "id": "S-000011",
+          "locator": "proper-score",
+          "role": "方法、证据或适用边界",
+          "version": "JASA 102(477), 359–378, March 2007"
+        },
+        {
+          "id": "S-000011",
+          "locator": "empirical-example",
+          "role": "方法、证据或适用边界",
+          "version": "JASA 102(477), 359–378, March 2007"
+        }
+      ],
+      "summary": "以严格适当评分评估概率，避免评价规则奖励夸大信心。二元事件可用 Brier 与 log loss；论文的理论和天气案例说明评分选择会改变模型优劣判断。",
+      "tags": {
+        "domains": [
+          "概率预测",
+          "预测市场"
+        ],
+        "methods": [
+          "Brier score",
+          "log loss"
+        ],
+        "problems": [
+          "概率评价",
+          "过度自信"
+        ]
+      },
+      "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "只用独立校准集拟合温度；保持测试集封存。"
+      ],
+      "content_hash": "c082c2c06a0ac5d01830fba3f26d840293fcc9c2ef9c836304aa6e50bd6e3997",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000012",
+      "lifecycle": "active",
+      "limitations": [
+        "论文不是市场研究；时间漂移后温度可能失效。ECE 受分箱影响，须同时报告 proper scores。"
+      ],
+      "path": "knowledge/K-000012.md",
+      "sources": [
+        {
+          "id": "S-000012",
+          "locator": "method",
+          "role": "方法、证据或适用边界",
+          "version": "ICML 2017 / PMLR 70:1321–1330"
+        },
+        {
+          "id": "S-000012",
+          "locator": "comparison",
+          "role": "方法、证据或适用边界",
+          "version": "ICML 2017 / PMLR 70:1321–1330"
+        }
+      ],
+      "summary": "固定模型后用一个温度参数校准 logits。视觉和 NLP 实验显示其经常降低校准误差，但并非所有数据集最佳。",
+      "tags": {
+        "domains": [
+          "概率预测"
+        ],
+        "methods": [
+          "temperature scaling"
+        ],
+        "problems": [
+          "校准",
+          "分布漂移"
+        ]
+      },
+      "title": "On Calibration of Modern Neural Networks",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "标签反馈可及时取得；学习率和评分函数预先规定。"
+      ],
+      "content_hash": "565da43a5de8790989022574e836fbba0c2386aa47d37e66975754ae84990fca",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000013",
+      "lifecycle": "active",
+      "limitations": [
+        "长期平均覆盖不保证每个市场、短窗口或条件覆盖；预测集可变宽，不能直接变成下注概率。"
+      ],
+      "path": "knowledge/K-000013.md",
+      "sources": [
+        {
+          "id": "S-000013",
+          "locator": "method",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:2106.00170v3"
+        },
+        {
+          "id": "S-000013",
+          "locator": "experiments",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:2106.00170v3"
+        }
+      ],
+      "summary": "以已观测误覆盖反馈调整预测集阈值，研究分布变化时长期覆盖。股票波动率和选举实例支持其作为在线不确定性工具。",
+      "tags": {
+        "domains": [
+          "时序预测",
+          "不确定性"
+        ],
+        "methods": [
+          "adaptive conformal inference"
+        ],
+        "problems": [
+          "分布漂移",
+          "覆盖率"
+        ]
+      },
+      "title": "Adaptive Conformal Inference Under Distribution Shift",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "必须选满足观测范围/可预测性等条件的界；估计目标预先定义。"
+      ],
+      "content_hash": "cee2cf6588da43b861385e4a2298fcb914146d2c8da33f62678ff888fb9c8f2a",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000014",
+      "lifecycle": "active",
+      "limitations": [
+        "原始未界定交易损益不可直接套有界公式；时间统一性不自动修复数据泄漏、多策略选择或错误标签。"
+      ],
+      "path": "knowledge/K-000014.md",
+      "sources": [
+        {
+          "id": "S-000014",
+          "locator": "bounded",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:1810.08240v9"
+        },
+        {
+          "id": "S-000014",
+          "locator": "simulation",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:1810.08240v9"
+        }
+      ],
+      "summary": "构造全时间有效的置信序列，避免重复查看固定时点区间造成错误发现。Theorem4 针对有界观测的平均条件期望，并不要求共同均值。",
+      "tags": {
+        "domains": [
+          "统计评估"
+        ],
+        "methods": [
+          "confidence sequences",
+          "empirical Bernstein"
+        ],
+        "problems": [
+          "可选停止",
+          "重复检验"
+        ]
+      },
+      "title": "Time-uniform, nonparametric, nonasymptotic confidence sequences",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "记录全部试验而非只保留赢家；统一成本、时间对齐和收益口径。"
+      ],
+      "content_hash": "a4f42534b21b84cc9edbd0d5c49042ea5f5ca54a654015807e66bd429733c7f7",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000015",
+      "lifecycle": "active",
+      "limitations": [
+        "CSCV不是实时可交易walk-forward的替代；分块与非平稳性仍影响解释，不能把单个概率当未来收益承诺。"
+      ],
+      "path": "knowledge/K-000015.md",
+      "sources": [
+        {
+          "id": "S-000015",
+          "locator": "definition",
+          "role": "方法、证据或适用边界",
+          "version": "作者PDF修订稿2015-02-27"
+        },
+        {
+          "id": "S-000015",
+          "locator": "limits",
+          "role": "方法、证据或适用边界",
+          "version": "作者PDF修订稿2015-02-27"
+        }
+      ],
+      "summary": "将全部尝试的策略收益矩阵用于组合对称交叉验证，估计样本内优选策略在样本外排名失效的风险。",
+      "tags": {
+        "domains": [
+          "回测验证"
+        ],
+        "methods": [
+          "CSCV",
+          "PBO"
+        ],
+        "problems": [
+          "多重尝试",
+          "选择偏差"
+        ]
+      },
+      "title": "The Probability of Backtest Overfitting",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "适用于有排序依赖的链上执行风险分析；需另核目标链与撮合机制。"
+      ],
+      "content_hash": "f133ba1cc61cd5d0b26c204f32a0d4698dbdaca2c6470e2700d82097ed326fad",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000016",
+      "lifecycle": "active",
+      "limitations": [
+        "历史PoW Ethereum证据不能量化当前Polymarket/Polygon风险；作者仅覆盖部分DEX和可识别机器人。"
+      ],
+      "path": "knowledge/K-000016.md",
+      "sources": [
+        {
+          "id": "S-000016",
+          "locator": "measurement",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:1904.05234v1"
+        },
+        {
+          "id": "S-000016",
+          "locator": "mechanism",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:1904.05234v1"
+        }
+      ],
+      "summary": "实测早期以太坊交易排序竞争，提出PGA和MEV风险框架。链上可见成交只揭示部分竞争过程，提交顺序不能视为最终执行顺序。",
+      "tags": {
+        "domains": [
+          "加密市场",
+          "执行结算"
+        ],
+        "methods": [
+          "MEV",
+          "priority gas auctions"
+        ],
+        "problems": [
+          "交易排序",
+          "确认风险"
+        ]
+      },
+      "title": "Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "连续时间CFMM及外部价格等模型条件必须保留。"
+      ],
+      "content_hash": "dfa55b9dcae70b5ca1eed599acc2bd9796e4bc30460fe4998f8df9458a58fe14",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000017",
+      "lifecycle": "active",
+      "limitations": [
+        "Polymarket二元CLOB不是CFMM，不能照搬LVR闭式公式；理想再平衡基准缺少现实执行摩擦。"
+      ],
+      "path": "knowledge/K-000017.md",
+      "sources": [
+        {
+          "id": "S-000017",
+          "locator": "decomposition",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:2208.06046v6"
+        },
+        {
+          "id": "S-000017",
+          "locator": "empirical",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv:2208.06046v6"
+        }
+      ],
+      "summary": "将AMM做市收益拆分为市场风险暴露和费用减逆向选择损失。匹配资产头寸的再平衡基准能避免把方向收益误作做市能力。",
+      "tags": {
+        "domains": [
+          "加密做市",
+          "收益归因"
+        ],
+        "methods": [
+          "loss-versus-rebalancing"
+        ],
+        "problems": [
+          "逆向选择",
+          "方向暴露"
+        ]
+      },
+      "title": "Automated Market Making and Loss-Versus-Rebalancing",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "模型涉及特定交易设计与速度结构；策略不能自行改变交易所撮合。"
+      ],
+      "content_hash": "6880d7b77b6e3865a744e9537fde208c085cc60d5abcc382812b18b9cd06d15d",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000018",
+      "lifecycle": "active",
+      "limitations": [
+        "美股期货/ETF证据不能移植利润大小；100ms决策间隔不意味着100ms交易所批量拍卖或实测延迟。"
+      ],
+      "path": "knowledge/K-000018.md",
+      "sources": [
+        {
+          "id": "S-000018",
+          "locator": "evidence",
+          "role": "方法、证据或适用边界",
+          "version": "QJE130(4):1547–1621, November2015"
+        },
+        {
+          "id": "S-000018",
+          "locator": "mechanism",
+          "role": "方法、证据或适用边界",
+          "version": "QJE130(4):1547–1621, November2015"
+        }
+      ],
+      "summary": "研究连续订单簿中陈旧报价被抢先成交的机制，并讨论频繁批量拍卖的设计。公开信息也能产生速度竞争，不能把理想信号价当可成交价。",
+      "tags": {
+        "domains": [
+          "市场微观结构"
+        ],
+        "methods": [
+          "frequent batch auctions",
+          "latency races"
+        ],
+        "problems": [
+          "陈旧报价",
+          "撤单延迟"
+        ]
+      },
+      "title": "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "需要正确且一致的行为策略概率、动作掩码和新鲜 on-policy 轨迹；仿真成交模型仍需单独验证。"
+      ],
+      "content_hash": "496ef178ba03b6eca2ed955ceddfb5c8b7126983b8f4c4ca6836e2faa658214a",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000019",
+      "lifecycle": "active",
+      "limitations": [
+        "裁剪不是硬 KL 约束，也不保证实际收益单调改善；论文没有做市证据。"
+      ],
+      "path": "knowledge/K-000019.md",
+      "sources": [
+        {
+          "id": "S-000019",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v2, 2017-08-28"
+        },
+        {
+          "id": "S-000019",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v2, 2017-08-28"
+        },
+        {
+          "id": "S-000019",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v2, 2017-08-28"
+        }
+      ],
+      "summary": "用新策略轨迹反复做小批量更新，以概率比裁剪限制部分过大更新的激励；论文证据来自控制与 Atari 基准。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "ppo"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Proximal Policy Optimization Algorithms",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "先定义经济折扣目标、critic、真实终止与截断的 bootstrap 掩码；保留事件时序。"
+      ],
+      "content_hash": "4b5049c003da992ad1f5e1a3e1130ee8451997ab1f23e62242adf6df7c0d253d",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000020",
+      "lifecycle": "active",
+      "limitations": [
+        "critic 不准会影响 lambda 小于 1 的偏差；原文按步折扣，未验证不规则市场事件。"
+      ],
+      "path": "knowledge/K-000020.md",
+      "sources": [
+        {
+          "id": "S-000020",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v6, 2018-10-20"
+        },
+        {
+          "id": "S-000020",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v6, 2018-10-20"
+        },
+        {
+          "id": "S-000020",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v6, 2018-10-20"
+        }
+      ],
+      "summary": "用指数加权 TD 残差估计优势；gamma 与 lambda 的偏差来源不同。论文在 TRPO 控制任务上验证。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "gae"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "High-Dimensional Continuous Control Using Generalized Advantage Estimation",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "理论依赖更强的优势与散度条件；有限样本、平均 KL 和实际动作执行需要分别检查。"
+      ],
+      "content_hash": "a594e4337336cc18dfe69d3a85d3de3af08d92c3e37682e2d9b949fba9680b26",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000021",
+      "lifecycle": "active",
+      "limitations": [
+        "实用 TRPO 不保证交易收益；实现与计算成本高于简单 PPO 更新。"
+      ],
+      "path": "knowledge/K-000021.md",
+      "sources": [
+        {
+          "id": "S-000021",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v5, 2017-04-20; ICML proceedings version also available"
+        },
+        {
+          "id": "S-000021",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v5, 2017-04-20; ICML proceedings version also available"
+        },
+        {
+          "id": "S-000021",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v5, 2017-04-20; ICML proceedings version also available"
+        }
+      ],
+      "summary": "以近似平均 KL 约束优化替代目标，使用共轭梯度与线搜索；实用算法是理论保证的近似。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "trpo"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Trust Region Policy Optimization",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "需要同调参预算与完整配置清单；先固定其他因素再消融。"
+      ],
+      "content_hash": "09d175d7fb52d2c9bc31d6ac6aebf827decffa97310add47b978a057fdb9ab9b",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000022",
+      "lifecycle": "active",
+      "limitations": [
+        "不能推导所有场景都应打开某开关，也不能推导 PPO 裁剪普遍无用。"
+      ],
+      "path": "knowledge/K-000022.md",
+      "sources": [
+        {
+          "id": "S-000022",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v1, 2020-05-25; ICLR 2020 version"
+        },
+        {
+          "id": "S-000022",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v1, 2020-05-25; ICLR 2020 version"
+        }
+      ],
+      "summary": "控制 PPO/TRPO 的代码级差异，发现缩放、初始化、value clipping 等会显著改变所测任务的表现与更新行为。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "implementation_matters"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Implementation Matters in Deep Policy Gradients: A Case Study on PPO and TRPO",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "原文为 Atari 上的 LSTM Q-learning，利用闪烁画面制造缺失观测；不是 GRU PPO。"
+      ],
+      "content_hash": "f06865e32300a158034c2c0ae2fcbe745a54ccdf92372abe82855f82ff03e8d8",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000023",
+      "lifecycle": "active",
+      "limitations": [
+        "记忆不一定优于显式短历史；有限反向传播与错误状态初始化会损失信息。"
+      ],
+      "path": "knowledge/K-000023.md",
+      "sources": [
+        {
+          "id": "S-000023",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2017-01-11; v2 was withdrawn, but later v3/v4 are present"
+        },
+        {
+          "id": "S-000023",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2017-01-11; v2 was withdrawn, but later v3/v4 are present"
+        },
+        {
+          "id": "S-000023",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2017-01-11; v2 was withdrawn, but later v3/v4 are present"
+        }
+      ],
+      "summary": "在 DQN 中加入 LSTM，用连续单帧历史处理部分可观测性，并讨论循环更新的初始状态。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "drqn"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Deep Recurrent Q-Learning for Partially Observable MDPs",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "必须明确 cell 方程、初始隐状态与环境边界，并保持输入顺序。"
+      ],
+      "content_hash": "3aa02e570a156ba5579919bfadfac8e5e2e84de8abf1543d719d42ecd45c0b38",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000024",
+      "lifecycle": "active",
+      "limitations": [
+        "学到的 reset gate 不等于显式 episode 清零；不同运行库的 GRU 约定不能直接假设相同。"
+      ],
+      "path": "knowledge/K-000024.md",
+      "sources": [
+        {
+          "id": "S-000024",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v3, 2014-09-03"
+        },
+        {
+          "id": "S-000024",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v3, 2014-09-03"
+        }
+      ],
+      "summary": "提出 reset/update 门控循环单元与 encoder-decoder；实验为英法翻译短语重评分，没有 RL 或金融结果。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "gru_original"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation",
+      "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "需多次训练与一致评估协议；市场数据存在时间和合约相关性，不能把每笔成交当独立样本。"
+      ],
+      "content_hash": "27929fad5cc08e96e3996c49d543a2e72b08dcae418502bae457913875e1b0f7",
+      "evidence": {
+        "note": "已核对公开原文及所列章节。active 表示可检索基础知识；不表示复现、盈利或适用于生产。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000025",
+      "lifecycle": "active",
+      "limitations": [
+        "bootstrap 无法修复泄漏或偏差；IQM 也不能替代金融尾部损失与回撤。"
+      ],
+      "path": "knowledge/K-000025.md",
+      "sources": [
+        {
+          "id": "S-000025",
+          "locator": "section-1",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2022-01-05"
+        },
+        {
+          "id": "S-000025",
+          "locator": "section-2",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2022-01-05"
+        },
+        {
+          "id": "S-000025",
+          "locator": "section-3",
+          "role": "方法、证据或适用边界",
+          "version": "arXiv v4, 2022-01-05"
+        }
+      ],
+      "summary": "建议用 bootstrap 区间、性能分布与稳健汇总呈现 RL 比较的不确定性，避免只报单点均值。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "rl_evaluation_reliability"
+        ],
+        "problems": [
+          "训练稳定性",
+          "时序泛化"
+        ]
+      },
+      "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+      "version": "foundation-1"
     }
   ],
   "manifest": {
     "content": {
       "knowledge/K-000001.md": "d91cc574a702fb281fbe7f13a3db0adc0b20455ad837e1e46a4ba9beb98b3936",
       "knowledge/K-000002.md": "458de5fa254227f43b71fee5e777ecc9eeeecbca4bd281f5c07095485790d191",
+      "knowledge/K-000003.md": "3e1a11757e3e00975c9752e506da989ae9106a6508c4c6255a41439eb5687185",
+      "knowledge/K-000004.md": "cf75ee153b89fe7d3a91aadac81ed765652cc5804f3935052dc569b9cf69975a",
+      "knowledge/K-000005.md": "9a60799bc882453490d4007dd6a4547359eeb95490edc371eefc1ff18e5ec0e4",
+      "knowledge/K-000006.md": "371291172c6b19755cf267f25bf5a087b031aab7c95d3746fbc540a366f900de",
+      "knowledge/K-000007.md": "7486cf67fbb4be00689be1caae6a1fe5dda8d3f9eef444ded3f34dfabe25d818",
+      "knowledge/K-000008.md": "c6143594de3fd79473e56eb76ea2dee56208643e9f3692ff5dc887513df0d2fe",
+      "knowledge/K-000009.md": "4a51dd767e7ad2ba9cc6e1578cb304d98472f8890695d270aa33a2ef2db9da08",
+      "knowledge/K-000010.md": "b99ec5f395c6d96fd0ec8edd1c8138d3beb9e62f2e1a513112985d616ce7ed44",
+      "knowledge/K-000011.md": "092177ec1147dc0d4d5f9ed724b18ace082d2600ae7783ec8040faa332cbe243",
+      "knowledge/K-000012.md": "c082c2c06a0ac5d01830fba3f26d840293fcc9c2ef9c836304aa6e50bd6e3997",
+      "knowledge/K-000013.md": "565da43a5de8790989022574e836fbba0c2386aa47d37e66975754ae84990fca",
+      "knowledge/K-000014.md": "cee2cf6588da43b861385e4a2298fcb914146d2c8da33f62678ff888fb9c8f2a",
+      "knowledge/K-000015.md": "a4f42534b21b84cc9edbd0d5c49042ea5f5ca54a654015807e66bd429733c7f7",
+      "knowledge/K-000016.md": "f133ba1cc61cd5d0b26c204f32a0d4698dbdaca2c6470e2700d82097ed326fad",
+      "knowledge/K-000017.md": "dfa55b9dcae70b5ca1eed599acc2bd9796e4bc30460fe4998f8df9458a58fe14",
+      "knowledge/K-000018.md": "6880d7b77b6e3865a744e9537fde208c085cc60d5abcc382812b18b9cd06d15d",
+      "knowledge/K-000019.md": "496ef178ba03b6eca2ed955ceddfb5c8b7126983b8f4c4ca6836e2faa658214a",
+      "knowledge/K-000020.md": "4b5049c003da992ad1f5e1a3e1130ee8451997ab1f23e62242adf6df7c0d253d",
+      "knowledge/K-000021.md": "a594e4337336cc18dfe69d3a85d3de3af08d92c3e37682e2d9b949fba9680b26",
+      "knowledge/K-000022.md": "09d175d7fb52d2c9bc31d6ac6aebf827decffa97310add47b978a057fdb9ab9b",
+      "knowledge/K-000023.md": "f06865e32300a158034c2c0ae2fcbe745a54ccdf92372abe82855f82ff03e8d8",
+      "knowledge/K-000024.md": "3aa02e570a156ba5579919bfadfac8e5e2e84de8abf1543d719d42ecd45c0b38",
+      "knowledge/K-000025.md": "27929fad5cc08e96e3996c49d543a2e72b08dcae418502bae457913875e1b0f7",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
-      "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db"
+      "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
+      "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
+      "sources/S-000004.md": "5c1ea45a4c782ac57d0889e8db734683c31cd105d2bae3728a275aaae8f8eb36",
+      "sources/S-000005.md": "ea3d8ecba50bf1f6c9154c77b1075dc986b8f013d53fd95150b639bb972f4eac",
+      "sources/S-000006.md": "342b711432f5686adadb921ce6eb72e02b12d08ef4678daef0282303633c4c70",
+      "sources/S-000007.md": "a1a712c59db986832806089ef1817af0c7512652adbb548e0554e97333cb3f74",
+      "sources/S-000008.md": "208a7d959f2383958e32b6e5a3311a3393ecb5b4c15785f96c0b72cd2d5d13d5",
+      "sources/S-000009.md": "1176f917d2aee1814b43658d2c24a30661814bfb771a10650b1dd6837df27f3f",
+      "sources/S-000010.md": "451b6b2b600877698bcd15b2d5583531f647b68e14cd21ab1206534be352879a",
+      "sources/S-000011.md": "8fdf17b4454135c9b6032113d7b941323c4275cad16c6404dc5b0a100caccabc",
+      "sources/S-000012.md": "630e865d4f4d6237c559fd5c7a3d788ad93e469c84a996c89932a377e33d9043",
+      "sources/S-000013.md": "e99e8368c025d493010a4ea04c9d0f089e191f8c7eaa332d678e8e27e7abcd25",
+      "sources/S-000014.md": "233a34f18c91b9f55f6b8fe073d52f199e0734fea66f4d2c6fc4e2a189d10177",
+      "sources/S-000015.md": "8fbd3b0ba80dd5ec0d5118c729e41e27e33a560b5c7ab72874c88502f5df1d5b",
+      "sources/S-000016.md": "7318400a291d69369bae7812c01b75f7fecdaeb34d0a13f3621985db23b57647",
+      "sources/S-000017.md": "5010f67b3753065d7004fda77d304f7fbd1b63e3bd794a781e6e12a1b7055a7a",
+      "sources/S-000018.md": "d48454bc7891d10a7c5bb908f24a6c1f96af3639ab8dab97addc3b00b3dafdcf",
+      "sources/S-000019.md": "aec41f8dbcebf35b921d06ab5a4d89f8319353466c99647eb37701f98a9c3317",
+      "sources/S-000020.md": "a2a4b9b04698ddf9bb16556eef8340364719f63b8571322858bf80786d9a8c21",
+      "sources/S-000021.md": "ed5f01c87b2d8700f7b5df05a88c1646469d53a92b4cd03d117e410f84313f38",
+      "sources/S-000022.md": "4be16b897ea48f217ac15aa69fedd90680826348629cf093d1f9e044f5908f61",
+      "sources/S-000023.md": "64b1f911c44837486e4c166f3b0635ebfac1a17e05d57af2d4b4724f7fbe458c",
+      "sources/S-000024.md": "2d4d1499cfeaab4d8eb006dc4ac86014c209be539f40aa6beea6e87617537146",
+      "sources/S-000025.md": "6f3b3f6102f32d1ffb7b47d76c00e8a382782490c691592e0074f0a793d3db63"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -173,7 +1398,30 @@
   },
   "reverse_relations": {
     "K-000001": [],
-    "K-000002": []
+    "K-000002": [],
+    "K-000003": [],
+    "K-000004": [],
+    "K-000005": [],
+    "K-000006": [],
+    "K-000007": [],
+    "K-000008": [],
+    "K-000009": [],
+    "K-000010": [],
+    "K-000011": [],
+    "K-000012": [],
+    "K-000013": [],
+    "K-000014": [],
+    "K-000015": [],
+    "K-000016": [],
+    "K-000017": [],
+    "K-000018": [],
+    "K-000019": [],
+    "K-000020": [],
+    "K-000021": [],
+    "K-000022": [],
+    "K-000023": [],
+    "K-000024": [],
+    "K-000025": []
   },
   "sources": [
     {
@@ -187,6 +1435,144 @@
       "id": "S-000002",
       "path": "sources/S-000002.md",
       "version": "arXiv:2610.21510v1"
+    },
+    {
+      "content_hash": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
+      "id": "S-000003",
+      "path": "sources/S-000003.md",
+      "version": "{\n  \"label\": \"Published journal version\",\n  \"date\": \"2008-04\",\n  \"venue\": \"Quantitative Finance 8(3), 217–224\",\n  \"online_date\": \"2008-03-28\"\n}"
+    },
+    {
+      "content_hash": "5c1ea45a4c782ac57d0889e8db734683c31cd105d2bae3728a275aaae8f8eb36",
+      "id": "S-000004",
+      "path": "sources/S-000004.md",
+      "version": "{\n  \"label\": \"arXiv v5 inspected; published journal manifestation verified\",\n  \"date\": \"2012-08-03\",\n  \"venue\": \"Mathematics and Financial Economics 7, 477–507 (September 2013)\",\n  \"online_date\": \"2012-09-04\",\n  \"arxiv_title\": \"Dealing with the Inventory Risk. A solution to the market making problem\"\n}"
+    },
+    {
+      "content_hash": "ea3d8ecba50bf1f6c9154c77b1075dc986b8f013d53fd95150b639bb972f4eac",
+      "id": "S-000005",
+      "path": "sources/S-000005.md",
+      "version": "{\n  \"label\": \"Undated institutional manuscript inspected; journal record verified\",\n  \"date\": null,\n  \"venue\": \"Operations Research 58(3), 549–563 (May–June 2010)\",\n  \"online_date\": \"2010-02-26\"\n}"
+    },
+    {
+      "content_hash": "342b711432f5686adadb921ce6eb72e02b12d08ef4678daef0282303633c4c70",
+      "id": "S-000006",
+      "path": "sources/S-000006.md",
+      "version": "{\n  \"label\": \"arXiv v2 inspected; journal publication verified\",\n  \"date\": \"2014-09-03\",\n  \"cover_date\": \"2014-09-05\",\n  \"venue\": \"Journal of the American Statistical Association 110(509), 107–122 (2015)\",\n  \"institutional_publication_date\": \"2015-01-02\"\n}"
+    },
+    {
+      "content_hash": "a1a712c59db986832806089ef1817af0c7512652adbb548e0554e97333cb3f74",
+      "id": "S-000007",
+      "path": "sources/S-000007.md",
+      "version": "{\n  \"label\": \"2019 arXiv v1 inspected; 2020 proceedings identity verified separately\",\n  \"date\": \"2019-04-26\",\n  \"inspected_title\": \"ABIDES: Towards High-Fidelity Market Simulation for AI Research\",\n  \"venue\": \"2020 ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (SIGSIM-PADS ’20), June 15–17, 2020\",\n  \"publication_pages\": \"12-page manuscript; proceedings page range not independently confirmed in an accessible primary record\"\n}"
+    },
+    {
+      "content_hash": "208a7d959f2383958e32b6e5a3311a3393ecb5b4c15785f96c0b72cd2d5d13d5",
+      "id": "S-000008",
+      "path": "sources/S-000008.md",
+      "version": "{\n  \"label\": \"Published journal PDF inspected\",\n  \"date\": \"2007\",\n  \"venue\": \"The Journal of Prediction Markets 1(1), 3–15\",\n  \"metadata_note\": \"Migrated publisher landing page says 2012-12-13 and has a title-spacing typo; PDF and issue identify 2007.\"\n}"
+    },
+    {
+      "content_hash": "1176f917d2aee1814b43658d2c24a30661814bfb771a10650b1dd6837df27f3f",
+      "id": "S-000009",
+      "path": "sources/S-000009.md",
+      "version": "{\n  \"label\": \"Published article inspected\",\n  \"date\": \"2004\",\n  \"venue\": \"Journal of Economic Perspectives 18(2), 107–126 (Spring 2004)\"\n}"
+    },
+    {
+      "content_hash": "451b6b2b600877698bcd15b2d5583531f647b68e14cd21ab1206534be352879a",
+      "id": "S-000010",
+      "path": "sources/S-000010.md",
+      "version": "{\n  \"label\": \"IZA April 2006 full text inspected; NBER May 2006 record verified\",\n  \"date\": \"2006-04\",\n  \"nber_issue_date\": \"2006-05\",\n  \"venue\": \"IZA Discussion Paper 2092 / NBER Working Paper 12200\",\n  \"published_manifestation\": \"IZA records a chapter in Hahn and Tetlock (eds.), Information Markets: A New Way of Making Decisions in the Public and Private Sectors, AEI-Brookings Press (2006); chapter pagination unverified.\"\n}"
+    },
+    {
+      "content_hash": "8fdf17b4454135c9b6032113d7b941323c4275cad16c6404dc5b0a100caccabc",
+      "id": "S-000011",
+      "path": "sources/S-000011.md",
+      "version": "JASA 102(477), 359–378, March 2007"
+    },
+    {
+      "content_hash": "630e865d4f4d6237c559fd5c7a3d788ad93e469c84a996c89932a377e33d9043",
+      "id": "S-000012",
+      "path": "sources/S-000012.md",
+      "version": "ICML 2017 / PMLR 70:1321–1330"
+    },
+    {
+      "content_hash": "e99e8368c025d493010a4ea04c9d0f089e191f8c7eaa332d678e8e27e7abcd25",
+      "id": "S-000013",
+      "path": "sources/S-000013.md",
+      "version": "arXiv:2106.00170v3"
+    },
+    {
+      "content_hash": "233a34f18c91b9f55f6b8fe073d52f199e0734fea66f4d2c6fc4e2a189d10177",
+      "id": "S-000014",
+      "path": "sources/S-000014.md",
+      "version": "arXiv:1810.08240v9"
+    },
+    {
+      "content_hash": "8fbd3b0ba80dd5ec0d5118c729e41e27e33a560b5c7ab72874c88502f5df1d5b",
+      "id": "S-000015",
+      "path": "sources/S-000015.md",
+      "version": "作者PDF修订稿2015-02-27"
+    },
+    {
+      "content_hash": "7318400a291d69369bae7812c01b75f7fecdaeb34d0a13f3621985db23b57647",
+      "id": "S-000016",
+      "path": "sources/S-000016.md",
+      "version": "arXiv:1904.05234v1"
+    },
+    {
+      "content_hash": "5010f67b3753065d7004fda77d304f7fbd1b63e3bd794a781e6e12a1b7055a7a",
+      "id": "S-000017",
+      "path": "sources/S-000017.md",
+      "version": "arXiv:2208.06046v6"
+    },
+    {
+      "content_hash": "d48454bc7891d10a7c5bb908f24a6c1f96af3639ab8dab97addc3b00b3dafdcf",
+      "id": "S-000018",
+      "path": "sources/S-000018.md",
+      "version": "QJE130(4):1547–1621, November2015"
+    },
+    {
+      "content_hash": "aec41f8dbcebf35b921d06ab5a4d89f8319353466c99647eb37701f98a9c3317",
+      "id": "S-000019",
+      "path": "sources/S-000019.md",
+      "version": "arXiv v2, 2017-08-28"
+    },
+    {
+      "content_hash": "a2a4b9b04698ddf9bb16556eef8340364719f63b8571322858bf80786d9a8c21",
+      "id": "S-000020",
+      "path": "sources/S-000020.md",
+      "version": "arXiv v6, 2018-10-20"
+    },
+    {
+      "content_hash": "ed5f01c87b2d8700f7b5df05a88c1646469d53a92b4cd03d117e410f84313f38",
+      "id": "S-000021",
+      "path": "sources/S-000021.md",
+      "version": "arXiv v5, 2017-04-20; ICML proceedings version also available"
+    },
+    {
+      "content_hash": "4be16b897ea48f217ac15aa69fedd90680826348629cf093d1f9e044f5908f61",
+      "id": "S-000022",
+      "path": "sources/S-000022.md",
+      "version": "arXiv v1, 2020-05-25; ICLR 2020 version"
+    },
+    {
+      "content_hash": "64b1f911c44837486e4c166f3b0635ebfac1a17e05d57af2d4b4724f7fbe458c",
+      "id": "S-000023",
+      "path": "sources/S-000023.md",
+      "version": "arXiv v4, 2017-01-11; v2 was withdrawn, but later v3/v4 are present"
+    },
+    {
+      "content_hash": "2d4d1499cfeaab4d8eb006dc4ac86014c209be539f40aa6beea6e87617537146",
+      "id": "S-000024",
+      "path": "sources/S-000024.md",
+      "version": "arXiv v3, 2014-09-03"
+    },
+    {
+      "content_hash": "6f3b3f6102f32d1ffb7b47d76c00e8a382782490c691592e0074f0a793d3db63",
+      "id": "S-000025",
+      "path": "sources/S-000025.md",
+      "version": "arXiv v4, 2022-01-05"
     }
   ]
 }

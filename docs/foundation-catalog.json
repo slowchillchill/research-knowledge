@@ -1,0 +1,281 @@
+[
+  {
+    "knowledge_id": "K-000003",
+    "source_id": "S-000003",
+    "canonical_id": "doi:10.1080/14697680701381228",
+    "title": "High-frequency trading in a limit order book",
+    "firstpublic": {
+      "date": null,
+      "earliest_verified_publication_date": "2008-03-28",
+      "note": "Publisher online date verified. The paper was received on 2006-04-24, but receipt is not proof of public availability; an earliest public draft date was not established."
+    },
+    "version_url": "https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000004",
+    "source_id": "S-000004",
+    "canonical_id": "doi:10.1007/s11579-012-0087-0",
+    "title": "Dealing with the inventory risk: a solution to the market making problem",
+    "firstpublic": {
+      "date": "2011-05-16",
+      "basis": "Earliest arXiv submission; not proof that no earlier working draft circulated."
+    },
+    "version_url": "https://arxiv.org/pdf/1105.3115v5",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000005",
+    "source_id": "S-000005",
+    "canonical_id": "doi:10.1287/opre.1090.0780",
+    "title": "A Stochastic Model for Order Book Dynamics",
+    "firstpublic": {
+      "date": null,
+      "earliest_verified_publication_date": "2010-02-26",
+      "note": "Publisher online date verified; earliest public preprint date not established."
+    },
+    "version_url": "https://www.columbia.edu/~ww2040/orderbook.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000006",
+    "source_id": "S-000006",
+    "canonical_id": "doi:10.1080/01621459.2014.982278",
+    "title": "Simulating and Analyzing Order Book Data: The Queue-Reactive Model",
+    "firstpublic": {
+      "date": "2013-12-02",
+      "basis": "Earliest arXiv submission."
+    },
+    "version_url": "https://arxiv.org/pdf/1312.0563v2",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000007",
+    "source_id": "S-000007",
+    "canonical_id": "doi:10.1145/3384441.3395986",
+    "title": "ABIDES: Towards High-Fidelity Multi-Agent Market Simulation",
+    "firstpublic": {
+      "date": "2019-04-26",
+      "basis": "arXiv v1 under the earlier title."
+    },
+    "version_url": "https://arxiv.org/pdf/1904.12066",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000008",
+    "source_id": "S-000008",
+    "canonical_id": "doi:10.5750/jpm.v1i1.417",
+    "title": "Logarithmic Market Scoring Rules for Modular Combinatorial Information Aggregation",
+    "firstpublic": {
+      "date": null,
+      "author_draft_date": "2002-01",
+      "note": "Author-hosted PDF is indexed as January 2002, but exact original posting date is unverified. Published journal year is 2007."
+    },
+    "version_url": "https://www.ubplj.org/index.php/jpm/article/download/417/448/1313",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000009",
+    "source_id": "S-000009",
+    "canonical_id": "doi:10.1257/0895330041371321",
+    "title": "Prediction Markets",
+    "firstpublic": {
+      "date": null,
+      "earliest_verified_publication_period": "Spring 2004",
+      "note": "Journal issue verified; exact earliest public posting date not established."
+    },
+    "version_url": "https://users.nber.org/~jwolfers/papers/Predictionmarkets.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000010",
+    "source_id": "S-000010",
+    "canonical_id": "doi:10.3386/w12200",
+    "title": "Interpreting Prediction Market Prices as Probabilities",
+    "firstpublic": {
+      "date": "2006-04",
+      "basis": "IZA Discussion Paper 2092 date; exact day not established."
+    },
+    "version_url": "https://docs.iza.org/dp2092.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000011",
+    "source_id": "S-000011",
+    "canonical_id": "doi:10.1198/016214506000001437",
+    "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+    "firstpublic": "2004-09-01（UW 技术报告日期；具体上线时刻未知）",
+    "version_url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000012",
+    "source_id": "S-000012",
+    "canonical_id": "arXiv:1706.04599",
+    "title": "On Calibration of Modern Neural Networks",
+    "firstpublic": "2017-06-14T17:33:50Z（arXiv v1 提交；公告时刻另计）",
+    "version_url": "https://proceedings.mlr.press/v70/guo17a/guo17a.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000013",
+    "source_id": "S-000013",
+    "canonical_id": "arXiv:2106.00170",
+    "title": "Adaptive Conformal Inference Under Distribution Shift",
+    "firstpublic": "2021-06-01T01:37:32Z（v1 提交）",
+    "version_url": "https://arxiv.org/pdf/2106.00170v3",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000014",
+    "source_id": "S-000014",
+    "canonical_id": "arXiv:1810.08240",
+    "title": "Time-uniform, nonparametric, nonasymptotic confidence sequences",
+    "firstpublic": "2018-10-18T19:05:00Z（v1 提交）",
+    "version_url": "https://arxiv.org/html/1810.08240v9",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000015",
+    "source_id": "S-000015",
+    "canonical_id": "SSRN:2326253",
+    "title": "The Probability of Backtest Overfitting",
+    "firstpublic": "2013-09-16（SSRN关联条目显示Posted；原条目读取失败，精确首次时间待核）",
+    "version_url": "https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000016",
+    "source_id": "S-000016",
+    "canonical_id": "arXiv:1904.05234",
+    "title": "Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges",
+    "firstpublic": "2019-04-10T15:10:51Z（v1提交）",
+    "version_url": "https://arxiv.org/pdf/1904.05234v1",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000017",
+    "source_id": "S-000017",
+    "canonical_id": "arXiv:2208.06046",
+    "title": "Automated Market Making and Loss-Versus-Rebalancing",
+    "firstpublic": "2022-08-11T21:33:57Z（v1提交）",
+    "version_url": "https://arxiv.org/html/2208.06046v6",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000018",
+    "source_id": "S-000018",
+    "canonical_id": "doi:10.1093/qje/qjv027",
+    "title": "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response",
+    "firstpublic": "2013-07（作者首页注明First version；日与上线时刻未知）",
+    "version_url": "https://www.cramton.umd.edu/papers2015-2019/budish-cramton-shim-hft-frequent-batch-auctions.pdf",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000019",
+    "source_id": "S-000019",
+    "canonical_id": "arXiv:1707.06347",
+    "title": "Proximal Policy Optimization Algorithms",
+    "firstpublic": {
+      "date": "2017-07-20",
+      "basis": "arXiv v1 submission history"
+    },
+    "version_url": "https://arxiv.org/pdf/1707.06347v2",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000020",
+    "source_id": "S-000020",
+    "canonical_id": "arXiv:1506.02438",
+    "title": "High-Dimensional Continuous Control Using Generalized Advantage Estimation",
+    "firstpublic": {
+      "date": "2015-06-08",
+      "basis": "arXiv v1 submission history"
+    },
+    "version_url": "https://arxiv.org/pdf/1506.02438v6",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000021",
+    "source_id": "S-000021",
+    "canonical_id": "arXiv:1502.05477",
+    "title": "Trust Region Policy Optimization",
+    "firstpublic": {
+      "date": "2015-02-19",
+      "basis": "arXiv v1 submission history"
+    },
+    "version_url": "https://arxiv.org/pdf/1502.05477v5",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000022",
+    "source_id": "S-000022",
+    "canonical_id": "arXiv:2005.12729; OpenReview:r1etN1rtPB",
+    "title": "Implementation Matters in Deep Policy Gradients: A Case Study on PPO and TRPO",
+    "firstpublic": {
+      "date": null,
+      "basis": "Exact first OpenReview posting date could not be verified because its record returned a verification gate. ICLR 2020 publication is verified; arXiv v1 was submitted 2020-05-25. Do not treat that upload as necessarily the first public release."
+    },
+    "version_url": "https://arxiv.org/pdf/2005.12729v1",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000023",
+    "source_id": "S-000023",
+    "canonical_id": "arXiv:1507.06527",
+    "title": "Deep Recurrent Q-Learning for Partially Observable MDPs",
+    "firstpublic": {
+      "date": "2015-07-23",
+      "basis": "arXiv v1 submission history; do not date the work by its 2017 revision"
+    },
+    "version_url": "https://arxiv.org/pdf/1507.06527v4",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000024",
+    "source_id": "S-000024",
+    "canonical_id": "arXiv:1406.1078; ACL:D14-1179; DOI:10.3115/v1/D14-1179",
+    "title": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation",
+    "firstpublic": {
+      "date": "2014-06-03",
+      "basis": "arXiv v1 submission history; EMNLP publication followed in October 2014."
+    },
+    "version_url": "https://arxiv.org/pdf/1406.1078v3",
+    "category": "foundational",
+    "replication": "not_attempted"
+  },
+  {
+    "knowledge_id": "K-000025",
+    "source_id": "S-000025",
+    "canonical_id": "arXiv:2108.13264",
+    "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+    "firstpublic": {
+      "date": "2021-08-30",
+      "basis": "arXiv v1 submission history"
+    },
+    "version_url": "https://arxiv.org/html/2108.13264v4",
+    "category": "foundational",
+    "replication": "not_attempted"
+  }
+]
