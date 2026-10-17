@@ -114,3 +114,7 @@ python3 -B scripts/mcp_server.py --root /absolute/path/to/research-knowledge
 `.github/workflows/check.yml` 在 push/PR 中运行标准库测试、正式数据校验、确定性重建检查和 SQLite 不入 Git 检查。发布前仍须用已核验的 `slowchillchill` 身份检查同名仓库用途；用途冲突时停下，不覆盖或强推。公开发布的状态与 commit 以 GitHub 的实际远端核验为准。
 
 本仓库不包含 Slack、模型 API、训练、交易、第三方索引二进制、OAuth/令牌、新增后台服务或机器专用全局客户端配置；本次论文卡整理未执行科研实验或变更既有 Agent 集成。
+
+## 基础文献入口
+
+[23 篇项目基础文献阅读路径](docs/foundation-reading-path.md)覆盖成交与库存、预测市场、PPO/GAE/GRU、校准评估及 MEV/结算。逐篇书目见[规范目录](docs/foundation-catalog.json)。基础文献与每日新论文分开；已有两篇 draft 不变，新基础卡为 active / reported / not_attempted。
