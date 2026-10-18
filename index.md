@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `1386f5434e07a94654b4e902f4ec51ed8186196b2c64ddc5fbd9b3dc55918872`
+Build input SHA-256: `8b1ad46800d24bd0748628eb6d30c34e9e722428390a16f6f3306229906ca21e`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -33,3 +33,6 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000025](knowledge/K-000025.md) — Deep Reinforcement Learning at the Edge of the Statistical Precipice (active; example=False; review_after=2027-04-17)
 - [K-000026](knowledge/K-000026.md) — 订单簿路径顺序增量可作为模拟器验收候选，不能据此推断交易收益 (draft; example=False; review_after=2027-01-18)
 - [K-000027](knowledge/K-000027.md) — Polymarket 撮合与最终结算须区分，历史回滚和反事实金额需保留口径 (draft; example=False; review_after=2027-01-18)
+- [K-000028](knowledge/K-000028.md) — 因果市场冲击模型需用配对反事实与区间校准验收，历史预测不能替代自身冲击 (draft; example=False; review_after=2027-01-18)
+- [K-000029](knowledge/K-000029.md) — 短训练长部署的循环记忆需区分DHI存在性理论、有限测试和训练成功率 (draft; example=False; review_after=2027-01-18)
+- [K-000030](knowledge/K-000030.md) — 预测市场组合套利的保证下界依赖当时可知规则、完整执行与终态，显示价格不是收益保证 (draft; example=False; review_after=2027-01-18)

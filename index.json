@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "1386f5434e07a94654b4e902f4ec51ed8186196b2c64ddc5fbd9b3dc55918872",
+  "input_version": "8b1ad46800d24bd0748628eb6d30c34e9e722428390a16f6f3306229906ca21e",
   "knowledge": [
     {
       "conditions": [
@@ -1503,6 +1503,241 @@
       },
       "title": "Polymarket 撮合与最终结算须区分，历史回滚和反事实金额需保留口径",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "干预必须表示测试订单带来的新增订单流；有无干预分支共享噪声、背景种子、调度与延迟，模型不可看到干预后观察。",
+        "训练、探索、校准与冻结测试按seed及日期隔离；模拟反事实、真实事实预测和聚合曲线指标分别解释。"
+      ],
+      "content_hash": "7faf8832c0f8c3225ee7a76e272b1e08e8554ec6c13900c06efaae0c9fbe73f2",
+      "evidence": {
+        "note": "保存公开原文的作者报告、自主摘要及条件化迁移建议；未执行作者代码、科研实验、项目回测或交易。原文核对不等于独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000028",
+      "lifecycle": "draft",
+      "limitations": [
+        "三变量先验不含队列、撤单和库存；真实突发流并非已验证清算标签，缺少真实无订单反事实。",
+        "名义80%区间在ABIDES/BTC/ETH覆盖仅32%/47%/51%；探索种子的conformal修复不是新的1000–1999留出结果。",
+        "recurrent曲线相关0.92–0.96来自12个duration×size格均值，不是逐订单精度；官方Transformer权重及episode缓存缺失。",
+        "未统一验证手续费、价差、部分成交、到达延迟及二元结算，不能宣称费用后交易收益。"
+      ],
+      "path": "knowledge/K-000028.md",
+      "sources": [
+        {
+          "id": "S-000029",
+          "locator": "architecture-prior",
+          "role": "先验、模型与干预消融",
+          "version": "arXiv:2610.12537v1"
+        },
+        {
+          "id": "S-000029",
+          "locator": "abides",
+          "role": "配对seed回放与独立留出",
+          "version": "arXiv:2610.12537v1"
+        },
+        {
+          "id": "S-000029",
+          "locator": "real-bursts",
+          "role": "真实数据与聚合曲线边界",
+          "version": "arXiv:2610.12537v1"
+        },
+        {
+          "id": "S-000029",
+          "locator": "intervals",
+          "role": "覆盖率和探索性校准",
+          "version": "arXiv:2610.12537v1"
+        },
+        {
+          "id": "S-000029",
+          "locator": "limits-artifacts",
+          "role": "先验与工件缺口",
+          "version": "arXiv:2610.12537v1"
+        }
+      ],
+      "summary": "Market Impact v1 在合成先验与 ABIDES 配对回放中检验干预输入；真实突发流缺少反事实，名义80%区间迁移后失准。可借鉴验证设计，不能据此直接替换做市成本模型。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "因果推断",
+          "执行成本"
+        ],
+        "methods": [
+          "causal PFN",
+          "配对反事实",
+          "区间校准"
+        ],
+        "problems": [
+          "市场冲击识别",
+          "预测区间失准",
+          "工件可复现性"
+        ]
+      },
+      "title": "因果市场冲击模型需用配对反事实与区间校准验收，历史预测不能替代自身冲击",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "保留延迟线索任务及读出分离、连续性和idle动力学假设；内存、每步计算与数值精度成本有界于时长。",
+        "区分存在合适分解的理论、固定训练检查点的数值诊断和多seed优化成功率；实际部署另需任务验证。"
+      ],
+      "content_hash": "4fe6b2899354f5c787f761c32ad5b7d1c493dd0f7b23bdce2555056ed51d7651",
+      "evidence": {
+        "note": "保存公开原文的作者报告、自主摘要及条件化迁移建议；未执行作者代码、科研实验、项目回测或交易。原文核对不等于独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000029",
+      "lifecycle": "draft",
+      "limitations": [
+        "250组中BMRU仅44组先学会，只有这44组均保持到10^6步；不能改写为全部配置均能学会。",
+        "每长度两个方向各一局、3000步VAA分类及有限百万步测试都不能证明无限时长性质。",
+        "合成POMDP无市场证据；多稳态不保证优化成功，未核官方实验代码；作者声明专利申请，实施新单元需另核许可。"
+      ],
+      "path": "knowledge/K-000029.md",
+      "sources": [
+        {
+          "id": "S-000030",
+          "locator": "dhi-definition",
+          "role": "固定资源DHI定义",
+          "version": "arXiv:2605.12206v2"
+        },
+        {
+          "id": "S-000030",
+          "locator": "quantifier",
+          "role": "v2存在量词与旧表述修正",
+          "version": "arXiv:2605.12206v2"
+        },
+        {
+          "id": "S-000030",
+          "locator": "multistability",
+          "role": "理论条件与鲁棒必要性",
+          "version": "arXiv:2605.12206v2"
+        },
+        {
+          "id": "S-000030",
+          "locator": "experiments",
+          "role": "有限实验与重训",
+          "version": "arXiv:2605.12206v2"
+        },
+        {
+          "id": "S-000030",
+          "locator": "protocol",
+          "role": "PPO/GAE与数值检验设置",
+          "version": "arXiv:2605.12206v2"
+        },
+        {
+          "id": "S-000030",
+          "locator": "disclosure",
+          "role": "作者专利披露",
+          "version": "arXiv:2605.12206v2"
+        }
+      ],
+      "summary": "Train Short v2修正读出量词，并在固定内存、计算和精度下研究延迟时长独立性；多稳态有条件地支持持久记忆，但不保证每次训练成功或市场任务受益。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "循环记忆",
+          "部署验证"
+        ],
+        "methods": [
+          "PPO",
+          "GAE",
+          "GRU",
+          "delay-horizon independence"
+        ],
+        "problems": [
+          "跨时长泛化",
+          "隐藏状态稳定性",
+          "理论量词"
+        ]
+      },
+      "title": "短训练长部署的循环记忆需区分DHI存在性理论、有限测试和训练成功率",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "逻辑关系正确且在决策当时可知，冻结规则文本与关系发现时间；所需数量能按显示价格成交且每腿按0/1二元结算。",
+        "使用当时已收到的receipt-time信息集与共享深度账本，费用、缺腿、占款和非二元终态分别记账。"
+      ],
+      "content_hash": "dc7022cd50252869aff72bca13d5460f5a5ee1b057a1835ae3a3b08ea27566b7",
+      "evidence": {
+        "note": "保存公开原文的作者报告、自主摘要及条件化迁移建议；未执行作者代码、科研实验、项目回测或交易。原文核对不等于独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000030",
+      "lifecycle": "draft",
+      "limitations": [
+        "作者按exchange timestamp回排，连接接收可晚数分钟；额外100ms–1s下单延迟无法修复未来信息被放回过去。",
+        "目录文本非挂牌时QuestionInitialized历史，关系提案/审核在样本结束后；全填与已二元结算样本具有选择条件。",
+        "更正删除112检测/97执行窗口后未重跑账本；不能把残留深度消耗解释成所有现实摩擦下无条件保守。",
+        "显示深档、队列竞争、后续自身冲击、solver耗时、融资、缺腿对冲、链上revert及争议未被完整计价；累计投入不是单次账户本金。"
+      ],
+      "path": "knowledge/K-000030.md",
+      "sources": [
+        {
+          "id": "S-000031",
+          "locator": "data-rules",
+          "role": "样本与规则来源",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        },
+        {
+          "id": "S-000031",
+          "locator": "conditional-guarantee",
+          "role": "条件化保证及共享深度",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        },
+        {
+          "id": "S-000031",
+          "locator": "current-table5",
+          "role": "当前利润与资金口径",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        },
+        {
+          "id": "S-000031",
+          "locator": "execution-stress",
+          "role": "延迟、填单与持续时间分母",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        },
+        {
+          "id": "S-000031",
+          "locator": "information-set",
+          "role": "接收时间和事后规则限制",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        },
+        {
+          "id": "S-000031",
+          "locator": "corrective-excision",
+          "role": "112/97更正与不重跑账本",
+          "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+        }
+      ],
+      "summary": "以正确逻辑约束和整数规划检测多腿套利，再用全深度及共享流动性账本回放；10月17日读本更正为112检测/97执行窗口。收益下界仍依赖信息集、报价执行与二元终态。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "市场微观结构",
+          "执行风险"
+        ],
+        "methods": [
+          "整数规划",
+          "逻辑约束",
+          "全深度回放"
+        ],
+        "problems": [
+          "多腿套利",
+          "因果信息集",
+          "缺腿风险",
+          "终态选择"
+        ]
+      },
+      "title": "预测市场组合套利的保证下界依赖当时可知规则、完整执行与终态，显示价格不是收益保证",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -1534,6 +1769,9 @@
       "knowledge/K-000025.md": "27929fad5cc08e96e3996c49d543a2e72b08dcae418502bae457913875e1b0f7",
       "knowledge/K-000026.md": "c8c8e6338ce51a21208d0cb98b130fdcbc703b51d077ca4c93eda6c674962ef8",
       "knowledge/K-000027.md": "bbc07de9586989daf1139aab242fa078cd63432ad1dcd534fdf5b01222415592",
+      "knowledge/K-000028.md": "7faf8832c0f8c3225ee7a76e272b1e08e8554ec6c13900c06efaae0c9fbe73f2",
+      "knowledge/K-000029.md": "4fe6b2899354f5c787f761c32ad5b7d1c493dd0f7b23bdce2555056ed51d7651",
+      "knowledge/K-000030.md": "dc7022cd50252869aff72bca13d5460f5a5ee1b057a1835ae3a3b08ea27566b7",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -1561,7 +1799,10 @@
       "sources/S-000025.md": "6f3b3f6102f32d1ffb7b47d76c00e8a382782490c691592e0074f0a793d3db63",
       "sources/S-000026.md": "4a18a0f1e26466975070e6f958156d6c456efdeaa232a25c45024fefc6467c32",
       "sources/S-000027.md": "8633d8035d589c186f44b42589e70a4858eefe57d6a31458c7ec687db7d22935",
-      "sources/S-000028.md": "9025cf5f60229a7fa8c4c0d50c74fa3354c5447107e762bf42046a1ac00dbe32"
+      "sources/S-000028.md": "9025cf5f60229a7fa8c4c0d50c74fa3354c5447107e762bf42046a1ac00dbe32",
+      "sources/S-000029.md": "23efee86b8d3554a1335ffac5a05f75965dd90cf40c9ce3d04215f2b73a84325",
+      "sources/S-000030.md": "cb48bd4fb84ac99ff1736b2bdfac7b36355e6c6947ba3d64a395c6403be8c55e",
+      "sources/S-000031.md": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -1598,7 +1839,10 @@
     "K-000024": [],
     "K-000025": [],
     "K-000026": [],
-    "K-000027": []
+    "K-000027": [],
+    "K-000028": [],
+    "K-000029": [],
+    "K-000030": []
   },
   "sources": [
     {
@@ -1768,6 +2012,24 @@
       "id": "S-000028",
       "path": "sources/S-000028.md",
       "version": "Order Lifecycle accessed 2026-10-18"
+    },
+    {
+      "content_hash": "23efee86b8d3554a1335ffac5a05f75965dd90cf40c9ce3d04215f2b73a84325",
+      "id": "S-000029",
+      "path": "sources/S-000029.md",
+      "version": "arXiv:2610.12537v1"
+    },
+    {
+      "content_hash": "cb48bd4fb84ac99ff1736b2bdfac7b36355e6c6947ba3d64a395c6403be8c55e",
+      "id": "S-000030",
+      "path": "sources/S-000030.md",
+      "version": "arXiv:2605.12206v2"
+    },
+    {
+      "content_hash": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a",
+      "id": "S-000031",
+      "path": "sources/S-000031.md",
+      "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
     }
   ]
 }
