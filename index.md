@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `55b8c420611f1780f739330ff3af0bf09bd2d39a914da07948fd87740947b959`
+Build input SHA-256: `1386f5434e07a94654b4e902f4ec51ed8186196b2c64ddc5fbd9b3dc55918872`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -31,3 +31,5 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000023](knowledge/K-000023.md) — Deep Recurrent Q-Learning for Partially Observable MDPs (active; example=False; review_after=2027-04-17)
 - [K-000024](knowledge/K-000024.md) — Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation (active; example=False; review_after=2027-04-17)
 - [K-000025](knowledge/K-000025.md) — Deep Reinforcement Learning at the Edge of the Statistical Precipice (active; example=False; review_after=2027-04-17)
+- [K-000026](knowledge/K-000026.md) — 订单簿路径顺序增量可作为模拟器验收候选，不能据此推断交易收益 (draft; example=False; review_after=2027-01-18)
+- [K-000027](knowledge/K-000027.md) — Polymarket 撮合与最终结算须区分，历史回滚和反事实金额需保留口径 (draft; example=False; review_after=2027-01-18)
