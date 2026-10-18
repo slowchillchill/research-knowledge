@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "55b8c420611f1780f739330ff3af0bf09bd2d39a914da07948fd87740947b959",
+  "input_version": "1386f5434e07a94654b4e902f4ec51ed8186196b2c64ddc5fbd9b3dc55918872",
   "knowledge": [
     {
       "conditions": [
@@ -1333,6 +1333,176 @@
       },
       "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
       "version": "foundation-1"
+    },
+    {
+      "conditions": [
+        "真实流和模拟流采用同一事件定义、反演算子、粒度和路径边界；各数据源分别训练与校准估计器。",
+        "按整天划分开发、校准和留出；同一路径、反演及重叠窗口不能跨拆分。比较需保留打乱、无时钟、容量和分辨率控制。"
+      ],
+      "content_hash": "c8c8e6338ce51a21208d0cb98b130fdcbc703b51d077ca4c93eda6c674962ef8",
+      "evidence": {
+        "note": "已读取指定官方全文和公开材料并核对引用定位；本地待审稿，未运行作者代码、科研实验或项目回测。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000026",
+      "lifecycle": "draft",
+      "limitations": [
+        "最终只有三个测试日、三个初始化；窗口重叠，部分特征探索及预测比较复用了测试日。pooled/ordered 参数量为 8609/12929，容量并未完全匹配。",
+        "nats/event 表示指定观测表示下的统计时间不对称，不能解释为收益或物理耗散；长路径受概率裁剪影响。",
+        "论文没有手续费、真实延迟、部分成交、队列优先级、二元结算或可执行净收益验证；结果只涉及本文简化 QR 变体。"
+      ],
+      "path": "knowledge/K-000026.md",
+      "sources": [
+        {
+          "id": "S-000026",
+          "locator": "data-splits",
+          "role": "样本、事件和日期拆分",
+          "version": "arXiv:2610.16151v2"
+        },
+        {
+          "id": "S-000026",
+          "locator": "estimator",
+          "role": "反演、估计器与单位",
+          "version": "arXiv:2610.16151v2"
+        },
+        {
+          "id": "S-000026",
+          "locator": "controls",
+          "role": "结果与混杂控制",
+          "version": "arXiv:2610.16151v2"
+        },
+        {
+          "id": "S-000026",
+          "locator": "prediction",
+          "role": "预测增益边界",
+          "version": "arXiv:2610.16151v2"
+        },
+        {
+          "id": "S-000026",
+          "locator": "simulator",
+          "role": "真实/模拟顺序增量对比",
+          "version": "arXiv:2610.16151v2"
+        }
+      ],
+      "summary": "将路径与严格反演配对，比较 ordered TCN 与 pooled MLP 的每事件不可逆性估计；本文简化模拟器的总分接近真实市场，但顺序增量明显较小。该差异是有条件的统计诊断候选。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "市场仿真",
+          "预测市场"
+        ],
+        "methods": [
+          "反对称密度比分类",
+          "temporal convolutional network",
+          "时间反演"
+        ],
+        "problems": [
+          "模拟器验收",
+          "时间顺序依赖",
+          "尺度敏感性"
+        ]
+      },
+      "title": "订单簿路径顺序增量可作为模拟器验收候选，不能据此推断交易收益",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "区分论文历史窗口、协议版本与访问日动态文档；按签名订单、交易和结算尝试分别去重。",
+        "对账需完整的 trade ID、order ID、tx hash、状态时间和最终结果；到期分层并保留临时敞口。"
+      ],
+      "content_hash": "bbc07de9586989daf1139aab242fa078cd63432ad1dcd534fdf5b01222415592",
+      "evidence": {
+        "note": "已读取指定官方全文和公开材料并核对引用定位；本地待审稿，未运行作者代码、科研实验或项目回测。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000027",
+      "lifecycle": "draft",
+      "limitations": [
+        "规则归因和人工抽样精度不提供总体召回或每笔主观意图；未提交上链的私有 CLOB 取消不可见。",
+        "1.037 亿美元是去重失败订单按最终结果估计的反事实净损失，不能当受害者已实现损失或与 v1 地址已实现利润直接比较。",
+        "缓解后日回滚均值 0.04%、最高 0.25% 只属于截至 2026-08-15 的历史窗口；无本项目用户延迟、排队或费用后净收益验证。"
+      ],
+      "path": "knowledge/K-000027.md",
+      "sources": [
+        {
+          "id": "S-000027",
+          "locator": "scope",
+          "role": "历史范围与协议",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000027",
+          "locator": "reverts",
+          "role": "回滚和规则归因",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000027",
+          "locator": "mitigation",
+          "role": "缓解后的历史比例",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000027",
+          "locator": "evaluation",
+          "role": "人工抽样边界",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000027",
+          "locator": "counterfactual",
+          "role": "金额去重和反事实定义",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000027",
+          "locator": "validity",
+          "role": "可见性与归因限制",
+          "version": "arXiv:2606.16852v2"
+        },
+        {
+          "id": "S-000028",
+          "locator": "trade-statuses",
+          "role": "当前官方交易终态语义",
+          "version": "Order Lifecycle accessed 2026-10-18"
+        },
+        {
+          "id": "S-000028",
+          "locator": "order-statuses",
+          "role": "区分订单与交易状态",
+          "version": "Order Lifecycle accessed 2026-10-18"
+        },
+        {
+          "id": "S-000028",
+          "locator": "flow",
+          "role": "原子结算与最终确认",
+          "version": "Order Lifecycle accessed 2026-10-18"
+        }
+      ],
+      "summary": "链下撮合通知可能随后链上回滚。论文的历史规则归因与避免损失估算不等于每笔意图或受害者已实现损失；官方文档也区分 MATCHED、MINED、成功确认和重试失败。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "执行结算",
+          "市场微观结构"
+        ],
+        "methods": [
+          "链上回滚测量",
+          "规则归因",
+          "事件对账"
+        ],
+        "problems": [
+          "撮合与结算一致性",
+          "临时库存",
+          "损益口径"
+        ]
+      },
+      "title": "Polymarket 撮合与最终结算须区分，历史回滚和反事实金额需保留口径",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -1362,6 +1532,8 @@
       "knowledge/K-000023.md": "f06865e32300a158034c2c0ae2fcbe745a54ccdf92372abe82855f82ff03e8d8",
       "knowledge/K-000024.md": "3aa02e570a156ba5579919bfadfac8e5e2e84de8abf1543d719d42ecd45c0b38",
       "knowledge/K-000025.md": "27929fad5cc08e96e3996c49d543a2e72b08dcae418502bae457913875e1b0f7",
+      "knowledge/K-000026.md": "c8c8e6338ce51a21208d0cb98b130fdcbc703b51d077ca4c93eda6c674962ef8",
+      "knowledge/K-000027.md": "bbc07de9586989daf1139aab242fa078cd63432ad1dcd534fdf5b01222415592",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -1386,7 +1558,10 @@
       "sources/S-000022.md": "4be16b897ea48f217ac15aa69fedd90680826348629cf093d1f9e044f5908f61",
       "sources/S-000023.md": "64b1f911c44837486e4c166f3b0635ebfac1a17e05d57af2d4b4724f7fbe458c",
       "sources/S-000024.md": "2d4d1499cfeaab4d8eb006dc4ac86014c209be539f40aa6beea6e87617537146",
-      "sources/S-000025.md": "6f3b3f6102f32d1ffb7b47d76c00e8a382782490c691592e0074f0a793d3db63"
+      "sources/S-000025.md": "6f3b3f6102f32d1ffb7b47d76c00e8a382782490c691592e0074f0a793d3db63",
+      "sources/S-000026.md": "4a18a0f1e26466975070e6f958156d6c456efdeaa232a25c45024fefc6467c32",
+      "sources/S-000027.md": "8633d8035d589c186f44b42589e70a4858eefe57d6a31458c7ec687db7d22935",
+      "sources/S-000028.md": "9025cf5f60229a7fa8c4c0d50c74fa3354c5447107e762bf42046a1ac00dbe32"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -1421,7 +1596,9 @@
     "K-000022": [],
     "K-000023": [],
     "K-000024": [],
-    "K-000025": []
+    "K-000025": [],
+    "K-000026": [],
+    "K-000027": []
   },
   "sources": [
     {
@@ -1573,6 +1750,24 @@
       "id": "S-000025",
       "path": "sources/S-000025.md",
       "version": "arXiv v4, 2022-01-05"
+    },
+    {
+      "content_hash": "4a18a0f1e26466975070e6f958156d6c456efdeaa232a25c45024fefc6467c32",
+      "id": "S-000026",
+      "path": "sources/S-000026.md",
+      "version": "arXiv:2610.16151v2"
+    },
+    {
+      "content_hash": "8633d8035d589c186f44b42589e70a4858eefe57d6a31458c7ec687db7d22935",
+      "id": "S-000027",
+      "path": "sources/S-000027.md",
+      "version": "arXiv:2606.16852v2"
+    },
+    {
+      "content_hash": "9025cf5f60229a7fa8c4c0d50c74fa3354c5447107e762bf42046a1ac00dbe32",
+      "id": "S-000028",
+      "path": "sources/S-000028.md",
+      "version": "Order Lifecycle accessed 2026-10-18"
     }
   ]
 }
