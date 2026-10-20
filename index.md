@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `8b1ad46800d24bd0748628eb6d30c34e9e722428390a16f6f3306229906ca21e`
+Build input SHA-256: `2d3ae63b96ab57cc67a2f6cff2a3375f1e663e91153a106f7a7f80f6999c91ee`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -36,3 +36,5 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000028](knowledge/K-000028.md) — 因果市场冲击模型需用配对反事实与区间校准验收，历史预测不能替代自身冲击 (draft; example=False; review_after=2027-01-18)
 - [K-000029](knowledge/K-000029.md) — 短训练长部署的循环记忆需区分DHI存在性理论、有限测试和训练成功率 (draft; example=False; review_after=2027-01-18)
 - [K-000030](knowledge/K-000030.md) — 预测市场组合套利的保证下界依赖当时可知规则、完整执行与终态，显示价格不是收益保证 (draft; example=False; review_after=2027-01-18)
+- [K-000031](knowledge/K-000031.md) — 事件预测训练应保留日期信息截止，概率报告的归一化结论限于固定证据与评分项 (draft; example=False; review_after=2027-01-20)
+- [K-000032](knowledge/K-000032.md) — 排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正 (draft; example=False; review_after=2027-01-20)
