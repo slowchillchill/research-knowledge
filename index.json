@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "8b1ad46800d24bd0748628eb6d30c34e9e722428390a16f6f3306229906ca21e",
+  "input_version": "2d3ae63b96ab57cc67a2f6cff2a3375f1e663e91153a106f7a7f80f6999c91ee",
   "knowledge": [
     {
       "conditions": [
@@ -1738,6 +1738,136 @@
       },
       "title": "预测市场组合套利的保证下界依赖当时可知规则、完整执行与终态，显示价格不是收益保证",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "同一已结算事件在多个结算前日期形成任务，检索和推理只能使用各预测日期可获得的信息。",
+        "归一化命题分析固定已获取证据/上下文、仅评分项的概率报告；不能无条件推广到完整智能体训练。"
+      ],
+      "content_hash": "66818c1949edd06914d58cd9c7b91a66374be5f813a79dd15da7de2dcbbf74f8",
+      "evidence": {
+        "note": "依据固定版本公开原文与自主整理笔记；原文核对不等于独立复现。未运行作者代码、科研实验、项目回测或交易。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000031",
+      "lifecycle": "draft",
+      "limitations": [
+        "GLM-4.5-Air memory-free的Brier改善仍对应负的Info-α；未验证扣除交易成本后的利润。",
+        "置信区间来自事件聚类/题目bootstrap，不能替代多个训练种子的稳定性检验。",
+        "预定义结果、英文新闻及事件来源限制外推；136张H200的配置存在较高复现门槛。"
+      ],
+      "path": "knowledge/K-000031.md",
+      "sources": [
+        {
+          "id": "S-000032",
+          "locator": "method-theory",
+          "role": "日期任务构造与固定证据、仅评分项命题",
+          "version": "arXiv:2610.22684v1"
+        },
+        {
+          "id": "S-000032",
+          "locator": "main-results",
+          "role": "Brier、Info-α符号及置信区间",
+          "version": "arXiv:2610.22684v1"
+        },
+        {
+          "id": "S-000032",
+          "locator": "compute-coverage",
+          "role": "算力和数据覆盖边界",
+          "version": "arXiv:2610.22684v1"
+        }
+      ],
+      "summary": "AlphaBet按结算前多个日期训练概率报告；固定证据下均值中心化保留期望评分梯度方向，组内标准差可能重加权结果。Brier改善不证明胜过同期市场或获得净交易利润。",
+      "tags": {
+        "domains": [
+          "事件预测",
+          "预测市场",
+          "强化学习"
+        ],
+        "methods": [
+          "GRPO",
+          "适当评分规则",
+          "时点检索"
+        ],
+        "problems": [
+          "概率校准",
+          "信息截止",
+          "归一化偏移"
+        ]
+      },
+      "title": "事件预测训练应保留日期信息截止，概率报告的归一化结论限于固定证据与评分项",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "模型预训练截止、新闻真实可用时间、股票池形成规则和缺失机制需要分别核验。",
+        "结果限于论文股票样本、时间划分、组合规则与成本模型；保留纯价格基线并区别对零、相对基线和搜索后显著性。"
+      ],
+      "content_hash": "9182a880ea344a90157d6de8ff7ea3c5ec13889c562bb96a57d5907d95160907",
+      "evidence": {
+        "note": "依据固定版本公开原文与自主整理笔记；原文核对不等于独立复现。未运行作者代码、科研实验、项目回测或交易。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000032",
+      "lifecycle": "draft",
+      "limitations": [
+        "测试仅36个月；新闻来源存在存活偏差，股票新闻特征有大量填补。",
+        "63日跨读者组合在主实验后形成，未调整显著性不等于独立发现；没有单个实验通过FDR校正。",
+        "成本按交易额固定10bp，不含借券费和价格冲击；CRSP须授权，第8节代码链接仍是占位符。"
+      ],
+      "path": "knowledge/K-000032.md",
+      "sources": [
+        {
+          "id": "S-000033",
+          "locator": "method-sample",
+          "role": "模型可见语料、新闻样本与时序留出",
+          "version": "arXiv:2610.22745v1"
+        },
+        {
+          "id": "S-000033",
+          "locator": "selection-results",
+          "role": "验证选优失败、表5显著性与FDR",
+          "version": "arXiv:2610.22745v1"
+        },
+        {
+          "id": "S-000033",
+          "locator": "limitations",
+          "role": "独立样本、事后组合、缺失与成本边界",
+          "version": "arXiv:2610.22745v1"
+        },
+        {
+          "id": "S-000033",
+          "locator": "availability",
+          "role": "代码占位符与数据许可",
+          "version": "arXiv:2610.22745v1"
+        }
+      ],
+      "summary": "NoLBERT截止语料与时序留出减少模型前视风险；作者的最佳验证实验仍亏损，63日跨读者组合月度净Sharpe 1.12对零显著、相对纯价格不显著且组合事后形成。",
+      "tags": {
+        "domains": [
+          "金融新闻",
+          "资产定价",
+          "研究评估"
+        ],
+        "methods": [
+          "NoLBERT",
+          "对比学习",
+          "时序留出",
+          "多重检验"
+        ],
+        "problems": [
+          "前视偏差",
+          "基线比较",
+          "模型选择",
+          "数据缺失"
+        ]
+      },
+      "title": "排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -1772,6 +1902,8 @@
       "knowledge/K-000028.md": "7faf8832c0f8c3225ee7a76e272b1e08e8554ec6c13900c06efaae0c9fbe73f2",
       "knowledge/K-000029.md": "4fe6b2899354f5c787f761c32ad5b7d1c493dd0f7b23bdce2555056ed51d7651",
       "knowledge/K-000030.md": "dc7022cd50252869aff72bca13d5460f5a5ee1b057a1835ae3a3b08ea27566b7",
+      "knowledge/K-000031.md": "66818c1949edd06914d58cd9c7b91a66374be5f813a79dd15da7de2dcbbf74f8",
+      "knowledge/K-000032.md": "9182a880ea344a90157d6de8ff7ea3c5ec13889c562bb96a57d5907d95160907",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -1802,7 +1934,9 @@
       "sources/S-000028.md": "9025cf5f60229a7fa8c4c0d50c74fa3354c5447107e762bf42046a1ac00dbe32",
       "sources/S-000029.md": "23efee86b8d3554a1335ffac5a05f75965dd90cf40c9ce3d04215f2b73a84325",
       "sources/S-000030.md": "cb48bd4fb84ac99ff1736b2bdfac7b36355e6c6947ba3d64a395c6403be8c55e",
-      "sources/S-000031.md": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a"
+      "sources/S-000031.md": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a",
+      "sources/S-000032.md": "1534b3139bfbc66d7af7583ba4b4ef97b0fd847fc8a8b36ff7ee0b5c1729bf2a",
+      "sources/S-000033.md": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -1842,7 +1976,9 @@
     "K-000027": [],
     "K-000028": [],
     "K-000029": [],
-    "K-000030": []
+    "K-000030": [],
+    "K-000031": [],
+    "K-000032": []
   },
   "sources": [
     {
@@ -2030,6 +2166,18 @@
       "id": "S-000031",
       "path": "sources/S-000031.md",
       "version": "Author PDF 2026-10-17; SHA256 32de30c2d876d53116ef426852ed26fb1825b3f4f099f0e127a6a2fda899a670"
+    },
+    {
+      "content_hash": "1534b3139bfbc66d7af7583ba4b4ef97b0fd847fc8a8b36ff7ee0b5c1729bf2a",
+      "id": "S-000032",
+      "path": "sources/S-000032.md",
+      "version": "arXiv:2610.22684v1"
+    },
+    {
+      "content_hash": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb",
+      "id": "S-000033",
+      "path": "sources/S-000033.md",
+      "version": "arXiv:2610.22745v1"
     }
   ]
 }
