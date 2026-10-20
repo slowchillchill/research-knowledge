@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `2d3ae63b96ab57cc67a2f6cff2a3375f1e663e91153a106f7a7f80f6999c91ee`
+Build input SHA-256: `c444f399e62e4219e549ef84c77ad2be1285cb4da5c0a536f2f59ee4668a897f`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -38,3 +38,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000030](knowledge/K-000030.md) — 预测市场组合套利的保证下界依赖当时可知规则、完整执行与终态，显示价格不是收益保证 (draft; example=False; review_after=2027-01-18)
 - [K-000031](knowledge/K-000031.md) — 事件预测训练应保留日期信息截止，概率报告的归一化结论限于固定证据与评分项 (draft; example=False; review_after=2027-01-20)
 - [K-000032](knowledge/K-000032.md) — 排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正 (draft; example=False; review_after=2027-01-20)
+- [K-000033](knowledge/K-000033.md) — 保留产物并清空对话的分叉择优可改善部分长程研究搜索，收益受评分器、预算和样本口径约束 (draft; example=False; review_after=2027-01-20)
