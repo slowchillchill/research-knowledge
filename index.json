@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "2d3ae63b96ab57cc67a2f6cff2a3375f1e663e91153a106f7a7f80f6999c91ee",
+  "input_version": "c444f399e62e4219e549ef84c77ad2be1285cb4da5c0a536f2f59ee4668a897f",
   "knowledge": [
     {
       "conditions": [
@@ -1868,6 +1868,102 @@
       },
       "title": "排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "任务有可重复验证的评分器，工作区可复制隔离，已验证的最佳产物可保护并恢复；分叉择优依赖评分器。",
+        "作者比较固定任务与相同harness下的模型token credits预算；不能视作GPU、solver运行和实际总成本完全匹配。",
+        "具体运行需保留实际种子、纳入样本、预算与调度，不能以主文概述代替逐运行配置。"
+      ],
+      "content_hash": "35823e2db119e966803bef0a6ba2883cb3c8e310c65095d8c203d8878d2ff700",
+      "evidence": {
+        "note": "已读取固定v1全文、附录及图表，保存作者报告与自主摘要；未运行作者实验、部署代理或执行交易。原文核对不等于独立复现，样本数及调度差异未自行消解。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000033",
+      "lifecycle": "draft",
+      "limitations": [
+        "13任务、小样本及单一GitHub Copilot CLI harness限制外推；分支独立不通信，未验证角色协作。",
+        "12/13任务均值最优不等于全部获胜；LWE-rec例外，消融也非每项任务由组合方法胜出。",
+        "表1、正文与附录A/B的样本数，以及主文和附录G/图3的触发时点存在报告差异；未取得原始轨迹消解。",
+        "LLM同时生成规格并判三元组；t-STE/SOE对该judge的一致性不是独立客观真值或因果证明。",
+        "本次v1未定位到可核验的本文自有代码及原始轨迹公开包；参考文献中的他人仓库不能冒充本文实现。"
+      ],
+      "path": "knowledge/K-000033.md",
+      "sources": [
+        {
+          "id": "S-000034",
+          "locator": "method",
+          "role": "保留工作区、清空上下文、分叉择优机制",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "main-results",
+          "role": "13任务归一化结果、LWE-rec例外",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "credits",
+          "role": "模型token预算与实际计算成本边界",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "ablation-samples",
+          "role": "消融、样本数量与预算口径差异",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "schedule",
+          "role": "主文、附录及示例的调度差异",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "embedding",
+          "role": "LLM判断嵌入及二维图证据边界",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "prompts",
+          "role": "PDF完整提示框与实现细节",
+          "version": "arXiv:2610.07447v1"
+        },
+        {
+          "id": "S-000034",
+          "locator": "scope",
+          "role": "任务可验证性及单harness、独立分支限制",
+          "version": "arXiv:2610.07447v1"
+        }
+      ],
+      "summary": "Fork-and-Flush以继承工作区、清空聊天和四分支择优探索思路盆地；13任务的0.78/0.47/0.54为作者报告的min–max归一化均值。仅匹配模型token credits，样本数及调度报告存在差异，不能推出总成本优势或交易收益。",
+      "tags": {
+        "domains": [
+          "自主研究",
+          "长程智能体",
+          "研究评估"
+        ],
+        "methods": [
+          "分叉择优",
+          "上下文重置",
+          "测试时搜索",
+          "三元组嵌入"
+        ],
+        "problems": [
+          "局部探索停滞",
+          "预算可比性",
+          "选择偏差",
+          "复现口径"
+        ]
+      },
+      "title": "保留产物并清空对话的分叉择优可改善部分长程研究搜索，收益受评分器、预算和样本口径约束",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -1904,6 +2000,7 @@
       "knowledge/K-000030.md": "dc7022cd50252869aff72bca13d5460f5a5ee1b057a1835ae3a3b08ea27566b7",
       "knowledge/K-000031.md": "66818c1949edd06914d58cd9c7b91a66374be5f813a79dd15da7de2dcbbf74f8",
       "knowledge/K-000032.md": "9182a880ea344a90157d6de8ff7ea3c5ec13889c562bb96a57d5907d95160907",
+      "knowledge/K-000033.md": "35823e2db119e966803bef0a6ba2883cb3c8e310c65095d8c203d8878d2ff700",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -1936,7 +2033,8 @@
       "sources/S-000030.md": "cb48bd4fb84ac99ff1736b2bdfac7b36355e6c6947ba3d64a395c6403be8c55e",
       "sources/S-000031.md": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a",
       "sources/S-000032.md": "1534b3139bfbc66d7af7583ba4b4ef97b0fd847fc8a8b36ff7ee0b5c1729bf2a",
-      "sources/S-000033.md": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb"
+      "sources/S-000033.md": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb",
+      "sources/S-000034.md": "22217cc9de446f19806b63e47f4ccfdd505d65d9a3ad57223c0c70c1ad87dbbc"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -1978,7 +2076,8 @@
     "K-000029": [],
     "K-000030": [],
     "K-000031": [],
-    "K-000032": []
+    "K-000032": [],
+    "K-000033": []
   },
   "sources": [
     {
@@ -2178,6 +2277,12 @@
       "id": "S-000033",
       "path": "sources/S-000033.md",
       "version": "arXiv:2610.22745v1"
+    },
+    {
+      "content_hash": "22217cc9de446f19806b63e47f4ccfdd505d65d9a3ad57223c0c70c1ad87dbbc",
+      "id": "S-000034",
+      "path": "sources/S-000034.md",
+      "version": "arXiv:2610.07447v1"
     }
   ]
 }
