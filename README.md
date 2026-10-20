@@ -115,6 +115,10 @@ python3 -B scripts/mcp_server.py --root /absolute/path/to/research-knowledge
 
 本仓库不包含 Slack、模型 API、训练、交易、第三方索引二进制、OAuth/令牌、新增后台服务或机器专用全局客户端配置；本次论文卡整理未执行科研实验或变更既有 Agent 集成。
 
+## 主题入口
+
+[主题分类索引](docs/topics.md)提供独立类别入口，包括[开发与研究 Agent：效率与自进化](docs/topics.md#agent-efficiency-self-evolution)。主题归属独立于生命周期、证据强度和复现状态；检索待审卡时须显式纳入草稿。
+
 ## 基础文献入口
 
 [23 篇项目基础文献阅读路径](docs/foundation-reading-path.md)覆盖成交与库存、预测市场、PPO/GAE/GRU、校准评估及 MEV/结算。逐篇书目见[规范目录](docs/foundation-catalog.json)。基础文献与每日新论文分开；已有两篇 draft 不变，新基础卡为 active / reported / not_attempted。

@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `c444f399e62e4219e549ef84c77ad2be1285cb4da5c0a536f2f59ee4668a897f`
+Build input SHA-256: `66e7af3daf57c88eec1a414264b55c42cecad2c2e135210deedf2684f5020ff0`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
