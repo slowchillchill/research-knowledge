@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "66e7af3daf57c88eec1a414264b55c42cecad2c2e135210deedf2684f5020ff0",
+  "input_version": "b0fedf7ca875b150af473e716cdccfd5ecf9dc314dad8261a8ac0f696011993e",
   "knowledge": [
     {
       "conditions": [
@@ -1965,6 +1965,79 @@
       },
       "title": "保留产物并清空对话的分叉择优可改善部分长程研究搜索，收益受评分器、预算和样本口径约束",
       "version": "draft-2"
+    },
+    {
+      "conditions": [
+        "结果限于作者的历史回放、单订单簿、零交易费用及给定训练与评估配置。",
+        "周期held-out均值与48窗final-policy总和须分开，不混作同一统计量。",
+        "拟议迁移实验需真实费用、因果时间、保守队列、部分成交与结算对账，并固定其他因素。"
+      ],
+      "content_hash": "d6731bb981c67dc62a7c605f21e1184c5a4177e5632f6ac1e4b1e67a416e1532",
+      "evidence": {
+        "note": "基于固定arXiv v1的公开全文研究和自主摘要；未运行作者代码、回测、交易或拟议实验。原文核对不等于独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000034",
+      "lifecycle": "draft",
+      "limitations": [
+        "每配置1个训练seed，单留出日期；评估PV标准差不是跨seed置信区间。",
+        "held-out同时称validation并用于调参，未明确独立最终test，选择偏差未排除。",
+        "L2合成MBO和均匀随机撤单不保证真实队列成交；历史流不响应策略，真实延迟压力测试未核。",
+        "消融同时改变多项设计，无法归因全部提升于多智能体或curriculum。",
+        "完整作者fork、处理后数据与窗口manifest未核实公开，终端余仓与0/1结算口径不足以审计。"
+      ],
+      "path": "knowledge/K-000034.md",
+      "sources": [
+        {
+          "id": "S-000035",
+          "locator": "method",
+          "role": "报价/风险双智能体与奖励塑形",
+          "version": "arXiv:2610.26789v1"
+        },
+        {
+          "id": "S-000035",
+          "locator": "results",
+          "role": "周期负均值、48窗总和及混杂消融",
+          "version": "arXiv:2610.26789v1"
+        },
+        {
+          "id": "S-000035",
+          "locator": "data",
+          "role": "日期划分、样本分母与validation偏差",
+          "version": "arXiv:2610.26789v1"
+        },
+        {
+          "id": "S-000035",
+          "locator": "execution",
+          "role": "费用、队列、延迟、部分成交和结算限制",
+          "version": "arXiv:2610.26789v1"
+        }
+      ],
+      "summary": "作者将报价与库存风险拆分为IPPO-GRU智能体；裸拆分最差，markout与组合塑形缩小周期留出损失，但最佳仍为−4.3 ticks/episode，每配置仅1个训练seed。零费用、合成队列、调参留出与混杂消融限制实盘外推。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "市场微观结构",
+          "强化学习"
+        ],
+        "methods": [
+          "多智能体强化学习",
+          "IPPO",
+          "GAE",
+          "GRU",
+          "成交后markout信用分配"
+        ],
+        "problems": [
+          "库存风险分配",
+          "奖励错配",
+          "执行仿真真实性",
+          "选择偏差"
+        ]
+      },
+      "title": "预测市场多智能体做市中，markout信用分配可缩小作者报告的留出损失，但尚非盈利或独立复现证据",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2002,6 +2075,7 @@
       "knowledge/K-000031.md": "66818c1949edd06914d58cd9c7b91a66374be5f813a79dd15da7de2dcbbf74f8",
       "knowledge/K-000032.md": "9182a880ea344a90157d6de8ff7ea3c5ec13889c562bb96a57d5907d95160907",
       "knowledge/K-000033.md": "70efa5ae62eae5514674af1db02b5be0364c04cd22046ee7072c78714c1139f1",
+      "knowledge/K-000034.md": "d6731bb981c67dc62a7c605f21e1184c5a4177e5632f6ac1e4b1e67a416e1532",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2035,7 +2109,8 @@
       "sources/S-000031.md": "f959334390a136079701348522a74a5e1f83efe5d3238017b573e17eedcc2c8a",
       "sources/S-000032.md": "1534b3139bfbc66d7af7583ba4b4ef97b0fd847fc8a8b36ff7ee0b5c1729bf2a",
       "sources/S-000033.md": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb",
-      "sources/S-000034.md": "22217cc9de446f19806b63e47f4ccfdd505d65d9a3ad57223c0c70c1ad87dbbc"
+      "sources/S-000034.md": "22217cc9de446f19806b63e47f4ccfdd505d65d9a3ad57223c0c70c1ad87dbbc",
+      "sources/S-000035.md": "5e053be93d48d1ed99f65258087585dae03856588231f241f6c4988c1f35e1a6"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2078,7 +2153,8 @@
     "K-000030": [],
     "K-000031": [],
     "K-000032": [],
-    "K-000033": []
+    "K-000033": [],
+    "K-000034": []
   },
   "sources": [
     {
@@ -2284,6 +2360,12 @@
       "id": "S-000034",
       "path": "sources/S-000034.md",
       "version": "arXiv:2610.07447v1"
+    },
+    {
+      "content_hash": "5e053be93d48d1ed99f65258087585dae03856588231f241f6c4988c1f35e1a6",
+      "id": "S-000035",
+      "path": "sources/S-000035.md",
+      "version": "arXiv:2610.26789v1"
     }
   ]
 }
