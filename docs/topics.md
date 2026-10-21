@@ -23,3 +23,23 @@ python3 -B scripts/kb.py sources K-000033
 ```
 
 也可搜索 `自进化`。MCP 对应 `search_knowledge` 的 `include_inactive=true`；随后调用 `read_card` 和 `trace_sources`。保持默认搜索规则：只有 active、非样例、未过审阅期限的卡进入默认有效知识，类别入口不提升草稿状态。
+
+<a id="prediction-market-making"></a>
+
+## 预测市场：订单簿做市与执行证据
+
+本入口关注预测市场订单簿的报价、库存风险、信用分配与执行仿真边界。作者报告的历史回放结果与拟议实验须分别阅读，不能将模拟 PV 当作实盘业绩。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000034 · 协作多智能体做市与 markout 信用分配](../knowledge/K-000034.md) | [S-000035 · arXiv:2610.26789v1](../sources/S-000035.md) | draft / reported / not_attempted |
+
+### 检索入口
+
+```bash
+python3 -B scripts/kb.py search '预测市场' --include-inactive
+python3 -B scripts/kb.py read K-000034
+python3 -B scripts/kb.py sources K-000034
+```
+
+读取完整卡片中的统计口径、数据与执行限制；本卡未执行科研实验或独立复现，保持草稿状态，不进入默认有效检索。

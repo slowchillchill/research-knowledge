@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `66e7af3daf57c88eec1a414264b55c42cecad2c2e135210deedf2684f5020ff0`
+Build input SHA-256: `b0fedf7ca875b150af473e716cdccfd5ecf9dc314dad8261a8ac0f696011993e`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -39,3 +39,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000031](knowledge/K-000031.md) — 事件预测训练应保留日期信息截止，概率报告的归一化结论限于固定证据与评分项 (draft; example=False; review_after=2027-01-20)
 - [K-000032](knowledge/K-000032.md) — 排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正 (draft; example=False; review_after=2027-01-20)
 - [K-000033](knowledge/K-000033.md) — 保留产物并清空对话的分叉择优可改善部分长程研究搜索，收益受评分器、预算和样本口径约束 (draft; example=False; review_after=2027-01-20)
+- [K-000034](knowledge/K-000034.md) — 预测市场多智能体做市中，markout信用分配可缩小作者报告的留出损失，但尚非盈利或独立复现证据 (draft; example=False; review_after=2027-01-21)
