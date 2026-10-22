@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `b0fedf7ca875b150af473e716cdccfd5ecf9dc314dad8261a8ac0f696011993e`
+Build input SHA-256: `2fa7c704f113ec7be3e3c281ad29ff29c59b9e569938eadf788bc2d5d44d26eb`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -40,3 +40,6 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000032](knowledge/K-000032.md) — 排除语言模型前视信息改善评估设计，但新闻组合仍须通过价格基线与搜索校正 (draft; example=False; review_after=2027-01-20)
 - [K-000033](knowledge/K-000033.md) — 保留产物并清空对话的分叉择优可改善部分长程研究搜索，收益受评分器、预算和样本口径约束 (draft; example=False; review_after=2027-01-20)
 - [K-000034](knowledge/K-000034.md) — 预测市场多智能体做市中，markout信用分配可缩小作者报告的留出损失，但尚非盈利或独立复现证据 (draft; example=False; review_after=2027-01-21)
+- [K-000035](knowledge/K-000035.md) — LOB-Impact：生成订单簿的冲击与恢复验收 (draft; example=False; review_after=2027-01-22)
+- [K-000036](knowledge/K-000036.md) — LOBGrad：概率盘口预测与成交假设边界 (draft; example=False; review_after=2027-01-22)
+- [K-000037](knowledge/K-000037.md) — Foresight or Reaction：事件记录时钟改变表观预知 (draft; example=False; review_after=2027-01-22)
