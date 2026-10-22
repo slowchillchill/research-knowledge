@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "b0fedf7ca875b150af473e716cdccfd5ecf9dc314dad8261a8ac0f696011993e",
+  "input_version": "2fa7c704f113ec7be3e3c281ad29ff29c59b9e569938eadf788bc2d5d44d26eb",
   "knowledge": [
     {
       "conditions": [
@@ -2038,6 +2038,210 @@
       },
       "title": "预测市场多智能体做市中，markout信用分配可缩小作者报告的留出损失，但尚非盈利或独立复现证据",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "限消息级生成器、特定主动订单形状与约10%目标参与率。",
+        "置信区间以交易日聚类；rollout数量不能替代独立交易日。"
+      ],
+      "content_hash": "2cf4640c7f3b6ff37e26053885460578e90bdba08cb2a5b02427ba5ecf4c000b",
+      "evidence": {
+        "note": "核对公开原始材料并自主总结；未运行作者代码、独立复现、回测或执行拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000035",
+      "lifecycle": "draft",
+      "limitations": [
+        "单测试月、5只股票；经验平方根规律不是所有市场的普遍真值。",
+        "部分校准使用测试月信息，不是严格无前视在线部署比较。",
+        "短上下文造成恢复失败是作者假说，未完成因果归因。",
+        "未证明真实被动队列、费用、延迟、部分成交或结算正确。"
+      ],
+      "path": "knowledge/K-000035.md",
+      "sources": [
+        {
+          "id": "S-000036",
+          "locator": "protocol",
+          "role": "§2.1 Benchmark design, Figure 1: visible/blind, free generation, build-up and relaxation",
+          "version": "arXiv:2610.27100v1"
+        },
+        {
+          "id": "S-000036",
+          "locator": "design",
+          "role": "§2.2 Models under test; §2.3 Data preparation; Tables 1–2",
+          "version": "arXiv:2610.27100v1"
+        },
+        {
+          "id": "S-000036",
+          "locator": "results",
+          "role": "§§3.2–3.4; Table 3: exponent, amplitude, attribution and relaxation",
+          "version": "arXiv:2610.27100v1"
+        },
+        {
+          "id": "S-000036",
+          "locator": "limits",
+          "role": "§4 Discussion: calibration, context-window hypothesis and scope",
+          "version": "arXiv:2610.27100v1"
+        }
+      ],
+      "summary": "生成订单簿可产生冲击，但分布拟真不保证交互真实性。作者25个模型×股票组合均识别出冲击，指数0.63–1.21，且未满足其可信恢复标准；不构成真实市场反事实或盈利证明。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "生成模型"
+        ],
+        "methods": [
+          "订单注入",
+          "visible/blind配对",
+          "按日聚类bootstrap"
+        ],
+        "problems": [
+          "市场冲击",
+          "恢复真实性",
+          "模拟器验收"
+        ]
+      },
+      "title": "LOB-Impact：生成订单簿的冲击与恢复验收",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "BTC/USDT 5秒快照，按时间15天训练、2天验证、4天测试。",
+        "GOOGL与META单独重训，沿用模型结构和超参数，不是零样本迁移。"
+      ],
+      "content_hash": "80f444b75a034abd436dfc63b4d037a25e33ba603de4218c1c3f42afb4f6fd57",
+      "evidence": {
+        "note": "核对公开原始材料并自主总结；未运行作者代码、独立复现、回测或执行拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000036",
+      "lifecycle": "draft",
+      "limitations": [
+        "收益区间欠覆盖，不能统称全部校准良好。",
+        "单步噪声预测风险界不是多步路径或收益保证。",
+        "聚合L2快照不能恢复真实个体订单队列；触价/耗尽代理不等于真实成交。",
+        "未独立复现，股票原始数据可得性仍需另核。"
+      ],
+      "path": "knowledge/K-000036.md",
+      "sources": [
+        {
+          "id": "S-000037",
+          "locator": "method",
+          "role": "§3 Methodology; §4 Theoretical Guarantees, Corollary 4.6",
+          "version": "arXiv:2610.25495v1"
+        },
+        {
+          "id": "S-000037",
+          "locator": "data",
+          "role": "§5 Experimental Results: Datasets, Ablations and baselines, Experimental setup",
+          "version": "arXiv:2610.25495v1"
+        },
+        {
+          "id": "S-000037",
+          "locator": "results",
+          "role": "§5.1 Generation Quality; Tables 1–2",
+          "version": "arXiv:2610.25495v1"
+        },
+        {
+          "id": "S-000037",
+          "locator": "execution",
+          "role": "§5.3 Downstream Task",
+          "version": "arXiv:2610.25495v1"
+        }
+      ],
+      "summary": "LOBGrad以循环编码器条件化扩散，联合预测队列和收益。BTC队列MAE由无编码器的0.109降至0.037，但收益90%区间覆盖84.4%；风格化成交模拟不等于实盘执行或盈利。",
+      "tags": {
+        "domains": [
+          "概率预测",
+          "市场微观结构",
+          "生成模型"
+        ],
+        "methods": [
+          "条件扩散",
+          "循环编码器",
+          "CRPS",
+          "时间切分"
+        ],
+        "problems": [
+          "概率校准",
+          "盘口预测",
+          "执行仿真真实性"
+        ]
+      },
+      "title": "LOBGrad：概率盘口预测与成交假设边界",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "结果限筛选后、有足够交易且事件确定兑付的合约。",
+        "物理事件时间、源记录时间和交易所时间不可混同。"
+      ],
+      "content_hash": "876d1253f158083ffa5269a17cb04340a81af459cf401bf765807d565d7f485e",
+      "evidence": {
+        "note": "核对公开原始材料并自主总结；未运行作者代码、独立复现、回测或执行拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000037",
+      "lifecycle": "draft",
+      "limitations": [
+        "一个交易所、两项运动、70天，偏向流动性好和较晚赛事事件。",
+        "跨源时钟偏移未实测；两个官方时间也都不是物理事件实测。",
+        "终态修订数据不能还原当时可见记录，价差与交易成本未形成套利证明。",
+        "原始526MB文件未随包分发，后续重取可能不完整。"
+      ],
+      "path": "knowledge/K-000037.md",
+      "sources": [
+        {
+          "id": "S-000038",
+          "locator": "setting",
+          "role": "replication/article/clock_paper_v64.tex, §3 Setting, data, and the three times",
+          "version": "Zenodo:23491301-v1.0"
+        },
+        {
+          "id": "S-000038",
+          "locator": "results",
+          "role": "同稿件 §5 Where the price move falls; Table 1; §9 A second sport: soccer",
+          "version": "Zenodo:23491301-v1.0"
+        },
+        {
+          "id": "S-000038",
+          "locator": "limits",
+          "role": "同稿件 §10 Limitations; §11 Conclusion",
+          "version": "Zenodo:23491301-v1.0"
+        },
+        {
+          "id": "S-000038",
+          "locator": "availability",
+          "role": "Zenodo record Description; replication/README.md; manuscript Data availability",
+          "version": "Zenodo:23491301-v1.0"
+        }
+      ],
+      "summary": "同一组事件改变记录时钟即可改变表观提前反应：1,213棒球合约的事件前价格变动份额中位数为2%或100%。支持时钟审计，不识别内幕信息、物理信息到达或可交易利润。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "事件研究",
+          "预测评估"
+        ],
+        "methods": [
+          "多时间戳对齐",
+          "价格变动份额分解",
+          "时钟偏移敏感性"
+        ],
+        "problems": [
+          "前视偏差",
+          "事件标签",
+          "表观提前反应"
+        ]
+      },
+      "title": "Foresight or Reaction：事件记录时钟改变表观预知",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2076,6 +2280,9 @@
       "knowledge/K-000032.md": "9182a880ea344a90157d6de8ff7ea3c5ec13889c562bb96a57d5907d95160907",
       "knowledge/K-000033.md": "70efa5ae62eae5514674af1db02b5be0364c04cd22046ee7072c78714c1139f1",
       "knowledge/K-000034.md": "d6731bb981c67dc62a7c605f21e1184c5a4177e5632f6ac1e4b1e67a416e1532",
+      "knowledge/K-000035.md": "2cf4640c7f3b6ff37e26053885460578e90bdba08cb2a5b02427ba5ecf4c000b",
+      "knowledge/K-000036.md": "80f444b75a034abd436dfc63b4d037a25e33ba603de4218c1c3f42afb4f6fd57",
+      "knowledge/K-000037.md": "876d1253f158083ffa5269a17cb04340a81af459cf401bf765807d565d7f485e",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2110,7 +2317,10 @@
       "sources/S-000032.md": "1534b3139bfbc66d7af7583ba4b4ef97b0fd847fc8a8b36ff7ee0b5c1729bf2a",
       "sources/S-000033.md": "a4ad641a9c26beca060d6e3ea4b3e777a54a059c59efe830a4efbddb1db752fb",
       "sources/S-000034.md": "22217cc9de446f19806b63e47f4ccfdd505d65d9a3ad57223c0c70c1ad87dbbc",
-      "sources/S-000035.md": "5e053be93d48d1ed99f65258087585dae03856588231f241f6c4988c1f35e1a6"
+      "sources/S-000035.md": "5e053be93d48d1ed99f65258087585dae03856588231f241f6c4988c1f35e1a6",
+      "sources/S-000036.md": "4019b851ad41d819d12634905c2ee8f3f86fd96a22eae233376223c95e11e9d9",
+      "sources/S-000037.md": "40c0cbcc92d0ba7199bc8eae92f5d31ce37e95ed7445b908320e6d164cb381b7",
+      "sources/S-000038.md": "5ed5ad85a5544d7de092ee64c8a161a1c6418169244383c210dc90a3646687b0"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2154,7 +2364,10 @@
     "K-000031": [],
     "K-000032": [],
     "K-000033": [],
-    "K-000034": []
+    "K-000034": [],
+    "K-000035": [],
+    "K-000036": [],
+    "K-000037": []
   },
   "sources": [
     {
@@ -2366,6 +2579,24 @@
       "id": "S-000035",
       "path": "sources/S-000035.md",
       "version": "arXiv:2610.26789v1"
+    },
+    {
+      "content_hash": "4019b851ad41d819d12634905c2ee8f3f86fd96a22eae233376223c95e11e9d9",
+      "id": "S-000036",
+      "path": "sources/S-000036.md",
+      "version": "arXiv:2610.27100v1"
+    },
+    {
+      "content_hash": "40c0cbcc92d0ba7199bc8eae92f5d31ce37e95ed7445b908320e6d164cb381b7",
+      "id": "S-000037",
+      "path": "sources/S-000037.md",
+      "version": "arXiv:2610.25495v1"
+    },
+    {
+      "content_hash": "5ed5ad85a5544d7de092ee64c8a161a1c6418169244383c210dc90a3646687b0",
+      "id": "S-000038",
+      "path": "sources/S-000038.md",
+      "version": "Zenodo:23491301-v1.0"
     }
   ]
 }
