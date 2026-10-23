@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "2fa7c704f113ec7be3e3c281ad29ff29c59b9e569938eadf788bc2d5d44d26eb",
+  "input_version": "883692ca2daa0896ee7259fca504cefcb351ca24707fe060c22d997638b1ee5c",
   "knowledge": [
     {
       "conditions": [
@@ -2242,6 +2242,143 @@
       },
       "title": "Foresight or Reaction：事件记录时钟改变表观预知",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "模型预训练为2022-01至2025-12八只美股的消息流，不输入盘口；机制分析为GOOG的2026年1月20个交易日、2014窗口。",
+        "历史统计解码、真实未来标签预测与生成消息回放是不同实验；探针按日分组，层和正则参数由内层验证选择。"
+      ],
+      "content_hash": "a3946763a6f4a327f01a03cab09b8f42dabf27b97b5fe918cdebd5c154aadf35",
+      "evidence": {
+        "note": "2026-10-23核对公开arXiv v1正文并自主总结；未训练模型、运行作者代码、回测或执行拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000038",
+      "lifecycle": "draft",
+      "limitations": [
+        "非零价格变动二分类排除了平盘，不能当作全部时点可交易准确率。",
+        "样本外股票的原始OFI R²差异较大，秩变换或缩尾结果不能代替原始幅度预测。",
+        "未给出匹配GRU基线及含费用、延迟、真实排队成交和结算的交易验证；本库未独立复现。"
+      ],
+      "path": "knowledge/K-000038.md",
+      "sources": [
+        {
+          "id": "S-000039",
+          "locator": "method",
+          "role": "模型、数据和按日嵌套/前向验证设置",
+          "version": "arXiv:2610.28753v1"
+        },
+        {
+          "id": "S-000039",
+          "locator": "encoding",
+          "role": "历史OFI解码与随机/盘口对照",
+          "version": "arXiv:2610.28753v1"
+        },
+        {
+          "id": "S-000039",
+          "locator": "steering",
+          "role": "内部干预与生成回放边界",
+          "version": "arXiv:2610.28753v1"
+        },
+        {
+          "id": "S-000039",
+          "locator": "prediction",
+          "role": "真实未来价格、方向与跨股票限制",
+          "version": "arXiv:2610.28753v1"
+        }
+      ],
+      "summary": "消息流Mamba-3状态可解码历史OFI，但未来25消息价格R²约0.04，与盘口基线0.036接近；状态steering改变模型信念，不证明真实市场因果收益。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "表征学习",
+          "模型可解释性"
+        ],
+        "methods": [
+          "Mamba-3",
+          "冻结状态探针",
+          "激活干预",
+          "按日嵌套交叉验证"
+        ],
+        "problems": [
+          "订单流不平衡",
+          "未来价格预测",
+          "模型内部因果与交易收益边界"
+        ]
+      },
+      "title": "LOB状态空间基础模型：流量表征与预测边界",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "单层64单元LSTM/GRU，两种合成任务adding与delayed recall；主网格5个seed、每次5000更新，每类正则仅一个比率。",
+        "数据为新生成或穷尽样本，度量优化与首次验证达标，不测有限训练集泛化；PyTorch复核仅覆盖无正则条件。"
+      ],
+      "content_hash": "6dc6a9c93a612fb39ab9aa93cfcae2daacff84d359061613cb740d6211393382",
+      "evidence": {
+        "note": "2026-10-23核对公开arXiv v1正文并自主总结；未训练模型、运行作者代码、回测或执行拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000039",
+      "lifecycle": "draft",
+      "limitations": [
+        "任务长度经校准选择，19/262个adding验证达标运行未获测试集确认，不能将验证成功率称为测试准确率。",
+        "PyTorch复核未重复梯度测量或正则位置比较；不能泛化到所有Rust库、循环架构、任务或正则强度。",
+        "没有PPO、金融预测或交易收益实验；本库未执行训练或独立复现。"
+      ],
+      "path": "knowledge/K-000039.md",
+      "sources": [
+        {
+          "id": "S-000040",
+          "locator": "methods",
+          "role": "门方程、初始化、任务、预算和实验网格",
+          "version": "arXiv:2610.29034v1"
+        },
+        {
+          "id": "S-000040",
+          "locator": "results",
+          "role": "验证达标次数与作者PyTorch子集复核",
+          "version": "arXiv:2610.29034v1"
+        },
+        {
+          "id": "S-000040",
+          "locator": "gradient",
+          "role": "梯度指标的条件性和seed重采样限制",
+          "version": "arXiv:2610.29034v1"
+        },
+        {
+          "id": "S-000040",
+          "locator": "limits",
+          "role": "适用范围、验证/测试差别和公开代码入口",
+          "version": "arXiv:2610.29034v1"
+        }
+      ],
+      "summary": "720次合成任务主网格中，chrono初始化360/360达到验证门槛，常规初始化120/360；结论限优化，GRU偏置符号须按门方程转换，不能据此推断PPO或金融效果。",
+      "tags": {
+        "domains": [
+          "序列建模",
+          "优化方法",
+          "实验设计"
+        ],
+        "methods": [
+          "chrono初始化",
+          "LSTM",
+          "GRU",
+          "recurrent dropout",
+          "zoneout"
+        ],
+        "problems": [
+          "长期依赖",
+          "梯度传播",
+          "跨实现门约定"
+        ]
+      },
+      "title": "循环网络门初始化：合成长记忆优化与实现约定",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2283,6 +2420,8 @@
       "knowledge/K-000035.md": "2cf4640c7f3b6ff37e26053885460578e90bdba08cb2a5b02427ba5ecf4c000b",
       "knowledge/K-000036.md": "80f444b75a034abd436dfc63b4d037a25e33ba603de4218c1c3f42afb4f6fd57",
       "knowledge/K-000037.md": "876d1253f158083ffa5269a17cb04340a81af459cf401bf765807d565d7f485e",
+      "knowledge/K-000038.md": "a3946763a6f4a327f01a03cab09b8f42dabf27b97b5fe918cdebd5c154aadf35",
+      "knowledge/K-000039.md": "6dc6a9c93a612fb39ab9aa93cfcae2daacff84d359061613cb740d6211393382",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2320,7 +2459,9 @@
       "sources/S-000035.md": "5e053be93d48d1ed99f65258087585dae03856588231f241f6c4988c1f35e1a6",
       "sources/S-000036.md": "4019b851ad41d819d12634905c2ee8f3f86fd96a22eae233376223c95e11e9d9",
       "sources/S-000037.md": "40c0cbcc92d0ba7199bc8eae92f5d31ce37e95ed7445b908320e6d164cb381b7",
-      "sources/S-000038.md": "5ed5ad85a5544d7de092ee64c8a161a1c6418169244383c210dc90a3646687b0"
+      "sources/S-000038.md": "5ed5ad85a5544d7de092ee64c8a161a1c6418169244383c210dc90a3646687b0",
+      "sources/S-000039.md": "4b24f6a897888b17288607904c0ab4a92d75328dea22cc3a26c87a56ff8f6d62",
+      "sources/S-000040.md": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2367,7 +2508,9 @@
     "K-000034": [],
     "K-000035": [],
     "K-000036": [],
-    "K-000037": []
+    "K-000037": [],
+    "K-000038": [],
+    "K-000039": []
   },
   "sources": [
     {
@@ -2597,6 +2740,18 @@
       "id": "S-000038",
       "path": "sources/S-000038.md",
       "version": "Zenodo:23491301-v1.0"
+    },
+    {
+      "content_hash": "4b24f6a897888b17288607904c0ab4a92d75328dea22cc3a26c87a56ff8f6d62",
+      "id": "S-000039",
+      "path": "sources/S-000039.md",
+      "version": "arXiv:2610.28753v1"
+    },
+    {
+      "content_hash": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc",
+      "id": "S-000040",
+      "path": "sources/S-000040.md",
+      "version": "arXiv:2610.29034v1"
     }
   ]
 }
