@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `883692ca2daa0896ee7259fca504cefcb351ca24707fe060c22d997638b1ee5c`
+Build input SHA-256: `86beffb6f970a15ec1e8524ec0d5cc891128552c9f794c63cdd3dccdd2b1abb4`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -45,3 +45,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000037](knowledge/K-000037.md) — Foresight or Reaction：事件记录时钟改变表观预知 (draft; example=False; review_after=2027-01-22)
 - [K-000038](knowledge/K-000038.md) — LOB状态空间基础模型：流量表征与预测边界 (draft; example=False; review_after=2027-01-23)
 - [K-000039](knowledge/K-000039.md) — 循环网络门初始化：合成长记忆优化与实现约定 (draft; example=False; review_after=2027-01-23)
+- [K-000040](knowledge/K-000040.md) — 预测市场上线信息：成交量漂移与稀有争议风险 (draft; example=False; review_after=2027-01-24)

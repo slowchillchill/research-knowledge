@@ -43,3 +43,19 @@ python3 -B scripts/kb.py sources K-000034
 ```
 
 读取完整卡片中的统计口径、数据与执行限制；本卡未执行科研实验或独立复现，保持草稿状态，不进入默认有效检索。
+
+<a id="prediction-market-contracts"></a>
+
+## 预测市场：合约信息、成交量与争议风险
+
+关注上线文本的预测证据、时间漂移、稀有争议及样本边界；静态代码风险尚未量化，不表示全部结果无效。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000040 · 上线信息、成交量漂移与稀有争议](../knowledge/K-000040.md) | [S-000041 · arXiv:2610.29578v1](../sources/S-000041.md)；[S-000042 · Zenodo 1.0.0](../sources/S-000042.md) | draft / reported / not_attempted |
+
+```bash
+python3 -B scripts/kb.py search '预测市场上线信息' --include-inactive
+python3 -B scripts/kb.py read K-000040
+python3 -B scripts/kb.py sources K-000040
+```

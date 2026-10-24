@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "883692ca2daa0896ee7259fca504cefcb351ca24707fe060c22d997638b1ee5c",
+  "input_version": "86beffb6f970a15ec1e8524ec0d5cc891128552c9f794c63cdd3dccdd2b1abb4",
   "knowledge": [
     {
       "conditions": [
@@ -2379,6 +2379,88 @@
       },
       "title": "循环网络门初始化：合成长记忆优化与实现约定",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "Polymarket已解决样本802,863个合约、391,955个事件，创建期2023-01至2026-05；同期评估为按事件分组的五折交叉验证。",
+        "成交量目标为log(1+终生成交量)及是否达到1,000美元；争议只在529,408个可观察oracle日志的合约中定义。"
+      ],
+      "content_hash": "07408f571f7cb477fb00cac48b7daba7ace00b855b552cbf2768cb36bed8e9b8",
+      "evidence": {
+        "note": "2026-10-24核对arXiv v1及Zenodo 1.0.0说明、清单和相关代码；只做静态审查，未执行作者代码、模型、回测或拟议审计。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000040",
+      "lifecycle": "draft",
+      "limitations": [
+        "公开样本清单记录成交量降序、volume-floor 100抓取，不能称覆盖全部市场；停止页整页保留，也不是逐行严格成交量大于等于100过滤。",
+        "历史API原始payload未公开，重新抓取样本及描述可能变化；通常在上线确定的字段不等于已验证的上线时点快照。",
+        "事件最早创建日切分可把截止后创建的同事件合约放入训练，训练标签是否在截止时已成熟也未检查；实际数量、方向及指标影响未知。",
+        "作者报告为单平台关联证据；本库没有独立复现，不据此推导交易优势或断言全部结果无效。"
+      ],
+      "path": "knowledge/K-000040.md",
+      "sources": [
+        {
+          "id": "S-000041",
+          "locator": "data",
+          "role": "样本、目标、日志可观察性与评估设计",
+          "version": "arXiv:2610.29578v1"
+        },
+        {
+          "id": "S-000041",
+          "locator": "volume",
+          "role": "同期结果、模板排除及时间泛化",
+          "version": "arXiv:2610.29578v1"
+        },
+        {
+          "id": "S-000041",
+          "locator": "disputes",
+          "role": "AUC、AP、基准率与关联分析",
+          "version": "arXiv:2610.29578v1"
+        },
+        {
+          "id": "S-000042",
+          "locator": "sample",
+          "role": "成交量截断及公开样本选择规则",
+          "version": "zenodo:23376383:1.0.0"
+        },
+        {
+          "id": "S-000042",
+          "locator": "temporal",
+          "role": "事件最早创建日切分的静态代码证据",
+          "version": "zenodo:23376383:1.0.0"
+        },
+        {
+          "id": "S-000042",
+          "locator": "availability",
+          "role": "原始API payload和重取限制",
+          "version": "zenodo:23376383:1.0.0"
+        }
+      ],
+      "summary": "802,863合约的同期成交量AUC为0.940，跨季度降至0.577，76.9%测试合约为新题型；争议AUC 0.78但AP仅0.012。公开包有成交量截断与潜在时间边界问题，影响未量化。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "金融自然语言处理",
+          "实验设计"
+        ],
+        "methods": [
+          "事件分组交叉验证",
+          "时间切分",
+          "LightGBM",
+          "稀有事件分类"
+        ],
+        "problems": [
+          "分布漂移",
+          "争议风险",
+          "样本代表性",
+          "时间泄漏"
+        ]
+      },
+      "title": "预测市场上线信息：成交量漂移与稀有争议风险",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2422,6 +2504,7 @@
       "knowledge/K-000037.md": "876d1253f158083ffa5269a17cb04340a81af459cf401bf765807d565d7f485e",
       "knowledge/K-000038.md": "a3946763a6f4a327f01a03cab09b8f42dabf27b97b5fe918cdebd5c154aadf35",
       "knowledge/K-000039.md": "6dc6a9c93a612fb39ab9aa93cfcae2daacff84d359061613cb740d6211393382",
+      "knowledge/K-000040.md": "07408f571f7cb477fb00cac48b7daba7ace00b855b552cbf2768cb36bed8e9b8",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2461,7 +2544,9 @@
       "sources/S-000037.md": "40c0cbcc92d0ba7199bc8eae92f5d31ce37e95ed7445b908320e6d164cb381b7",
       "sources/S-000038.md": "5ed5ad85a5544d7de092ee64c8a161a1c6418169244383c210dc90a3646687b0",
       "sources/S-000039.md": "4b24f6a897888b17288607904c0ab4a92d75328dea22cc3a26c87a56ff8f6d62",
-      "sources/S-000040.md": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc"
+      "sources/S-000040.md": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc",
+      "sources/S-000041.md": "1499942a2f7b96c132950418c69616f6599981f5b94868861144dde870fcfe94",
+      "sources/S-000042.md": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2510,7 +2595,8 @@
     "K-000036": [],
     "K-000037": [],
     "K-000038": [],
-    "K-000039": []
+    "K-000039": [],
+    "K-000040": []
   },
   "sources": [
     {
@@ -2752,6 +2838,18 @@
       "id": "S-000040",
       "path": "sources/S-000040.md",
       "version": "arXiv:2610.29034v1"
+    },
+    {
+      "content_hash": "1499942a2f7b96c132950418c69616f6599981f5b94868861144dde870fcfe94",
+      "id": "S-000041",
+      "path": "sources/S-000041.md",
+      "version": "arXiv:2610.29578v1"
+    },
+    {
+      "content_hash": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2",
+      "id": "S-000042",
+      "path": "sources/S-000042.md",
+      "version": "zenodo:23376383:1.0.0"
     }
   ]
 }
