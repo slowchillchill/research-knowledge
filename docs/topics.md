@@ -75,3 +75,19 @@ python3 -B scripts/kb.py search '竞争做市均衡' --include-inactive
 python3 -B scripts/kb.py read K-000041
 python3 -B scripts/kb.py sources K-000041
 ```
+
+<a id="meta-rl-memory-adaptation"></a>
+
+## 元强化学习：记忆语义与测试时适应
+
+区分episode内快记忆、跨episode摘要、PPO当前参数因果重建和旧策略概率；任务族泛化不表示金融非平稳适应已验证。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000042 · METTA双层记忆与任务相关的在线适应](../knowledge/K-000042.md) | [S-000044 · arXiv:2610.31656v1](../sources/S-000044.md) | draft / reported / not_attempted |
+
+```bash
+python3 -B scripts/kb.py search 'METTA' --include-inactive
+python3 -B scripts/kb.py read K-000042
+python3 -B scripts/kb.py sources K-000042
+```

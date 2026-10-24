@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "4df49699d14ebe13c7286790f2fa2b93a281f6d465bbf1ef6d986d19aedee39c",
+  "input_version": "405c00ef637610eae7babc6426a1ad8d684646cf56e094e9ffe3995222c9e16d",
   "knowledge": [
     {
       "conditions": [
@@ -2532,6 +2532,83 @@
       },
       "title": "竞争做市均衡：无内部遗憾学习的时间平均报价包络",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "episode内因果TTT记忆每集重置，跨episode保留摘要；meta-test冻结慢参数并在线更新快记忆。",
+        "Meta-World ML1目标隐藏，ML10/ML45目标可见且trial内任务族固定、具体变化可跨集改变；PointMaze为固定任务trial的100个训练与24个留出起终点任务。",
+        "所有报告结果为五个独立随机种子；曲线与表格误差为SEM；实验限HalfCheetahVel、Meta-World和稀疏奖励PointMaze。"
+      ],
+      "content_hash": "c1fbaf583bcf6fe4ab66aa6ba0a798052f385f8ce9400e301a495f730a9ab144",
+      "evidence": {
+        "note": "2026-10-24核对arXiv v1正文、表1、图6的消融解释及附录B–G；未核实完整训练代码公开，未训练、独立复现或执行拟议记忆审计。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000042",
+      "lifecycle": "draft",
+      "limitations": [
+        "关闭在线更新对ML10影响小，不能把所有主结果增益都归于测试时更新。",
+        "训练分段仍需用每次更新后的当前慢参数重建此前因果历史；论文的实现描述不是本库对完整代码的核验。",
+        "默认跨episode attention完整trial计算为O(E²T)，EMA才为O(ET)；episode内线性复杂度不等于所有维度均线性或无更新开销。",
+        "任务族留出与固定任务trial不证明金融regime或非平稳连续适应；完整训练代码公开状态未核实，未审计其他实现。"
+      ],
+      "path": "knowledge/K-000042.md",
+      "sources": [
+        {
+          "id": "S-000044",
+          "locator": "memory",
+          "role": "双层因果记忆、快慢参数及meta-test重置",
+          "version": "arXiv:2610.31656v1"
+        },
+        {
+          "id": "S-000044",
+          "locator": "ppo",
+          "role": "当前参数因果重建、旧策略log概率与GAE",
+          "version": "arXiv:2610.31656v1"
+        },
+        {
+          "id": "S-000044",
+          "locator": "results",
+          "role": "PointMaze量化结果、ML10反例与五种子口径",
+          "version": "arXiv:2610.31656v1"
+        },
+        {
+          "id": "S-000044",
+          "locator": "protocol",
+          "role": "可见目标、任务族、trial构造与基线协议",
+          "version": "arXiv:2610.31656v1"
+        },
+        {
+          "id": "S-000044",
+          "locator": "complexity",
+          "role": "完整trial复杂度与非平稳适应的未来工作边界",
+          "version": "arXiv:2610.31656v1"
+        }
+      ],
+      "summary": "METTA以episode内TTT快权重和跨episode摘要聚合进行meta-RL适应；PPO用当前慢参数重建因果记忆，固定旧策略log概率。五种子实验中在线更新改善PointMaze，在ML10消融差异小。",
+      "tags": {
+        "domains": [
+          "元强化学习",
+          "序列建模",
+          "实验设计"
+        ],
+        "methods": [
+          "Test-Time Training",
+          "PPO",
+          "GAE",
+          "跨episode摘要聚合"
+        ],
+        "problems": [
+          "长上下文适应",
+          "因果记忆重建",
+          "任务分布泛化",
+          "记忆消融"
+        ]
+      },
+      "title": "METTA：双层记忆、因果重建与任务相关的在线适应增益",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2577,6 +2654,7 @@
       "knowledge/K-000039.md": "6dc6a9c93a612fb39ab9aa93cfcae2daacff84d359061613cb740d6211393382",
       "knowledge/K-000040.md": "07408f571f7cb477fb00cac48b7daba7ace00b855b552cbf2768cb36bed8e9b8",
       "knowledge/K-000041.md": "5bd03e5d69ea6175335d3a50dac620bbbdd3a1f852799d8d5dec80d0074f0d5c",
+      "knowledge/K-000042.md": "c1fbaf583bcf6fe4ab66aa6ba0a798052f385f8ce9400e301a495f730a9ab144",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2619,7 +2697,8 @@
       "sources/S-000040.md": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc",
       "sources/S-000041.md": "1499942a2f7b96c132950418c69616f6599981f5b94868861144dde870fcfe94",
       "sources/S-000042.md": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2",
-      "sources/S-000043.md": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8"
+      "sources/S-000043.md": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8",
+      "sources/S-000044.md": "17c670c66a96fe9fdf767e4b8717996355941b4e5a4b85f7f7c1498ea066fc47"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2670,7 +2749,8 @@
     "K-000038": [],
     "K-000039": [],
     "K-000040": [],
-    "K-000041": []
+    "K-000041": [],
+    "K-000042": []
   },
   "sources": [
     {
@@ -2930,6 +3010,12 @@
       "id": "S-000043",
       "path": "sources/S-000043.md",
       "version": "arXiv:2610.30891v1"
+    },
+    {
+      "content_hash": "17c670c66a96fe9fdf767e4b8717996355941b4e5a4b85f7f7c1498ea066fc47",
+      "id": "S-000044",
+      "path": "sources/S-000044.md",
+      "version": "arXiv:2610.31656v1"
     }
   ]
 }

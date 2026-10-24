@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `4df49699d14ebe13c7286790f2fa2b93a281f6d465bbf1ef6d986d19aedee39c`
+Build input SHA-256: `405c00ef637610eae7babc6426a1ad8d684646cf56e094e9ffe3995222c9e16d`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -47,3 +47,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000039](knowledge/K-000039.md) — 循环网络门初始化：合成长记忆优化与实现约定 (draft; example=False; review_after=2027-01-23)
 - [K-000040](knowledge/K-000040.md) — 预测市场上线信息：成交量漂移与稀有争议风险 (draft; example=False; review_after=2027-01-24)
 - [K-000041](knowledge/K-000041.md) — 竞争做市均衡：无内部遗憾学习的时间平均报价包络 (draft; example=False; review_after=2027-01-24)
+- [K-000042](knowledge/K-000042.md) — METTA：双层记忆、因果重建与任务相关的在线适应增益 (draft; example=False; review_after=2027-01-24)
