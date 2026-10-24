@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `86beffb6f970a15ec1e8524ec0d5cc891128552c9f794c63cdd3dccdd2b1abb4`
+Build input SHA-256: `4df49699d14ebe13c7286790f2fa2b93a281f6d465bbf1ef6d986d19aedee39c`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -46,3 +46,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000038](knowledge/K-000038.md) — LOB状态空间基础模型：流量表征与预测边界 (draft; example=False; review_after=2027-01-23)
 - [K-000039](knowledge/K-000039.md) — 循环网络门初始化：合成长记忆优化与实现约定 (draft; example=False; review_after=2027-01-23)
 - [K-000040](knowledge/K-000040.md) — 预测市场上线信息：成交量漂移与稀有争议风险 (draft; example=False; review_after=2027-01-24)
+- [K-000041](knowledge/K-000041.md) — 竞争做市均衡：无内部遗憾学习的时间平均报价包络 (draft; example=False; review_after=2027-01-24)

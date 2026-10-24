@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "86beffb6f970a15ec1e8524ec0d5cc891128552c9f794c63cdd3dccdd2b1abb4",
+  "input_version": "4df49699d14ebe13c7286790f2fa2b93a281f6d465bbf1ef6d986d19aedee39c",
   "knowledge": [
     {
       "conditions": [
@@ -2461,6 +2461,77 @@
       },
       "title": "预测市场上线信息：成交量漂移与稀有争议风险",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "静态博弈为N大于等于2个同时报价做市商和一个知晓当轮真实价值、按价值与市场中价比较而总会交易的非策略交易者；最优同价订单等分。",
+        "学习部分显式分析两个做市商；价值V_t从固定F独立抽样且独立于报价与历史，双方内部遗憾趋零。",
+        "密度在(0,1)连续且为正，零利润条件报价满足a′(m)+b′(m)不超过2；固定网格先取学习时间极限，再令tick趋零。"
+      ],
+      "content_hash": "5bd03e5d69ea6175335d3a50dac620bbbdd3a1f852799d8d5dec80d0074f0d5c",
+      "evidence": {
+        "note": "2026-10-24核对arXiv v1 PDF的模型、正则假设、定理22、推论24及合成实验；HTML在定理处截断。未运行仿真、训练或独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000041",
+      "lifecycle": "draft",
+      "limitations": [
+        "矩形包络是纳什报价曲线的外界；定理控制时间平均的期望距离，不保证每步报价、最后迭代或唯一均衡。",
+        "无内部遗憾条件不能直接赋予PPO或其他深度强化学习算法；本文不提供其收敛或盈利保证。",
+        "模型未纳入库存、手续费、延迟、FIFO队列、动态基本面或预测市场结算。",
+        "合成实验使用clamped Gaussian和有限网格；夹断边界质量被作者称可忽略，不是现实数据或完整理论条件的实证验证。"
+      ],
+      "path": "knowledge/K-000041.md",
+      "sources": [
+        {
+          "id": "S-000043",
+          "locator": "model",
+          "role": "同时报价、知情且总交易的交易者、等分成交和收益",
+          "version": "arXiv:2610.30891v1"
+        },
+        {
+          "id": "S-000043",
+          "locator": "equilibrium",
+          "role": "均衡存在、零利润及位置尺度族价差",
+          "version": "arXiv:2610.30891v1"
+        },
+        {
+          "id": "S-000043",
+          "locator": "learning",
+          "role": "正则假设14、定理22、推论24与矩形包络",
+          "version": "arXiv:2610.30891v1"
+        },
+        {
+          "id": "S-000043",
+          "locator": "simulations",
+          "role": "合成实验、有限预算及未决问题",
+          "version": "arXiv:2610.30891v1"
+        }
+      ],
+      "summary": "静态双边报价博弈存在零利润纯策略纳什均衡；两个无内部遗憾学习者在iid价值、正则条件和细网格极限下，时间平均期望距离趋近均衡矩形包络，不是最后迭代或PPO保证。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "博弈论",
+          "在线学习"
+        ],
+        "methods": [
+          "纯策略纳什均衡",
+          "相关均衡",
+          "无内部遗憾学习",
+          "离散价格网格"
+        ],
+        "problems": [
+          "均衡存在性",
+          "报价竞争",
+          "收敛口径",
+          "波动率与价差"
+        ]
+      },
+      "title": "竞争做市均衡：无内部遗憾学习的时间平均报价包络",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2505,6 +2576,7 @@
       "knowledge/K-000038.md": "a3946763a6f4a327f01a03cab09b8f42dabf27b97b5fe918cdebd5c154aadf35",
       "knowledge/K-000039.md": "6dc6a9c93a612fb39ab9aa93cfcae2daacff84d359061613cb740d6211393382",
       "knowledge/K-000040.md": "07408f571f7cb477fb00cac48b7daba7ace00b855b552cbf2768cb36bed8e9b8",
+      "knowledge/K-000041.md": "5bd03e5d69ea6175335d3a50dac620bbbdd3a1f852799d8d5dec80d0074f0d5c",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2546,7 +2618,8 @@
       "sources/S-000039.md": "4b24f6a897888b17288607904c0ab4a92d75328dea22cc3a26c87a56ff8f6d62",
       "sources/S-000040.md": "8addcd7dce2b162aac958b2ef4de9ee3e3bdcc4c93699c54542537105e3e26dc",
       "sources/S-000041.md": "1499942a2f7b96c132950418c69616f6599981f5b94868861144dde870fcfe94",
-      "sources/S-000042.md": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2"
+      "sources/S-000042.md": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2",
+      "sources/S-000043.md": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2596,7 +2669,8 @@
     "K-000037": [],
     "K-000038": [],
     "K-000039": [],
-    "K-000040": []
+    "K-000040": [],
+    "K-000041": []
   },
   "sources": [
     {
@@ -2850,6 +2924,12 @@
       "id": "S-000042",
       "path": "sources/S-000042.md",
       "version": "zenodo:23376383:1.0.0"
+    },
+    {
+      "content_hash": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8",
+      "id": "S-000043",
+      "path": "sources/S-000043.md",
+      "version": "arXiv:2610.30891v1"
     }
   ]
 }

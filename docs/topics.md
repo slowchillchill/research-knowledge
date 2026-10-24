@@ -59,3 +59,19 @@ python3 -B scripts/kb.py search '预测市场上线信息' --include-inactive
 python3 -B scripts/kb.py read K-000040
 python3 -B scripts/kb.py sources K-000040
 ```
+
+<a id="competitive-market-making"></a>
+
+## 市场微观结构：报价竞争与学习均衡
+
+理论条件、时间平均口径和现实执行机制须分开阅读；均衡存在与无内部遗憾结果不提供PPO或盈利保证。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000041 · 竞争做市均衡与时间平均报价包络](../knowledge/K-000041.md) | [S-000043 · arXiv:2610.30891v1](../sources/S-000043.md) | draft / reported / not_attempted |
+
+```bash
+python3 -B scripts/kb.py search '竞争做市均衡' --include-inactive
+python3 -B scripts/kb.py read K-000041
+python3 -B scripts/kb.py sources K-000041
+```
