@@ -91,3 +91,23 @@ python3 -B scripts/kb.py search 'METTA' --include-inactive
 python3 -B scripts/kb.py read K-000042
 python3 -B scripts/kb.py sources K-000042
 ```
+
+<a id="institutional-flow-execution"></a>
+
+## 市场微观结构：机构订单流与可执行性
+
+关注身份可观察订单流、短样本年化、信号到达后的成交价和流动性供给关联；均价稳健性与实际执行验证分别阅读。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000043 · 机构订单流预测力与可执行性边界](../knowledge/K-000043.md) | [S-000045 · arXiv:2610.31141v1](../sources/S-000045.md) | draft / reported / not_attempted |
+
+<a id="selective-auditing"></a>
+
+## 人工智能可靠性：选择性审计与预算分配
+
+区分期望之比、比例的期望和逐路径控制；主定理中的完美审计器、未截顶算法与实验设置不能互相替代。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000044 · 选择性审计与期望误差比](../knowledge/K-000044.md) | [S-000046 · arXiv:2610.31662v1](../sources/S-000046.md) | draft / reported / not_attempted |
