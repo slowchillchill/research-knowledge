@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "405c00ef637610eae7babc6426a1ad8d684646cf56e094e9ffe3995222c9e16d",
+  "input_version": "b2d50749be54f018ed8a5e4820fd49ae374a534adc75b81b08ff34f9f09ffecf",
   "knowledge": [
     {
       "conditions": [
@@ -2609,6 +2609,148 @@
       },
       "title": "METTA：双层记忆、因果重建与任务相关的在线适应增益",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "交易所五只匿名股票，2010-11-22至2010-11-26共五天；前两天按预测相关分组，后三天检验，考察26个时间尺度。",
+        "数据含逐事件交易员身份、主动/被动成交方和客户/自营交易容量字段；假想策略假定区间末能观察分组执行流。"
+      ],
+      "content_hash": "715d1f2dc9c63e492631ffb3758d8c246679c8ddc578409628f98afc1244cb6a",
+      "evidence": {
+        "note": "2026-10-25重新核对公开arXiv v1的正文方法、成本、配对与回归段；141页版本的附录未逐项核查，未运行数据、代码或拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000043",
+      "lifecycle": "draft",
+      "limitations": [
+        "16–63是短期留出样本的假想流跟随收益年化，不是实际可交易或长期Sharpe；当期VWAP并不保证信号可得后的入场。",
+        "5秒例子在单边约0.25/0.35基点成本附近已敏感；延迟均价稳健性不完整解决报价可得、队列、部分成交、接收延迟和冲击。",
+        "被动成交与损益为条件关联，非因果效应；FIFO配对会计不等于实际队列执行仿真，初始库存也未知。",
+        "未核得官方代码或原始交易员级数据；公开匿名订单簿不能替代身份及客户/自营标签，未逐项核查全部附录。"
+      ],
+      "path": "knowledge/K-000043.md",
+      "sources": [
+        {
+          "id": "S-000045",
+          "locator": "data",
+          "role": "五股票五天、身份和客户/自营字段、两期分组",
+          "version": "arXiv:2610.31141v1"
+        },
+        {
+          "id": "S-000045",
+          "locator": "flow",
+          "role": "预测指标、后三天留出与假想收益口径",
+          "version": "arXiv:2610.31141v1"
+        },
+        {
+          "id": "S-000045",
+          "locator": "execution",
+          "role": "VWAP入场、单边成本和一间隔延迟的原文说明",
+          "version": "arXiv:2610.31141v1"
+        },
+        {
+          "id": "S-000045",
+          "locator": "pnl",
+          "role": "FIFO损益配对、被动角色和回归关联",
+          "version": "arXiv:2610.31141v1"
+        }
+      ],
+      "summary": "五只匿名股票、五天数据中，前两天选出的机构流在后三天保留预测相关；年化Sharpe 16–63来自假想VWAP策略，信号形成后的可执行入场与成本敏感性须另核。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "机构交易",
+          "实验设计"
+        ],
+        "methods": [
+          "订单流相关性",
+          "时间留出",
+          "FIFO损益配对",
+          "成本敏感性分析"
+        ],
+        "problems": [
+          "信号可得时间",
+          "可执行价格",
+          "短样本年化",
+          "关联与因果"
+        ]
+      },
+      "title": "机构订单流预测力：短样本假想收益与可执行性边界",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "审计时能观察真实错误并纠正最终决策，审计器被假设为完美；主误差保证无需数据流分布或分数校准假设。",
+        "加性阈值法低分必审、高分以正概率γ抽检，反馈按观察概率倒数加权；有限样本余项随期望错误总数n_T缩小。",
+        "实验固定各数据集的置信度和错误流，只重采样审计随机性；比较SORRY-Bench、StrongREJECT、定性标注及四类数据标注任务。"
+      ],
+      "content_hash": "c167a92cebd1eeb87088e1504358d44861eb4bdafdee85db5a031614859835c9",
+      "evidence": {
+        "note": "2026-10-25核对arXiv v1方法、定理陈述、实验和相关附录；未逐条验证全部证明，未核得官方代码和处理后数据，未执行拟议离线实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000044",
+      "lifecycle": "draft",
+      "limitations": [
+        "Err(T)是E[漏审错误数]/E[全部错误数]，不是逐路径高概率控制，也不等于E[每次错误比例]；后者的FNR结果另需单调性。",
+        "“无分布假设”不消除完美审计器与可观察真实错误的前提；罕见错误使分母小并削弱有限样本保证。",
+        "附录C对累计约束状态E_t截顶的实验版本改变了算法2；主定理只覆盖未截顶版，错误稀少时截顶版可恶化。",
+        "GPT-5.2定性标注代理审计不是无误人类真值；固定流重复抽检不是独立重训或跨时间部署验证。",
+        "未逐条核验全部证明，官方代码和处理后数据未核得；延迟或噪声审计以及交易收益安全均未获本文保证。"
+      ],
+      "path": "knowledge/K-000044.md",
+      "sources": [
+        {
+          "id": "S-000046",
+          "locator": "criterion",
+          "role": "Err期望之比、完美审计器与FNR单调性",
+          "version": "arXiv:2610.31662v1"
+        },
+        {
+          "id": "S-000046",
+          "locator": "methods",
+          "role": "加性阈值、逆概率反馈、校准与效率优化",
+          "version": "arXiv:2610.31662v1"
+        },
+        {
+          "id": "S-000046",
+          "locator": "experiments",
+          "role": "数据集规模、代理审计与固定流随机化",
+          "version": "arXiv:2610.31662v1"
+        },
+        {
+          "id": "S-000046",
+          "locator": "capping",
+          "role": "截顶实验版、主定理范围及稀有错误反例",
+          "version": "arXiv:2610.31662v1"
+        }
+      ],
+      "summary": "低置信必审、高置信随机抽检，以逆概率反馈调整阈值并可校准或做primal-dual优化；主保证控制期望漏审错误与期望全部错误之比，假设审计器完美，截顶实验版不在主定理内。",
+      "tags": {
+        "domains": [
+          "人工智能可靠性",
+          "在线学习",
+          "统计决策"
+        ],
+        "methods": [
+          "选择性审计",
+          "逆概率加权",
+          "在线置信校准",
+          "primal-dual优化"
+        ],
+        "problems": [
+          "审计预算",
+          "误差指标口径",
+          "稀有错误",
+          "噪声审计器"
+        ]
+      },
+      "title": "选择性审计：期望误差比控制与完美审计器边界",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2655,6 +2797,8 @@
       "knowledge/K-000040.md": "07408f571f7cb477fb00cac48b7daba7ace00b855b552cbf2768cb36bed8e9b8",
       "knowledge/K-000041.md": "5bd03e5d69ea6175335d3a50dac620bbbdd3a1f852799d8d5dec80d0074f0d5c",
       "knowledge/K-000042.md": "c1fbaf583bcf6fe4ab66aa6ba0a798052f385f8ce9400e301a495f730a9ab144",
+      "knowledge/K-000043.md": "715d1f2dc9c63e492631ffb3758d8c246679c8ddc578409628f98afc1244cb6a",
+      "knowledge/K-000044.md": "c167a92cebd1eeb87088e1504358d44861eb4bdafdee85db5a031614859835c9",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2698,7 +2842,9 @@
       "sources/S-000041.md": "1499942a2f7b96c132950418c69616f6599981f5b94868861144dde870fcfe94",
       "sources/S-000042.md": "a90ce65d6b05169e2b1effe13e1e1b258981f178e626295873a51bea11ad9cd2",
       "sources/S-000043.md": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8",
-      "sources/S-000044.md": "17c670c66a96fe9fdf767e4b8717996355941b4e5a4b85f7f7c1498ea066fc47"
+      "sources/S-000044.md": "17c670c66a96fe9fdf767e4b8717996355941b4e5a4b85f7f7c1498ea066fc47",
+      "sources/S-000045.md": "d02d446acf8a65f131f57a253d2dee16231670f5f05c4597d790f38411f16c6e",
+      "sources/S-000046.md": "f98f6d1eb268336ba0516f1d8f957bdc34453fc1569e9459e8a3c827be14bc95"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2750,7 +2896,9 @@
     "K-000039": [],
     "K-000040": [],
     "K-000041": [],
-    "K-000042": []
+    "K-000042": [],
+    "K-000043": [],
+    "K-000044": []
   },
   "sources": [
     {
@@ -3016,6 +3164,18 @@
       "id": "S-000044",
       "path": "sources/S-000044.md",
       "version": "arXiv:2610.31656v1"
+    },
+    {
+      "content_hash": "d02d446acf8a65f131f57a253d2dee16231670f5f05c4597d790f38411f16c6e",
+      "id": "S-000045",
+      "path": "sources/S-000045.md",
+      "version": "arXiv:2610.31141v1"
+    },
+    {
+      "content_hash": "f98f6d1eb268336ba0516f1d8f957bdc34453fc1569e9459e8a3c827be14bc95",
+      "id": "S-000046",
+      "path": "sources/S-000046.md",
+      "version": "arXiv:2610.31662v1"
     }
   ]
 }
