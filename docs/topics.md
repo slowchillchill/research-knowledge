@@ -111,3 +111,35 @@ python3 -B scripts/kb.py sources K-000042
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000044 · 选择性审计与期望误差比](../knowledge/K-000044.md) | [S-000046 · arXiv:2610.31662v1](../sources/S-000046.md) | draft / reported / not_attempted |
+
+<a id="safe-rl-recovery"></a>
+
+## 强化学习安全：恢复接管与混合策略梯度
+
+区分固定状态触发下的理想混合回报梯度、完整PPO实现和动作触发shield；任务训练跌倒与恢复预训练的端到端成本分别阅读。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000045 · SafeExplorer混合回报梯度与安全成本](../knowledge/K-000045.md) | [S-000047 · arXiv:2607.08925v2](../sources/S-000047.md) | draft / reported / not_attempted |
+
+```bash
+python3 -B scripts/kb.py search 'SafeExplorer' --include-inactive
+python3 -B scripts/kb.py read K-000045
+python3 -B scripts/kb.py sources K-000045
+```
+
+<a id="prediction-market-forecast-evaluation"></a>
+
+## 预测市场：预测评估、人口代表性与交易激励
+
+区分共同窗口预测评分、费用前预测者模拟收益和扣费账户ROI；人口与活跃度分组不构成因果识别，公开事件级验证不能替代专有账户数据复现。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000046 · 政治预测准确性与可执行收益边界](../knowledge/K-000046.md) | [S-000048 · arXiv:2610.28277v1](../sources/S-000048.md) | draft / reported / not_attempted |
+
+```bash
+python3 -B scripts/kb.py search 'arXiv:2610.28277' --include-inactive
+python3 -B scripts/kb.py read K-000046
+python3 -B scripts/kb.py sources K-000046
+```

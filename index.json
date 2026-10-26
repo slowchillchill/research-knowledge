@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "b2d50749be54f018ed8a5e4820fd49ae374a534adc75b81b08ff34f9f09ffecf",
+  "input_version": "0315eae76e4c643f1662f037507990ba2e1e431ae2a48deefb04f203467766a3",
   "knowledge": [
     {
       "conditions": [
@@ -2751,6 +2751,184 @@
       },
       "title": "选择性审计：期望误差比控制与完美审计器边界",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "恢复控制器固定且不依赖主策略参数；接管分区仅由状态决定，主策略在其实际控制步满足score-function及微分积分交换等正则条件。",
+        "无偏结论针对混合控制器轨迹分布下的理想回报梯度，恢复段继续计入全轨迹回报与GAE；不是主策略独立部署回报的无偏结论。",
+        "解析恢复value的精确形式要求动力学与恢复控制器确定性；随机动力学中只能作带误差的近似。",
+        "三种改造locomotion仿真环境各10训练seed；HalfCheetah与Ant各800万步，Go1为1600万步；部分消融仅5seed或使用独立批次和不同半径。"
+      ],
+      "content_hash": "c29dc37346c631e29eab441d71c54af584f2d7a48bcd50793500daf55b93a279",
+      "evidence": {
+        "note": "依据arXiv v2的52页版本作针对性核证，复核元数据、定理范围、主表及必要附录；未逐证全审，图像截图读取失败。未核得可验证的作者代码、checkpoint或原始数据，未运行科研实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000045",
+      "lifecycle": "draft",
+      "limitations": [
+        "action-triggered shield不在定理范围，检查拟议订单再决定是否接管不能直接套用。",
+        "PPO clipping、GAE近似、自归一化随机分母、多轮数据复用及额外模仿损失不因理想估计器定理而整套无偏。",
+        "255/43/21倍只计任务训练；加入恢复预训练后倍率显著降低，HalfCheetah预训练168次来自旧trainer早停且原判据未保存。",
+        "主表混合回报与恢复关闭后的主策略独立评估协议不同，不可跨表相减；共享恢复器与触发器的on-policy基线移植不等于原算法完整原生实现。",
+        "单mask未稳定胜出；Walker2d校准组合仍损失约25%回报，弱恢复器约为PPO的3倍跌倒；未核得完整复现资产。"
+      ],
+      "path": "knowledge/K-000045.md",
+      "sources": [
+        {
+          "id": "S-000047",
+          "locator": "metadata",
+          "role": "v1/v2时间、标题和正式发表月份的边界",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "gradient",
+          "role": "混合回报理想梯度、状态分区及动作触发排除",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "implementation",
+          "role": "全轨迹优势、随机分母、解析value与模仿损失",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "results",
+          "role": "十种子、步数、混合回报与独立评估协议",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "baselines",
+          "role": "共享恢复器的基线移植与CPO比较",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "cost",
+          "role": "恢复预训练、checkpoint和run结束的成本口径",
+          "version": "arXiv:2607.08925v2"
+        },
+        {
+          "id": "S-000047",
+          "locator": "ablation",
+          "role": "交叉消融、Walker2d与弱恢复器反例",
+          "version": "arXiv:2607.08925v2"
+        }
+      ],
+      "summary": "固定、与主策略参数无关且仅按状态接管的恢复器下，只在主策略实际控制步保留score-function，恢复段仍参与全轨迹回报。无偏对象是混合控制器回报的理想梯度；机器人仿真的跌倒优势须另计恢复预训练成本，不能外推为整套PPO或订单触发shield无偏。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "机器人安全",
+          "实验设计"
+        ],
+        "methods": [
+          "混合策略梯度",
+          "PPO",
+          "GAE",
+          "状态触发恢复接管",
+          "成功恢复模仿"
+        ],
+        "problems": [
+          "恢复干预下的信用分配",
+          "梯度偏差",
+          "端到端安全成本",
+          "动作触发外推边界"
+        ]
+      },
+      "title": "SafeExplorer：恢复接管下的混合回报梯度与端到端安全成本",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "§3的准确性比较限2024选举共同可观察窗口和对应合约集合；Brier越低越好，日度观测与跨场所价格相关。",
+        "Table 3预测者模拟收益为费用前；§5.6真实账户ROI的PnL已扣费用，两者样本、分母与用途不同。",
+        "24个众院席位合约仅上市6天且成交薄，不能把窗口和市场差异单独归因于流动性。",
+        "人口、地理与活跃度分组是观察性结果；活跃度可能受先前盈亏影响，地区属性不能用于推断个人。"
+      ],
+      "content_hash": "62f0da0b6f7525839ed1d153e3553f894c012a07b7403840a6e50b3dca2553a4",
+      "evidence": {
+        "note": "依据arXiv:2610.28277v1正文§3、Tables 1–3与§5.6–5.8作自主摘要，复核官方元数据和公告；工作论文正式录用未核。作者复现包未定位，账户微观数据专有，未运行统计复现、回测或拟议实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000046",
+      "lifecycle": "draft",
+      "limitations": [
+        "单次选举逐日观测不能视作独立事件，多个场所价格也不是独立复制；不能由此建立跨选举稳健alpha。",
+        "Table 3未证明滑点、队列和延迟后的可执行收益；预测误差或模拟收益优势不直接等于报价优势。",
+        "分组ROI差异不是人口属性、交易激励或交易频次的因果效应，盈亏后的继续交易/退出会产生选择。",
+        "作者复现包未定位，账户微观数据专有，公开存档仅能支持事件级验证；正式录用未核实。"
+      ],
+      "path": "knowledge/K-000046.md",
+      "sources": [
+        {
+          "id": "S-000048",
+          "locator": "metadata",
+          "role": "作者、提交日、公告日及工作论文状态",
+          "version": "arXiv:2610.28277v1"
+        },
+        {
+          "id": "S-000048",
+          "locator": "data",
+          "role": "合约、公开预测与专有账户数据范围",
+          "version": "arXiv:2610.28277v1"
+        },
+        {
+          "id": "S-000048",
+          "locator": "accuracy",
+          "role": "共同窗口Brier、总统与众院相反排名",
+          "version": "arXiv:2610.28277v1"
+        },
+        {
+          "id": "S-000048",
+          "locator": "simulation",
+          "role": "Table 3费用前预测者模拟收益",
+          "version": "arXiv:2610.28277v1"
+        },
+        {
+          "id": "S-000048",
+          "locator": "outcomes",
+          "role": "真实账户扣费ROI与分组解释",
+          "version": "arXiv:2610.28277v1"
+        },
+        {
+          "id": "S-000048",
+          "locator": "interpretation",
+          "role": "跨市场比较、活跃度选择与非因果边界",
+          "version": "arXiv:2610.28277v1"
+        }
+      ],
+      "summary": "2024共同窗口总统合约中Kalshi的Brier优于FiveThirtyEight，24个众院席位却相反。论文以市场和账户数据讨论人口代表性与交易激励；费用前预测者模拟收益须与扣费真实账户ROI区分，单次选举、活跃度选择和专有微观数据限制因果与alpha推断。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "政治预测",
+          "市场微观结构",
+          "实验设计"
+        ],
+        "methods": [
+          "Brier score",
+          "预测者模拟收益",
+          "账户分组ROI",
+          "事件留出评估"
+        ],
+        "problems": [
+          "人口代表性与价格效率",
+          "激励解释",
+          "相关样本",
+          "费用与可执行性",
+          "选择偏差"
+        ]
+      },
+      "title": "政治预测市场：预测准确性、激励解释与可执行收益的证据边界",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2799,6 +2977,8 @@
       "knowledge/K-000042.md": "c1fbaf583bcf6fe4ab66aa6ba0a798052f385f8ce9400e301a495f730a9ab144",
       "knowledge/K-000043.md": "715d1f2dc9c63e492631ffb3758d8c246679c8ddc578409628f98afc1244cb6a",
       "knowledge/K-000044.md": "c167a92cebd1eeb87088e1504358d44861eb4bdafdee85db5a031614859835c9",
+      "knowledge/K-000045.md": "c29dc37346c631e29eab441d71c54af584f2d7a48bcd50793500daf55b93a279",
+      "knowledge/K-000046.md": "62f0da0b6f7525839ed1d153e3553f894c012a07b7403840a6e50b3dca2553a4",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -2844,7 +3024,9 @@
       "sources/S-000043.md": "4b85cdb62b9553982f4381cc588f54b6e141cf6fd7a71a597082accc320135e8",
       "sources/S-000044.md": "17c670c66a96fe9fdf767e4b8717996355941b4e5a4b85f7f7c1498ea066fc47",
       "sources/S-000045.md": "d02d446acf8a65f131f57a253d2dee16231670f5f05c4597d790f38411f16c6e",
-      "sources/S-000046.md": "f98f6d1eb268336ba0516f1d8f957bdc34453fc1569e9459e8a3c827be14bc95"
+      "sources/S-000046.md": "f98f6d1eb268336ba0516f1d8f957bdc34453fc1569e9459e8a3c827be14bc95",
+      "sources/S-000047.md": "dfdb85b3bfb4765303961e5164c6bc024210b63321c9ca2f3638758e07406110",
+      "sources/S-000048.md": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -2898,7 +3080,9 @@
     "K-000041": [],
     "K-000042": [],
     "K-000043": [],
-    "K-000044": []
+    "K-000044": [],
+    "K-000045": [],
+    "K-000046": []
   },
   "sources": [
     {
@@ -3176,6 +3360,18 @@
       "id": "S-000046",
       "path": "sources/S-000046.md",
       "version": "arXiv:2610.31662v1"
+    },
+    {
+      "content_hash": "dfdb85b3bfb4765303961e5164c6bc024210b63321c9ca2f3638758e07406110",
+      "id": "S-000047",
+      "path": "sources/S-000047.md",
+      "version": "arXiv:2607.08925v2"
+    },
+    {
+      "content_hash": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b",
+      "id": "S-000048",
+      "path": "sources/S-000048.md",
+      "version": "arXiv:2610.28277v1"
     }
   ]
 }

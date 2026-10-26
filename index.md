@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `b2d50749be54f018ed8a5e4820fd49ae374a534adc75b81b08ff34f9f09ffecf`
+Build input SHA-256: `0315eae76e4c643f1662f037507990ba2e1e431ae2a48deefb04f203467766a3`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -50,3 +50,5 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000042](knowledge/K-000042.md) — METTA：双层记忆、因果重建与任务相关的在线适应增益 (draft; example=False; review_after=2027-01-24)
 - [K-000043](knowledge/K-000043.md) — 机构订单流预测力：短样本假想收益与可执行性边界 (draft; example=False; review_after=2027-01-25)
 - [K-000044](knowledge/K-000044.md) — 选择性审计：期望误差比控制与完美审计器边界 (draft; example=False; review_after=2027-01-25)
+- [K-000045](knowledge/K-000045.md) — SafeExplorer：恢复接管下的混合回报梯度与端到端安全成本 (draft; example=False; review_after=2027-01-26)
+- [K-000046](knowledge/K-000046.md) — 政治预测市场：预测准确性、激励解释与可执行收益的证据边界 (draft; example=False; review_after=2027-01-26)
