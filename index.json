@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "0315eae76e4c643f1662f037507990ba2e1e431ae2a48deefb04f203467766a3",
+  "input_version": "576c80f001359e1eff552c8fea3a8228cc6bc76f1a737b61a57ce615b37c78cf",
   "knowledge": [
     {
       "conditions": [
@@ -2929,6 +2929,138 @@
       },
       "title": "政治预测市场：预测准确性、激励解释与可执行收益的证据边界",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "单一7×7拾取任务、A2C、小网络，32步时限且奖励随时间衰减。",
+        "比较训练种子、地图与评估随机性，并在封存新地图面板上比较容量与时钟对照。"
+      ],
+      "content_hash": "8c45fe8980964507c92f6780324f8074faa7f4345f5bf1a7afed0fa45263a387",
+      "evidence": {
+        "note": "2026-10-28核读arXiv v1的设计、主要表格与局限；数值为作者报告，未下载运行代码、检查点或独立复现实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000047",
+      "lifecycle": "draft",
+      "limitations": [
+        "并非所有时钟和机制实验均为确认性实验；计划未在公共平台注册，完全可观测对照未运行。",
+        "未检验时间无关奖励、长时程、其他任务或算法；剩余优势不能视为零。"
+      ],
+      "path": "knowledge/K-000047.md",
+      "sources": [
+        {
+          "id": "S-000049",
+          "locator": "design",
+          "role": "任务、种子与评估设计",
+          "version": "arXiv:2610.33816v1"
+        },
+        {
+          "id": "S-000049",
+          "locator": "results",
+          "role": "表1、3、4、5中的作者报告",
+          "version": "arXiv:2610.33816v1"
+        },
+        {
+          "id": "S-000049",
+          "locator": "limitations",
+          "role": "确认性与探索性边界及外推限制",
+          "version": "arXiv:2610.33816v1"
+        }
+      ],
+      "summary": "单一XLand-MiniGrid任务中，给无记忆基线提供步数后，LSTM优势大幅缩小；容量、时间信息与评估噪声应分别控制，不能将该结果推广为记忆无用。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "实验设计",
+          "记忆评估"
+        ],
+        "methods": [
+          "A2C",
+          "LSTM",
+          "时钟对照",
+          "配对种子",
+          "方差分解"
+        ],
+        "problems": [
+          "计时混杂",
+          "容量混杂",
+          "评估噪声",
+          "泛化边界"
+        ]
+      },
+      "title": "Memory or a Clock?：记忆优势中的计时混杂与评估噪声",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "深圳证券交易所逐订单数据；DID使用额外专有共址接收时间戳，最终保留24个交易日的开盘延迟事件。",
+        "因果解释需平行趋势、无同期通道特定冲击；归因于HFT还需延迟不经其他通道影响市场质量的排除限制。"
+      ],
+      "content_hash": "ebc3f9fe3b86a5bd74315c1cea146836937554f85d87051470a85cf043fe4b26",
+      "evidence": {
+        "note": "2026-10-28核读arXiv v1方法、DID设计、表9–10与局限；作者研究页确认SSRN对应条目，但SSRN页面403，未比对两版本全文。未独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000048",
+      "lifecycle": "draft",
+      "limitations": [
+        "行为代理不能直接识别交易者身份；不同结果的事前趋势诊断并不一致。",
+        "平均报价价差及有效价差变化不显著，模型定价误差仅覆盖可用子样本；不能概括为所有流动性指标恶化。",
+        "中间价预测未计交易成本和执行约束；专有共址数据与其他市场制度限制复现和外推。"
+      ],
+      "path": "knowledge/K-000048.md",
+      "sources": [
+        {
+          "id": "S-000050",
+          "locator": "proxy",
+          "role": "订单级代理及行为验证",
+          "version": "arXiv:2610.33400v1"
+        },
+        {
+          "id": "S-000050",
+          "locator": "design",
+          "role": "24日DID窗口与识别假设",
+          "version": "arXiv:2610.33400v1"
+        },
+        {
+          "id": "S-000050",
+          "locator": "results",
+          "role": "表9–10及指标差异",
+          "version": "arXiv:2610.33400v1"
+        },
+        {
+          "id": "S-000050",
+          "locator": "predictability",
+          "role": "预测相关的执行限制",
+          "version": "arXiv:2610.33400v1"
+        }
+      ],
+      "summary": "以主动精确匹配订单代理延迟敏感交易；开盘通道延迟差异关联更高代理占比、秒内价格变幅及逆向选择。代理不等于身份标签，因果解释依赖识别假设，预测相关不等于可实现利润。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "中国股票市场",
+          "高频交易"
+        ],
+        "methods": [
+          "订单簿重建",
+          "精确匹配代理",
+          "双重差分",
+          "事件研究"
+        ],
+        "problems": [
+          "延迟敏感交易识别",
+          "市场质量",
+          "因果识别",
+          "预测与可执行性"
+        ]
+      },
+      "title": "中国高频交易：精确匹配代理与开盘延迟的市场质量证据",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -2979,6 +3111,8 @@
       "knowledge/K-000044.md": "c167a92cebd1eeb87088e1504358d44861eb4bdafdee85db5a031614859835c9",
       "knowledge/K-000045.md": "c29dc37346c631e29eab441d71c54af584f2d7a48bcd50793500daf55b93a279",
       "knowledge/K-000046.md": "62f0da0b6f7525839ed1d153e3553f894c012a07b7403840a6e50b3dca2553a4",
+      "knowledge/K-000047.md": "8c45fe8980964507c92f6780324f8074faa7f4345f5bf1a7afed0fa45263a387",
+      "knowledge/K-000048.md": "ebc3f9fe3b86a5bd74315c1cea146836937554f85d87051470a85cf043fe4b26",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3026,7 +3160,9 @@
       "sources/S-000045.md": "d02d446acf8a65f131f57a253d2dee16231670f5f05c4597d790f38411f16c6e",
       "sources/S-000046.md": "f98f6d1eb268336ba0516f1d8f957bdc34453fc1569e9459e8a3c827be14bc95",
       "sources/S-000047.md": "dfdb85b3bfb4765303961e5164c6bc024210b63321c9ca2f3638758e07406110",
-      "sources/S-000048.md": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b"
+      "sources/S-000048.md": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b",
+      "sources/S-000049.md": "b02d5c56a5cd12dbcec72b87e397d0689fe16beb12bc7ab994b79efc930ae9a5",
+      "sources/S-000050.md": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3082,7 +3218,9 @@
     "K-000043": [],
     "K-000044": [],
     "K-000045": [],
-    "K-000046": []
+    "K-000046": [],
+    "K-000047": [],
+    "K-000048": []
   },
   "sources": [
     {
@@ -3372,6 +3510,18 @@
       "id": "S-000048",
       "path": "sources/S-000048.md",
       "version": "arXiv:2610.28277v1"
+    },
+    {
+      "content_hash": "b02d5c56a5cd12dbcec72b87e397d0689fe16beb12bc7ab994b79efc930ae9a5",
+      "id": "S-000049",
+      "path": "sources/S-000049.md",
+      "version": "arXiv:2610.33816v1"
+    },
+    {
+      "content_hash": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98",
+      "id": "S-000050",
+      "path": "sources/S-000050.md",
+      "version": "arXiv:2610.33400v1"
     }
   ]
 }

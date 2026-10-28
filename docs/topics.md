@@ -143,3 +143,24 @@ python3 -B scripts/kb.py search 'arXiv:2610.28277' --include-inactive
 python3 -B scripts/kb.py read K-000046
 python3 -B scripts/kb.py sources K-000046
 ```
+
+
+<a id="memory-clock-evaluation"></a>
+
+## 强化学习评估：记忆、计时与噪声
+
+容量、时间信息和评估噪声分别控制；单任务中计时解释的重要性不能推广为记忆无用。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000047 · Memory or a Clock?](../knowledge/K-000047.md) | [S-000049 · arXiv:2610.33816v1](../sources/S-000049.md) | draft / reported / not_attempted |
+
+<a id="china-hft-latency"></a>
+
+## 市场微观结构：中国高频交易与信息延迟
+
+区分行为代理、身份标签、识别假设和可执行利润；市场质量各指标分别阅读。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000048 · 精确匹配代理与开盘延迟](../knowledge/K-000048.md) | [S-000050 · arXiv:2610.33400v1 / SSRN:7599578](../sources/S-000050.md) | draft / reported / not_attempted |

@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `0315eae76e4c643f1662f037507990ba2e1e431ae2a48deefb04f203467766a3`
+Build input SHA-256: `576c80f001359e1eff552c8fea3a8228cc6bc76f1a737b61a57ce615b37c78cf`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -52,3 +52,5 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000044](knowledge/K-000044.md) — 选择性审计：期望误差比控制与完美审计器边界 (draft; example=False; review_after=2027-01-25)
 - [K-000045](knowledge/K-000045.md) — SafeExplorer：恢复接管下的混合回报梯度与端到端安全成本 (draft; example=False; review_after=2027-01-26)
 - [K-000046](knowledge/K-000046.md) — 政治预测市场：预测准确性、激励解释与可执行收益的证据边界 (draft; example=False; review_after=2027-01-26)
+- [K-000047](knowledge/K-000047.md) — Memory or a Clock?：记忆优势中的计时混杂与评估噪声 (draft; example=False; review_after=2027-01-28)
+- [K-000048](knowledge/K-000048.md) — 中国高频交易：精确匹配代理与开盘延迟的市场质量证据 (draft; example=False; review_after=2027-01-28)
