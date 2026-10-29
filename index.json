@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "576c80f001359e1eff552c8fea3a8228cc6bc76f1a737b61a57ce615b37c78cf",
+  "input_version": "e0b65986c9e7586e088c80749e2ac3be5a6bb9c39a2ad1cfd93d4f778ac3bf8d",
   "knowledge": [
     {
       "conditions": [
@@ -3061,6 +3061,63 @@
       },
       "title": "中国高频交易：精确匹配代理与开盘延迟的市场质量证据",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "理论针对各向同性高斯策略，依赖矩条件、非退化条件及新旧策略关系。"
+      ],
+      "content_hash": "458de355f7af743bd8f686b67400e9b333693a92e47bd74f74bc3463984e0ea0",
+      "evidence": {
+        "note": "核读公开arXiv v1的理论条件与实验；结果为作者报告，未独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000049",
+      "lifecycle": "draft",
+      "limitations": [
+        "不能直接套用到离散动作策略；未证明所有可塑性问题都来自探索。",
+        "没有金融交易或生产部署有效性证据；论文专用代码及原始数据未核得。"
+      ],
+      "path": "knowledge/K-000049.md",
+      "sources": [
+        {
+          "id": "S-000051",
+          "locator": "theory",
+          "role": "理论适用条件",
+          "version": "arXiv:2610.36309v1"
+        },
+        {
+          "id": "S-000051",
+          "locator": "benchmark",
+          "role": "探索方差匹配对照",
+          "version": "arXiv:2610.36309v1"
+        },
+        {
+          "id": "S-000051",
+          "locator": "robot",
+          "role": "真机重复次数边界",
+          "version": "arXiv:2610.36309v1"
+        }
+      ],
+      "summary": "诊断PPO适应停滞时，应把探索方差作为单独对照；防止训练崩溃并不等于恢复适应能力。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "PPO",
+          "探索方差对照"
+        ],
+        "problems": [
+          "可塑性损失",
+          "训练稳定性",
+          "非平稳适应"
+        ]
+      },
+      "title": "PPO探索方差与可塑性损失的混杂",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3113,6 +3170,7 @@
       "knowledge/K-000046.md": "62f0da0b6f7525839ed1d153e3553f894c012a07b7403840a6e50b3dca2553a4",
       "knowledge/K-000047.md": "8c45fe8980964507c92f6780324f8074faa7f4345f5bf1a7afed0fa45263a387",
       "knowledge/K-000048.md": "ebc3f9fe3b86a5bd74315c1cea146836937554f85d87051470a85cf043fe4b26",
+      "knowledge/K-000049.md": "458de355f7af743bd8f686b67400e9b333693a92e47bd74f74bc3463984e0ea0",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3162,7 +3220,8 @@
       "sources/S-000047.md": "dfdb85b3bfb4765303961e5164c6bc024210b63321c9ca2f3638758e07406110",
       "sources/S-000048.md": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b",
       "sources/S-000049.md": "b02d5c56a5cd12dbcec72b87e397d0689fe16beb12bc7ab994b79efc930ae9a5",
-      "sources/S-000050.md": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98"
+      "sources/S-000050.md": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98",
+      "sources/S-000051.md": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3220,7 +3279,8 @@
     "K-000045": [],
     "K-000046": [],
     "K-000047": [],
-    "K-000048": []
+    "K-000048": [],
+    "K-000049": []
   },
   "sources": [
     {
@@ -3522,6 +3582,12 @@
       "id": "S-000050",
       "path": "sources/S-000050.md",
       "version": "arXiv:2610.33400v1"
+    },
+    {
+      "content_hash": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3",
+      "id": "S-000051",
+      "path": "sources/S-000051.md",
+      "version": "arXiv:2610.36309v1"
     }
   ]
 }

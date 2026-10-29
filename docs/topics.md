@@ -164,3 +164,14 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000048 · 精确匹配代理与开盘延迟](../knowledge/K-000048.md) | [S-000050 · arXiv:2610.33400v1 / SSRN:7599578](../sources/S-000050.md) | draft / reported / not_attempted |
+
+
+<a id="ppo-exploration-plasticity"></a>
+
+## 强化学习：探索与可塑性诊断
+
+探索强度、适应表现与重复试验层级分别判断；草稿收录不代表独立复现。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000049 · PPO探索方差与可塑性损失的混杂](../knowledge/K-000049.md) | [S-000051 · arXiv:2610.36309v1](../sources/S-000051.md) | draft / reported / not_attempted |

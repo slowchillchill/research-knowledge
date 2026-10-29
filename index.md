@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `576c80f001359e1eff552c8fea3a8228cc6bc76f1a737b61a57ce615b37c78cf`
+Build input SHA-256: `e0b65986c9e7586e088c80749e2ac3be5a6bb9c39a2ad1cfd93d4f778ac3bf8d`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -54,3 +54,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000046](knowledge/K-000046.md) — 政治预测市场：预测准确性、激励解释与可执行收益的证据边界 (draft; example=False; review_after=2027-01-26)
 - [K-000047](knowledge/K-000047.md) — Memory or a Clock?：记忆优势中的计时混杂与评估噪声 (draft; example=False; review_after=2027-01-28)
 - [K-000048](knowledge/K-000048.md) — 中国高频交易：精确匹配代理与开盘延迟的市场质量证据 (draft; example=False; review_after=2027-01-28)
+- [K-000049](knowledge/K-000049.md) — PPO探索方差与可塑性损失的混杂 (draft; example=False; review_after=2027-01-29)
