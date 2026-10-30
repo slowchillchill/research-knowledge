@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "e0b65986c9e7586e088c80749e2ac3be5a6bb9c39a2ad1cfd93d4f778ac3bf8d",
+  "input_version": "cf27f6dfb1a8c62b58252d538e13407d6c3815cba8fcae7b1c3b4ead79116637",
   "knowledge": [
     {
       "conditions": [
@@ -3118,6 +3118,118 @@
       },
       "title": "PPO探索方差与可塑性损失的混杂",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "强正则性、局部覆盖和可估动力结构等模型条件。"
+      ],
+      "content_hash": "197b37cf3d63b0312ca3debbda873df2581a4664f33b670c0d396960247351f6",
+      "evidence": {
+        "note": "公开 v1 论文的作者报告与整理者判断分别标注；未独立复现实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000050",
+      "lifecycle": "draft",
+      "limitations": [
+        "合成采样预算随时间步细化增长；方法与基线的信息不对称。",
+        "未核市场数据、交易成本、成交与结算实验；未独立复现。"
+      ],
+      "path": "knowledge/K-000050.md",
+      "sources": [
+        {
+          "id": "S-000052",
+          "locator": "theory",
+          "role": "§3 Localized learning: algorithm and main result，§3.2 Computational budgets、§3.3 Main guarantee",
+          "version": "arXiv:2610.36758v1"
+        },
+        {
+          "id": "S-000052",
+          "locator": "evaluation",
+          "role": "§5.2 Halfin–Whitt queueing example；Appendix E implementation and evaluation",
+          "version": "arXiv:2610.36758v1"
+        }
+      ],
+      "summary": "固定物理时长下的近对数遗憾依赖模型、覆盖与合成采样预算；不能直接迁移为PPO或交易收益保证。",
+      "tags": {
+        "domains": [
+          "强化学习",
+          "模型评估"
+        ],
+        "methods": [
+          "CD-FQ",
+          "连续时间控制"
+        ],
+        "problems": [
+          "决策频率",
+          "计算预算"
+        ]
+      },
+      "title": "决策频率一致的遗憾界不等于免费提频",
+      "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "合约须描述同一事件、仅截止日不同；不能把不同事件窗口当作期限梯。"
+      ],
+      "content_hash": "ecb22d2b11e8646903a39c2c349a2fd4b387127c6d65856a95dfb844e1681b66",
+      "evidence": {
+        "note": "公开 v1 论文的作者报告与整理者判断分别标注；未独立复现实验。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000051",
+      "lifecycle": "draft",
+      "limitations": [
+        "故事线外推不等于严格向前时间验证；回顾性事件时刻存在未来信息。",
+        "代码和数据可用性未核实；没有可执行成本后净收益验证。"
+      ],
+      "path": "knowledge/K-000051.md",
+      "sources": [
+        {
+          "id": "S-000053",
+          "locator": "data",
+          "role": "§3 Data，§3.3 Deadline Ladders",
+          "version": "arXiv:2610.36639v1"
+        },
+        {
+          "id": "S-000053",
+          "locator": "method",
+          "role": "§4 Measurement Framework，§4.2–4.5",
+          "version": "arXiv:2610.36639v1"
+        },
+        {
+          "id": "S-000053",
+          "locator": "results",
+          "role": "§6 Whether Versus When，§7 Prices as Warnings",
+          "version": "arXiv:2610.36639v1"
+        },
+        {
+          "id": "S-000053",
+          "locator": "limitations",
+          "role": "§8.2 Limitations；Appendix A、D",
+          "version": "arXiv:2610.36639v1"
+        }
+      ],
+      "summary": "同事件期限梯可以提供时点概率，但预警指标必须审计陈旧价格、前视和时间外推，不能直接解释为可交易利润。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "市场微观结构"
+        ],
+        "methods": [
+          "保序回归",
+          "概率校准"
+        ],
+        "problems": [
+          "时点预测",
+          "前视偏差"
+        ]
+      },
+      "title": "预测市场的发生概率与发生时点应分开评估",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3171,6 +3283,8 @@
       "knowledge/K-000047.md": "8c45fe8980964507c92f6780324f8074faa7f4345f5bf1a7afed0fa45263a387",
       "knowledge/K-000048.md": "ebc3f9fe3b86a5bd74315c1cea146836937554f85d87051470a85cf043fe4b26",
       "knowledge/K-000049.md": "458de355f7af743bd8f686b67400e9b333693a92e47bd74f74bc3463984e0ea0",
+      "knowledge/K-000050.md": "197b37cf3d63b0312ca3debbda873df2581a4664f33b670c0d396960247351f6",
+      "knowledge/K-000051.md": "ecb22d2b11e8646903a39c2c349a2fd4b387127c6d65856a95dfb844e1681b66",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3221,7 +3335,9 @@
       "sources/S-000048.md": "b89b58c27c6867f91613c62bc5c3780832e96312913fdc6f04e4e4c900b1245b",
       "sources/S-000049.md": "b02d5c56a5cd12dbcec72b87e397d0689fe16beb12bc7ab994b79efc930ae9a5",
       "sources/S-000050.md": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98",
-      "sources/S-000051.md": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3"
+      "sources/S-000051.md": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3",
+      "sources/S-000052.md": "d2aac8d992bc69ba902ae94a51c8bbd813a02ae829a705304da1c0ac15705465",
+      "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3280,7 +3396,9 @@
     "K-000046": [],
     "K-000047": [],
     "K-000048": [],
-    "K-000049": []
+    "K-000049": [],
+    "K-000050": [],
+    "K-000051": []
   },
   "sources": [
     {
@@ -3588,6 +3706,18 @@
       "id": "S-000051",
       "path": "sources/S-000051.md",
       "version": "arXiv:2610.36309v1"
+    },
+    {
+      "content_hash": "d2aac8d992bc69ba902ae94a51c8bbd813a02ae829a705304da1c0ac15705465",
+      "id": "S-000052",
+      "path": "sources/S-000052.md",
+      "version": "arXiv:2610.36758v1"
+    },
+    {
+      "content_hash": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f",
+      "id": "S-000053",
+      "path": "sources/S-000053.md",
+      "version": "arXiv:2610.36639v1"
     }
   ]
 }

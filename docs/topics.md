@@ -175,3 +175,13 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000049 · PPO探索方差与可塑性损失的混杂](../knowledge/K-000049.md) | [S-000051 · arXiv:2610.36309v1](../sources/S-000051.md) | draft / reported / not_attempted |
+
+
+## 决策频率与预测市场时点校准
+
+频率一致界不等于免费提频；发生概率不等于即将发生。以下均为作者报告，尚未复现。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000050 · 频率一致遗憾界](../knowledge/K-000050.md) | [S-000052 · arXiv:2610.36758v1](../sources/S-000052.md) | draft / reported / not_attempted |
+| [K-000051 · 发生概率与时点](../knowledge/K-000051.md) | [S-000053 · arXiv:2610.36639v1](../sources/S-000053.md) | draft / reported / not_attempted |
