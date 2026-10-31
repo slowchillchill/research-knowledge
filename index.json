@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "049b35cfe944a6b847aea5b612286579c5f87c3a83b3480a329081c6f5ceac84",
+  "input_version": "25d3cbec4979509311b07f756ffb2cb043648270bdb0efee0b49545839b8f494",
   "knowledge": [
     {
       "conditions": [
@@ -3293,6 +3293,69 @@
       },
       "title": "队列敏感冲击模型的解释力与可交易性须分开",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "比较必须匹配信号、规模、时间窗、成本与估值时点；预测指标不能代替可执行收益。"
+      ],
+      "content_hash": "40f6e03b7956e92b2c0f9b5c831100a276842b438003c637868fa744e3e8aeef",
+      "evidence": {
+        "note": "已阅读公开 v1 正文；作者报告与整理者推论分列，未独立复现或运行回测。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000053",
+      "lifecycle": "draft",
+      "limitations": [
+        "作者跟随对象不必符合完整90/180天筛选；MAS解释独立于规则下单，未证明完整框架或MAS盈利。",
+        "短窗及小实盘样本，浮盈估值不完全同步；链确认时间不等于成交延迟。",
+        "官方研究代码及冻结数据包未核实；未独立复现。"
+      ],
+      "path": "knowledge/K-000053.md",
+      "sources": [
+        {
+          "id": "S-000055",
+          "locator": "prediction",
+          "role": "§4.2、Table 4；附录 Table 7 的 Logistic regression 配置",
+          "version": "arXiv:2610.34754v1"
+        },
+        {
+          "id": "S-000055",
+          "locator": "clustering",
+          "role": "§4.1、§4.3 与附录 Table 7",
+          "version": "arXiv:2610.34754v1"
+        },
+        {
+          "id": "S-000055",
+          "locator": "execution",
+          "role": "§4.5–4.6，尤其 §4.5.2",
+          "version": "arXiv:2610.34754v1"
+        },
+        {
+          "id": "S-000055",
+          "locator": "boundaries",
+          "role": "附录 §6.3 Trading System",
+          "version": "arXiv:2610.34754v1"
+        }
+      ],
+      "summary": "盈利预测、行为分组与可执行跟单是三种不同证据；不能由不匹配机会集的纸实总额差推断执行偏差。",
+      "tags": {
+        "domains": [
+          "预测市场",
+          "市场微观结构"
+        ],
+        "methods": [
+          "时间前向验证",
+          "执行回放审计"
+        ],
+        "problems": [
+          "盈利持久性",
+          "纸盘实盘可比性"
+        ]
+      },
+      "title": "盈利钱包的预测持久性不等于跟单可复制收益",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3349,6 +3412,7 @@
       "knowledge/K-000050.md": "197b37cf3d63b0312ca3debbda873df2581a4664f33b670c0d396960247351f6",
       "knowledge/K-000051.md": "ecb22d2b11e8646903a39c2c349a2fd4b387127c6d65856a95dfb844e1681b66",
       "knowledge/K-000052.md": "ae0ab9ee70e519fd74ca97b21b3760b4bbde379ee6e7f20e7f7c3d0c4fe59f26",
+      "knowledge/K-000053.md": "40f6e03b7956e92b2c0f9b5c831100a276842b438003c637868fa744e3e8aeef",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3402,7 +3466,8 @@
       "sources/S-000051.md": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3",
       "sources/S-000052.md": "d2aac8d992bc69ba902ae94a51c8bbd813a02ae829a705304da1c0ac15705465",
       "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f",
-      "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac"
+      "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac",
+      "sources/S-000055.md": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3464,7 +3529,8 @@
     "K-000049": [],
     "K-000050": [],
     "K-000051": [],
-    "K-000052": []
+    "K-000052": [],
+    "K-000053": []
   },
   "sources": [
     {
@@ -3790,6 +3856,12 @@
       "id": "S-000054",
       "path": "sources/S-000054.md",
       "version": "arXiv:2610.38442v1"
+    },
+    {
+      "content_hash": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35",
+      "id": "S-000055",
+      "path": "sources/S-000055.md",
+      "version": "arXiv:2610.34754v1"
     }
   ]
 }

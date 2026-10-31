@@ -194,3 +194,12 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000052 · 队列敏感冲击边界](../knowledge/K-000052.md) | [S-000054 · arXiv:2610.38442v1](../sources/S-000054.md) | draft / reported / not_attempted |
+
+
+## 预测市场：盈利持久性与可执行跟单
+
+预测、解释与执行分开评价；作者报告不等于独立复现。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000053 · 盈利钱包与跟单边界](../knowledge/K-000053.md) | [S-000055 · arXiv:2610.34754v1](../sources/S-000055.md) | draft / reported / not_attempted |

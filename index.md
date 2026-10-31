@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `049b35cfe944a6b847aea5b612286579c5f87c3a83b3480a329081c6f5ceac84`
+Build input SHA-256: `25d3cbec4979509311b07f756ffb2cb043648270bdb0efee0b49545839b8f494`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -58,3 +58,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000050](knowledge/K-000050.md) — 决策频率一致的遗憾界不等于免费提频 (draft; example=False; review_after=2027-01-30)
 - [K-000051](knowledge/K-000051.md) — 预测市场的发生概率与发生时点应分开评估 (draft; example=False; review_after=2027-01-30)
 - [K-000052](knowledge/K-000052.md) — 队列敏感冲击模型的解释力与可交易性须分开 (draft; example=False; review_after=2027-01-31)
+- [K-000053](knowledge/K-000053.md) — 盈利钱包的预测持久性不等于跟单可复制收益 (draft; example=False; review_after=2027-01-31)
