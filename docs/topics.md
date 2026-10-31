@@ -185,3 +185,12 @@ python3 -B scripts/kb.py sources K-000046
 | --- | --- | --- |
 | [K-000050 · 频率一致遗憾界](../knowledge/K-000050.md) | [S-000052 · arXiv:2610.36758v1](../sources/S-000052.md) | draft / reported / not_attempted |
 | [K-000051 · 发生概率与时点](../knowledge/K-000051.md) | [S-000053 · arXiv:2610.36639v1](../sources/S-000053.md) | draft / reported / not_attempted |
+
+
+## 市场微观结构：队列深度与被动冲击
+
+同期解释、模型反事实和可执行预测须区分；尚未独立复现。
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000052 · 队列敏感冲击边界](../knowledge/K-000052.md) | [S-000054 · arXiv:2610.38442v1](../sources/S-000054.md) | draft / reported / not_attempted |

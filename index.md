@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `cf27f6dfb1a8c62b58252d538e13407d6c3815cba8fcae7b1c3b4ead79116637`
+Build input SHA-256: `049b35cfe944a6b847aea5b612286579c5f87c3a83b3480a329081c6f5ceac84`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -57,3 +57,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000049](knowledge/K-000049.md) — PPO探索方差与可塑性损失的混杂 (draft; example=False; review_after=2027-01-29)
 - [K-000050](knowledge/K-000050.md) — 决策频率一致的遗憾界不等于免费提频 (draft; example=False; review_after=2027-01-30)
 - [K-000051](knowledge/K-000051.md) — 预测市场的发生概率与发生时点应分开评估 (draft; example=False; review_after=2027-01-30)
+- [K-000052](knowledge/K-000052.md) — 队列敏感冲击模型的解释力与可交易性须分开 (draft; example=False; review_after=2027-01-31)

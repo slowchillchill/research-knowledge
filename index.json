@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "cf27f6dfb1a8c62b58252d538e13407d6c3815cba8fcae7b1c3b4ead79116637",
+  "input_version": "049b35cfe944a6b847aea5b612286579c5f87c3a83b3480a329081c6f5ceac84",
   "knowledge": [
     {
       "conditions": [
@@ -3230,6 +3230,69 @@
       },
       "title": "预测市场的发生概率与发生时点应分开评估",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "需要事件时间排序和成交前队列深度；不能把同期输入当成下单时已知信息。"
+      ],
+      "content_hash": "ae0ab9ee70e519fd74ca97b21b3760b4bbde379ee6e7f20e7f7c3d0c4fe59f26",
+      "evidence": {
+        "note": "已阅读公开 v1 正文；作者报告与整理者推论分列，未独立复现或运行回测。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000052",
+      "lifecycle": "draft",
+      "limitations": [
+        "同窗口价格与流量回归不证明提前预测能力；报告测试切分也参与期限选择。",
+        "反事实固定主动订单流，未验证流动性变化引起的主动交易反馈。",
+        "未核官方可用代码或公开数据下载；未证明成本后收益。"
+      ],
+      "path": "knowledge/K-000052.md",
+      "sources": [
+        {
+          "id": "S-000054",
+          "locator": "data",
+          "role": "§3.1 Data and Order-Book Reconstruction",
+          "version": "arXiv:2610.38442v1"
+        },
+        {
+          "id": "S-000054",
+          "locator": "method",
+          "role": "§4.1–4.2，Eq.18–19",
+          "version": "arXiv:2610.38442v1"
+        },
+        {
+          "id": "S-000054",
+          "locator": "results",
+          "role": "§4.4 Estimation Results and Stability Diagnostics，Table 2",
+          "version": "arXiv:2610.38442v1"
+        },
+        {
+          "id": "S-000054",
+          "locator": "counterfactual",
+          "role": "§5.1 Counterfactual Definition of Passive Impact",
+          "version": "arXiv:2610.38442v1"
+        }
+      ],
+      "summary": "队列状态可改善冲击模型的样本外拟合，但同期解释、被动冲击反事实与可执行交易预测是不同证据层级。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "量化研究"
+        ],
+        "methods": [
+          "传播子模型",
+          "队列状态建模"
+        ],
+        "problems": [
+          "冲击校准",
+          "前视偏差"
+        ]
+      },
+      "title": "队列敏感冲击模型的解释力与可交易性须分开",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3285,6 +3348,7 @@
       "knowledge/K-000049.md": "458de355f7af743bd8f686b67400e9b333693a92e47bd74f74bc3463984e0ea0",
       "knowledge/K-000050.md": "197b37cf3d63b0312ca3debbda873df2581a4664f33b670c0d396960247351f6",
       "knowledge/K-000051.md": "ecb22d2b11e8646903a39c2c349a2fd4b387127c6d65856a95dfb844e1681b66",
+      "knowledge/K-000052.md": "ae0ab9ee70e519fd74ca97b21b3760b4bbde379ee6e7f20e7f7c3d0c4fe59f26",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3337,7 +3401,8 @@
       "sources/S-000050.md": "6c2ac7c39607f037118a5dbc3ede8b877511930f432531b1457fb69df936cd98",
       "sources/S-000051.md": "1a94cc7b47a1113823c6ae07329475f614043f1422ee17dc43f8c72c3bc77ff3",
       "sources/S-000052.md": "d2aac8d992bc69ba902ae94a51c8bbd813a02ae829a705304da1c0ac15705465",
-      "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f"
+      "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f",
+      "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3398,7 +3463,8 @@
     "K-000048": [],
     "K-000049": [],
     "K-000050": [],
-    "K-000051": []
+    "K-000051": [],
+    "K-000052": []
   },
   "sources": [
     {
@@ -3718,6 +3784,12 @@
       "id": "S-000053",
       "path": "sources/S-000053.md",
       "version": "arXiv:2610.36639v1"
+    },
+    {
+      "content_hash": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac",
+      "id": "S-000054",
+      "path": "sources/S-000054.md",
+      "version": "arXiv:2610.38442v1"
     }
   ]
 }
