@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "25d3cbec4979509311b07f756ffb2cb043648270bdb0efee0b49545839b8f494",
+  "input_version": "eee9c6c8c431bf9362f77ee597176e37fc66d628b8f3e754fa5db4731c9af6bc",
   "knowledge": [
     {
       "conditions": [
@@ -3356,6 +3356,59 @@
       },
       "title": "盈利钱包的预测持久性不等于跟单可复制收益",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "模型到达、线性需求和库存惩罚假设须同时保留；前排优先成交不适用于任意队列位置。"
+      ],
+      "content_hash": "9af878a43944207db75e0fdf8e43d46bf2dec6ee6b76faf9365708912947a2cc",
+      "evidence": {
+        "note": "依据公开v1方法与结果整理；作者报告与审计建议分列，未独立复现或检查实际实现代码。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000054",
+      "lifecycle": "draft",
+      "limitations": [
+        "同五日估计和评价，没有独立样本外验证；财富比较未扣库存惩罚。",
+        "费用、滑点、延迟、部分成交和二元结算迁移未闭合。",
+        "式17/41及表4是待澄清文本/公式疑点，未核实际代码，不断言运行实现有错。"
+      ],
+      "path": "knowledge/K-000054.md",
+      "sources": [
+        {
+          "id": "S-000056",
+          "locator": "evaluation",
+          "role": "§5.4–5.5、Table 8、Table 12",
+          "version": "arXiv:2610.37324v1"
+        },
+        {
+          "id": "S-000056",
+          "locator": "implementation",
+          "role": "Equation 17、Equation 41、Table 4",
+          "version": "arXiv:2610.37324v1"
+        }
+      ],
+      "summary": "理论最优报价不自动等于数值实现最优或样本外净收益；先审计可行成交、库存惩罚与真实排队假设。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "做市"
+        ],
+        "methods": [
+          "状态依赖Hawkes",
+          "动态规划",
+          "数值审计"
+        ],
+        "problems": [
+          "库存风险",
+          "可行成交",
+          "样本外评价"
+        ]
+      },
+      "title": "状态依赖Hawkes最优报价须分离理论目标、数值实现与风险评价",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3413,6 +3466,7 @@
       "knowledge/K-000051.md": "ecb22d2b11e8646903a39c2c349a2fd4b387127c6d65856a95dfb844e1681b66",
       "knowledge/K-000052.md": "ae0ab9ee70e519fd74ca97b21b3760b4bbde379ee6e7f20e7f7c3d0c4fe59f26",
       "knowledge/K-000053.md": "40f6e03b7956e92b2c0f9b5c831100a276842b438003c637868fa744e3e8aeef",
+      "knowledge/K-000054.md": "9af878a43944207db75e0fdf8e43d46bf2dec6ee6b76faf9365708912947a2cc",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3467,7 +3521,8 @@
       "sources/S-000052.md": "d2aac8d992bc69ba902ae94a51c8bbd813a02ae829a705304da1c0ac15705465",
       "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f",
       "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac",
-      "sources/S-000055.md": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35"
+      "sources/S-000055.md": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35",
+      "sources/S-000056.md": "1afa34f335e97926783385f6f6f28078b5fd7215b46d99c4ee815813e78eacdb"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3530,7 +3585,8 @@
     "K-000050": [],
     "K-000051": [],
     "K-000052": [],
-    "K-000053": []
+    "K-000053": [],
+    "K-000054": []
   },
   "sources": [
     {
@@ -3862,6 +3918,12 @@
       "id": "S-000055",
       "path": "sources/S-000055.md",
       "version": "arXiv:2610.34754v1"
+    },
+    {
+      "content_hash": "1afa34f335e97926783385f6f6f28078b5fd7215b46d99c4ee815813e78eacdb",
+      "id": "S-000056",
+      "path": "sources/S-000056.md",
+      "version": "arXiv:2610.37324v1"
     }
   ]
 }

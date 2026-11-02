@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `25d3cbec4979509311b07f756ffb2cb043648270bdb0efee0b49545839b8f494`
+Build input SHA-256: `eee9c6c8c431bf9362f77ee597176e37fc66d628b8f3e754fa5db4731c9af6bc`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -59,3 +59,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000051](knowledge/K-000051.md) — 预测市场的发生概率与发生时点应分开评估 (draft; example=False; review_after=2027-01-30)
 - [K-000052](knowledge/K-000052.md) — 队列敏感冲击模型的解释力与可交易性须分开 (draft; example=False; review_after=2027-01-31)
 - [K-000053](knowledge/K-000053.md) — 盈利钱包的预测持久性不等于跟单可复制收益 (draft; example=False; review_after=2027-01-31)
+- [K-000054](knowledge/K-000054.md) — 状态依赖Hawkes最优报价须分离理论目标、数值实现与风险评价 (draft; example=False; review_after=2027-02-01)

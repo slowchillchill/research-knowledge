@@ -203,3 +203,10 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000053 · 盈利钱包与跟单边界](../knowledge/K-000053.md) | [S-000055 · arXiv:2610.34754v1](../sources/S-000055.md) | draft / reported / not_attempted |
+
+
+## 做市：最优报价的实现审计
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000054 · 状态依赖Hawkes报价审计](../knowledge/K-000054.md) | [S-000056 · arXiv:2610.37324v1](../sources/S-000056.md) | draft / reported / not_attempted |
