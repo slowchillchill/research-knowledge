@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "eee9c6c8c431bf9362f77ee597176e37fc66d628b8f3e754fa5db4731c9af6bc",
+  "input_version": "a646cd31410dc55dd86ba2e606fdb053322ccf1dddf2e355351e906b36c8263f",
   "knowledge": [
     {
       "conditions": [
@@ -3409,6 +3409,64 @@
       },
       "title": "状态依赖Hawkes最优报价须分离理论目标、数值实现与风险评价",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "适用范围为具有成交记录和有限档位聚合报价的数据；新数据源须重新验证。"
+      ],
+      "content_hash": "ee34d2b85c764c7b8278acab99617b58dae58316c6d2160f36ce6031e36b557e",
+      "evidence": {
+        "note": "公开v1阅读摘要，未取得原始TRTH数据或独立复现。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000055",
+      "lifecycle": "draft",
+      "limitations": [
+        "匹配结果不等于交易所逐订单真值；未匹配样本不能直接丢弃后推广准确率。",
+        "不是收益或实盘执行证据。"
+      ],
+      "path": "knowledge/K-000055.md",
+      "sources": [
+        {
+          "id": "S-000057",
+          "locator": "matching",
+          "role": "重建方法与作者报告",
+          "version": "arXiv:1604.02759v1"
+        },
+        {
+          "id": "S-000057",
+          "locator": "signing",
+          "role": "签名评价范围",
+          "version": "arXiv:1604.02759v1"
+        },
+        {
+          "id": "S-000057",
+          "locator": "calibration",
+          "role": "模型校准示例",
+          "version": "arXiv:1604.02759v1"
+        }
+      ],
+      "summary": "成交与报价的同步和聚合方式会影响事件标签；匹配成功不能直接视为真实订单恢复。",
+      "tags": {
+        "domains": [
+          "市场微观结构",
+          "数据质量"
+        ],
+        "methods": [
+          "订单流重建",
+          "成交报价匹配",
+          "Lee-Ready"
+        ],
+        "problems": [
+          "时间同步",
+          "成交方向",
+          "校准偏差"
+        ]
+      },
+      "title": "聚合订单流重建：匹配覆盖率、签名基准与模型校准须分开",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3467,6 +3525,7 @@
       "knowledge/K-000052.md": "ae0ab9ee70e519fd74ca97b21b3760b4bbde379ee6e7f20e7f7c3d0c4fe59f26",
       "knowledge/K-000053.md": "40f6e03b7956e92b2c0f9b5c831100a276842b438003c637868fa744e3e8aeef",
       "knowledge/K-000054.md": "9af878a43944207db75e0fdf8e43d46bf2dec6ee6b76faf9365708912947a2cc",
+      "knowledge/K-000055.md": "ee34d2b85c764c7b8278acab99617b58dae58316c6d2160f36ce6031e36b557e",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3522,7 +3581,8 @@
       "sources/S-000053.md": "407fb9c7cbcf1081167bc31a230bbf3011e9aa0962ab426f384b91b9bc04fe3f",
       "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac",
       "sources/S-000055.md": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35",
-      "sources/S-000056.md": "1afa34f335e97926783385f6f6f28078b5fd7215b46d99c4ee815813e78eacdb"
+      "sources/S-000056.md": "1afa34f335e97926783385f6f6f28078b5fd7215b46d99c4ee815813e78eacdb",
+      "sources/S-000057.md": "c8a038c4421b29bc3b7375407dba12f3a9a1c26eaf8d9bd638f7b414975c5d14"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3586,7 +3646,8 @@
     "K-000051": [],
     "K-000052": [],
     "K-000053": [],
-    "K-000054": []
+    "K-000054": [],
+    "K-000055": []
   },
   "sources": [
     {
@@ -3924,6 +3985,12 @@
       "id": "S-000056",
       "path": "sources/S-000056.md",
       "version": "arXiv:2610.37324v1"
+    },
+    {
+      "content_hash": "c8a038c4421b29bc3b7375407dba12f3a9a1c26eaf8d9bd638f7b414975c5d14",
+      "id": "S-000057",
+      "path": "sources/S-000057.md",
+      "version": "arXiv:1604.02759v1"
     }
   ]
 }

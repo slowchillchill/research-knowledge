@@ -210,3 +210,10 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000054 · 状态依赖Hawkes报价审计](../knowledge/K-000054.md) | [S-000056 · arXiv:2610.37324v1](../sources/S-000056.md) | draft / reported / not_attempted |
+
+
+## 市场微观结构：聚合数据与订单流重建
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000055 · 订单流重建与评价边界](../knowledge/K-000055.md) | [S-000057 · arXiv:1604.02759v1](../sources/S-000057.md) | draft / reported / not_attempted |
