@@ -217,3 +217,9 @@ python3 -B scripts/kb.py sources K-000046
 | 知识卡 | 来源 | 当前状态 |
 | --- | --- | --- |
 | [K-000055 · 订单流重建与评价边界](../knowledge/K-000055.md) | [S-000057 · arXiv:1604.02759v1](../sources/S-000057.md) | draft / reported / not_attempted |
+
+## 量化研究治理：受限假设与留出验收
+
+| 知识卡 | 来源 | 当前状态 |
+| --- | --- | --- |
+| [K-000056 · Hard to Fool研究验收边界](../knowledge/K-000056.md) | [S-000058 · arXiv:2611.06607v1](../sources/S-000058.md) | draft / reported / not_attempted |

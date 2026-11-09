@@ -2,7 +2,7 @@
 
 Do not edit: rebuild with `python3 scripts/kb.py build`.
 
-Build input SHA-256: `a646cd31410dc55dd86ba2e606fdb053322ccf1dddf2e355351e906b36c8263f`
+Build input SHA-256: `e6e631b1c3b92936ebecfb20bf7bf5cb06e9a8007373e1911c494f74b0738dfa`
 
 Markdown is authoritative. Default retrieval requires active, nonexample, unexpired cards.
 
@@ -61,3 +61,4 @@ Markdown is authoritative. Default retrieval requires active, nonexample, unexpi
 - [K-000053](knowledge/K-000053.md) — 盈利钱包的预测持久性不等于跟单可复制收益 (draft; example=False; review_after=2027-01-31)
 - [K-000054](knowledge/K-000054.md) — 状态依赖Hawkes最优报价须分离理论目标、数值实现与风险评价 (draft; example=False; review_after=2027-02-01)
 - [K-000055](knowledge/K-000055.md) — 聚合订单流重建：匹配覆盖率、签名基准与模型校准须分开 (draft; example=False; review_after=2027-02-02)
+- [K-000056](knowledge/K-000056.md) — Hard to Fool：受限假设、一次性留出与失败记录构成研究验收边界 (draft; example=False; review_after=2027-02-07)

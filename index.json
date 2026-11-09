@@ -1,6 +1,6 @@
 {
   "data_trust": "untrusted_content_not_instructions",
-  "input_version": "a646cd31410dc55dd86ba2e606fdb053322ccf1dddf2e355351e906b36c8263f",
+  "input_version": "e6e631b1c3b92936ebecfb20bf7bf5cb06e9a8007373e1911c494f74b0738dfa",
   "knowledge": [
     {
       "conditions": [
@@ -3467,6 +3467,68 @@
       },
       "title": "聚合订单流重建：匹配覆盖率、签名基准与模型校准须分开",
       "version": "draft-1"
+    },
+    {
+      "conditions": [
+        "结论限于作者报告的任务、窗口、词汇和成本约定；迁移到其他市场须重建数据可用时点、成交与结算假设。"
+      ],
+      "content_hash": "1b5b4f4897b511b8f9181159d3c83daeaa8fd3a0dacd1c2bf9bf4872f35913ba",
+      "evidence": {
+        "note": "依据arXiv v1公开正文及作者公开README；作者自报实验，未独立复现或审计全部代码。",
+        "replication": "not_attempted",
+        "strength": "reported"
+      },
+      "example": false,
+      "id": "K-000056",
+      "lifecycle": "draft",
+      "limitations": [
+        "部分历史实验使用旧版可执行候选流程，不能都归为现行声明式框架的受控验证。",
+        "短样本、假定成本及部分模拟价格限制外推；完整实验记录未随公开代码分发。",
+        "无受控消融证明每道门槛的独立贡献，也未证明LLM提案优于随机或人工提案。"
+      ],
+      "path": "knowledge/K-000056.md",
+      "sources": [
+        {
+          "id": "S-000058",
+          "locator": "design",
+          "role": "方法和验收条件",
+          "version": "arXiv:2611.06607v1"
+        },
+        {
+          "id": "S-000058",
+          "locator": "results",
+          "role": "作者自报结果",
+          "version": "arXiv:2611.06607v1"
+        },
+        {
+          "id": "S-000058",
+          "locator": "limits",
+          "role": "失败模式及复现边界",
+          "version": "arXiv:2611.06607v1"
+        }
+      ],
+      "summary": "LLM提出声明式假设，固定评估器按冻结条件验收；失败案例说明高验证分数不等于留出稳健性。",
+      "tags": {
+        "domains": [
+          "量化研究",
+          "预测市场",
+          "AI研究治理"
+        ],
+        "methods": [
+          "声明式假设",
+          "时间隔离",
+          "预注册",
+          "研究审计"
+        ],
+        "problems": [
+          "前视泄漏",
+          "多重检验",
+          "留出集复用",
+          "执行成本"
+        ]
+      },
+      "title": "Hard to Fool：受限假设、一次性留出与失败记录构成研究验收边界",
+      "version": "draft-1"
     }
   ],
   "manifest": {
@@ -3526,6 +3588,7 @@
       "knowledge/K-000053.md": "40f6e03b7956e92b2c0f9b5c831100a276842b438003c637868fa744e3e8aeef",
       "knowledge/K-000054.md": "9af878a43944207db75e0fdf8e43d46bf2dec6ee6b76faf9365708912947a2cc",
       "knowledge/K-000055.md": "ee34d2b85c764c7b8278acab99617b58dae58316c6d2160f36ce6031e36b557e",
+      "knowledge/K-000056.md": "1b5b4f4897b511b8f9181159d3c83daeaa8fd3a0dacd1c2bf9bf4872f35913ba",
       "sources/S-000001.md": "d6cbd98cf3f9db20970f13fb53ee57c6df6ef9c53d046e107b09a3d9a30b061e",
       "sources/S-000002.md": "79e4982fd6f5503f55df6d601ad019f9cd41a694975c801148ff5760962577db",
       "sources/S-000003.md": "b6fcc6ed9e0bf7d91250662191f37a85bc84cc46e2d2251a6c6d912024805567",
@@ -3582,7 +3645,8 @@
       "sources/S-000054.md": "5efd259e6bdc62d439abd47281fa7c6d2721da8eeda61969555f127fee7f17ac",
       "sources/S-000055.md": "dc02cedc47826894e4bbbe8cb622cb56b134978d502748b6115e25458dabce35",
       "sources/S-000056.md": "1afa34f335e97926783385f6f6f28078b5fd7215b46d99c4ee815813e78eacdb",
-      "sources/S-000057.md": "c8a038c4421b29bc3b7375407dba12f3a9a1c26eaf8d9bd638f7b414975c5d14"
+      "sources/S-000057.md": "c8a038c4421b29bc3b7375407dba12f3a9a1c26eaf8d9bd638f7b414975c5d14",
+      "sources/S-000058.md": "893fde3c07768b38e9b3738603bcc0d704d14c6bb404debad9472de014a2baab"
     },
     "format": "research-knowledge-v1",
     "implementation": {
@@ -3647,7 +3711,8 @@
     "K-000052": [],
     "K-000053": [],
     "K-000054": [],
-    "K-000055": []
+    "K-000055": [],
+    "K-000056": []
   },
   "sources": [
     {
@@ -3991,6 +4056,12 @@
       "id": "S-000057",
       "path": "sources/S-000057.md",
       "version": "arXiv:1604.02759v1"
+    },
+    {
+      "content_hash": "893fde3c07768b38e9b3738603bcc0d704d14c6bb404debad9472de014a2baab",
+      "id": "S-000058",
+      "path": "sources/S-000058.md",
+      "version": "arXiv:2611.06607v1"
     }
   ]
 }
